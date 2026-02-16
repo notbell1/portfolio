@@ -3,15 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="/public/profile/icon.png"
-      type="image/x-icon"
-    />
+
+    <link rel="shortcut icon" href="/profile/icon.png" type="image/x-icon" />
+
     <title>Nottbell Portfolio</title>
+    <meta name="title" content="Nottbell Portfolio" />
+    <meta
+      name="description"
+      content="Personal portfolio of Nottbell. Professional Creative Developer specializing in high-performance web experiences."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nottbell.vercel.app/" />
+    <meta property="og:title" content="Nottbell Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore my projects and digital masteries. Crafted with logic and modern design."
+    />
+    <meta
+      property="og:image"
+      content="https://nottbell.vercel.app/profile/og-image.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nottbell.vercel.app/" />
+    <meta property="twitter:title" content="Nottbell Portfolio" />
+    <meta
+      property="twitter:description"
+      content="Explore my projects and digital masteries. Crafted with logic and modern design."
+    />
+    <meta
+      property="twitter:image"
+      content="https://nottbell.vercel.app/profile/og-image.png"
+    />
 
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -22,7 +48,6 @@
               dark: "#0f172a",
               primary: "#38bdf8",
             },
-            // Menambahkan Keyframes ke dalam konfigurasi Tailwind
             animation: {
               shimmer: "shimmer 2s infinite linear",
             },
@@ -87,6 +112,16 @@
         background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+      }
+
+      /* Image Overlay Gradient */
+      .img-gradient {
+        background: linear-gradient(
+          to top,
+          #020617,
+          rgba(2, 6, 23, 0.5),
+          transparent
+        );
       }
     </style>
   </head>
