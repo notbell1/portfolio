@@ -48,13 +48,14 @@ export const Home = `
 
           <div class="flex flex-wrap justify-center lg:justify-start items-center gap-x-2 gap-y-4 max-w-sm md:max-w-none mx-auto lg:mx-0">
             <a href="mailto:abbelkadafi@gmail.com" target="_blank" class="p-2 text-slate-500 hover:text-sky-400 transition-all duration-300 hover:-translate-y-1" title="Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
-            <a href="https://api.whatsapp.com/send/?phone=6282287592930&text=Halo%20Abbel%21" target="_blank" class="p-2 text-slate-500 hover:text-green-400 transition-all duration-300 hover:-translate-y-1" title="WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=6282287592930&text=Halo%20Abbel%21%0A%0ASaya%20tertarik%20untuk%20berdiskusi%20terkait%20proyek%20atau%20kolaborasi%20teknis.%20Boleh%20kita%20lanjutkan%20pembicaraan%20ini%3F
+            " target="_blank" class="p-2 text-slate-500 hover:text-green-400 transition-all duration-300 hover:-translate-y-1" title="WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
             <a href="https://www.facebook.com/Zx.Marchia/" target="_blank" class="p-2 text-slate-500 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1" title="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
             <a href="https://www.instagram.com/_ntbbll" target="_blank" class="p-2 text-slate-500 hover:text-pink-500 transition-all duration-300 hover:-translate-y-1" title="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
             <a href="https://x.com/Zxbell2/" target="_blank" class="p-2 text-slate-500 hover:text-sky-300 transition-all duration-300 hover:-translate-y-1" title="Twitter/X"><i data-lucide="twitter" class="w-5 h-5"></i></a>
             <a href="https://t.me/bellxss" target="_blank" class="p-2 text-slate-500 hover:text-blue-400 transition-all duration-300 hover:-translate-y-1" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
             <a href="https://www.roblox.com/users/9013470120/profile" target="_blank" class="p-2 text-slate-500 hover:text-indigo-500 transition-all duration-300 hover:-translate-y-1" title="Roblox"><i data-lucide="disc" class="w-5 h-5"></i></a>
-            <a href="#" target="_blank" class="p-2 text-slate-500 hover:text-white transition-all duration-300 hover:-translate-y-1" title="Github"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://github.com/notbell1" target="_blank" class="p-2 text-slate-500 hover:text-white transition-all duration-300 hover:-translate-y-1" title="Github"><i data-lucide="github" class="w-5 h-5"></i></a>
             <a href="https://www.linkedin.com/in/abbel" target="_blank" class="p-2 text-slate-500 hover:text-blue-500 transition-all duration-300 hover:-translate-y-1" title="Linkedin"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
             <a href="https://uisb.ac.id/" target="_blank" class="p-2 text-slate-500 hover:text-red-400 transition-all duration-300 hover:-translate-y-1" title="University"><i data-lucide="graduation-cap" class="w-5 h-5"></i></a>
           </div>
