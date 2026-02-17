@@ -12,7 +12,7 @@ export const News = `
           Articles
         </h2>
         <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none italic">
-          Dev <span class="text-slate-600">Archives</span>
+          Articles <span class="text-slate-600">Archives</span>
         </h3>
       </div>
 
@@ -27,10 +27,15 @@ export const News = `
 
         <div class="relative w-full sm:w-56">
           <select id="newsFilter" class="w-full bg-transparent px-6 py-3.5 text-[10px] text-sky-500 focus:outline-none font-mono tracking-widest appearance-none cursor-pointer uppercase font-black italic">
-            <option value="all">SEMUA ENTRY</option>
-            <option value="Tech Stack">TECH STACK</option>
-            <option value="Development">DEVELOPMENT</option>
-            <option value="Design">DESIGN</option>
+            <option value="all">-- FILTER SEMUA --</option>
+            <option value="Keamanan Siber">Keamanan Siber</option>
+            <option value="Blockchain">Blockchain</option>
+            <option value="Sains Data">Sains Data</option>
+            <option value="Kecerdasan Buatan">Kecerdasan Buatan</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Pengembangan Web">Pengembangan Web</option>
+            <option value="Internet of Things">Internet of Things</option>
+            <option value="Komputasi Awan">Komputasi Awan</option>
           </select>
           <i data-lucide="filter" class="absolute right-5 top-4 w-3.5 h-3.5 text-slate-700 pointer-events-none"></i>
         </div>

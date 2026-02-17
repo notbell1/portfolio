@@ -19,19 +19,26 @@ export const Home = `
         </p>
         
         <div class="mt-10 space-y-8">
-          <div class="flex justify-center lg:justify-start">
-            <a href="#project" class="group relative px-10 py-4 bg-slate-800 text-white font-bold rounded-full transition-all duration-500 overflow-hidden border border-slate-700 hover:border-sky-500 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="#project" class="group relative px-8 py-4 bg-slate-800 text-white font-bold rounded-full transition-all duration-500 overflow-hidden border border-slate-700 hover:border-sky-500 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]">
               <span class="relative z-10 flex items-center gap-3 uppercase tracking-[0.2em] text-[10px]">
                 View My Work 
                 <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"></i>
               </span>
               <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             </a>
+
+            <a href="/cv/abbel-cv.pdf" download="Abbel_CV.pdf" class="group relative px-8 py-4 bg-sky-500 text-slate-950 font-bold rounded-full transition-all duration-500 overflow-hidden hover:bg-sky-400 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 active:scale-95">
+              <span class="relative z-10 flex items-center gap-3 uppercase tracking-[0.2em] text-[10px]">
+                Download CV
+                <i data-lucide="download" class="w-4 h-4 group-hover:animate-bounce"></i>
+              </span>
+            </a>
           </div>
 
           <div class="flex flex-wrap justify-center lg:justify-start items-center gap-x-2 gap-y-4 max-w-sm md:max-w-none mx-auto lg:mx-0">
             <a href="mailto:abbelkadafi@gmail.com" target="_blank" class="p-2 text-slate-500 hover:text-sky-400 transition-all duration-300 hover:-translate-y-1" title="Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
-            <a href="https://api.whatsapp.com/send/?phone=6282287592930&text=Halo%20Abbel%21%0A%0ASaya%20menemukan%20kontak%20ini%20dari%20website%20portfolio%20kamu.%20Saya%20tertarik%20dengan%20karya%20dan%20pengalaman%20yang%20kamu%20tampilkan%20di%20sana.%0A%0ASaya%20ingin%20mengajak%20kamu%20untuk%20bergabung%20dengan%20tim%2Fpekerjaan%2Forganisasi%20yang%20sedang%20kami%20jalankan.%20Sepertinya%20skill%20dan%20gaya%20kerja%20kamu%20cocok%20dengan%20kebutuhan%20kami.%0A%0AKalau%20kamu%20tertarik%2C%20boleh%20kita%20diskusi%20lebih%20lanjut%20ya%20%F0%9F%98%8A%0A%0ATerima%20kasih%21&type=phone_number&app_absent=0" target="_blank" class="p-2 text-slate-500 hover:text-green-400 transition-all duration-300 hover:-translate-y-1" title="WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=6282287592930&text=Halo%20Abbel%21" target="_blank" class="p-2 text-slate-500 hover:text-green-400 transition-all duration-300 hover:-translate-y-1" title="WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
             <a href="https://www.facebook.com/Zx.Marchia/" target="_blank" class="p-2 text-slate-500 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1" title="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
             <a href="https://www.instagram.com/_ntbbll" target="_blank" class="p-2 text-slate-500 hover:text-pink-500 transition-all duration-300 hover:-translate-y-1" title="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
             <a href="https://x.com/Zxbell2/" target="_blank" class="p-2 text-slate-500 hover:text-sky-300 transition-all duration-300 hover:-translate-y-1" title="Twitter/X"><i data-lucide="twitter" class="w-5 h-5"></i></a>
@@ -47,7 +54,7 @@ export const Home = `
       <div class="relative flex items-center justify-center lg:justify-end">
         <div class="relative group cursor-pointer">
           <div class="absolute inset-[-50px] border border-slate-800 rounded-full animate-[spin_12s_linear_infinite] opacity-40 group-hover:opacity-100 group-hover:border-sky-500/30 transition-all duration-700">
-             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-sky-400 rounded-full shadow-[0_0_15px_#38bdf8]"></div>
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-sky-400 rounded-full shadow-[0_0_15px_#38bdf8]"></div>
           </div>
           <div class="absolute inset-[-25px] border border-sky-500/10 rounded-full animate-[spin_8s_linear_infinite_reverse] group-hover:border-sky-500/40 transition-all duration-700"></div>
           <div class="relative w-64 h-64 md:w-80 md:h-80 transition-all duration-700 group-hover:scale-[1.03] group-hover:-rotate-2">
@@ -88,21 +95,20 @@ export const initTyping = () => {
     if (isDeleting) {
       textElement.innerHTML = currentPhrase.substring(0, charIndex - 1);
       charIndex--;
-      typeSpeed = 50; // Kecepatan hapus
+      typeSpeed = 50;
     } else {
-      // Mengetik karakter
       textElement.innerHTML = currentPhrase.substring(0, charIndex + 1);
       charIndex++;
-      typeSpeed = 100; // Kecepatan mengetik
+      typeSpeed = 100;
     }
 
     if (!isDeleting && charIndex === currentPhrase.length) {
       isDeleting = true;
-      typeSpeed = 2000; // Jeda
+      typeSpeed = 2000;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length; // Loop
-      typeSpeed = 500; // Jeda
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500;
     }
 
     setTimeout(type, typeSpeed);
