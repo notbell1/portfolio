@@ -2,11 +2,11 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/news/:id",
+      "source": "/news/(.*)",
       "destination": "/index.html"
     },
     {
-      "source": "/project/:id",
+      "source": "/project/(.*)",
       "destination": "/index.html"
     },
     {
