@@ -7,7 +7,7 @@ export const Footer = `
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
             
-            <div class="lg:col-span-5 space-y-8">
+            <div class="lg:col-span-5 space-y-8" data-aos="fade-up">
                 <div class="space-y-4">
                     <h2 class="text-2xl font-black text-white italic tracking-tighter flex items-center gap-3">
                         <span class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center text-slate-950 not-italic text-sm">B</span>
@@ -25,13 +25,13 @@ export const Footer = `
                 </div>
             </div>
 
-            <div class="lg:col-span-3 space-y-6">
+            <div class="lg:col-span-3 space-y-6" data-aos="fade-up" data-aos-delay="200">
                 <h4 class="text-white font-black text-[10px] uppercase tracking-[0.4em] italic">Navigation</h4>
                 <ul class="space-y-4">
                     <li><a href="#home" class="text-slate-500 hover:text-sky-400 font-mono text-xs transition-colors flex items-center gap-2 group">
                         <span class="w-0 group-hover:w-4 h-px bg-sky-500 transition-all"></span>HOME
                     </a></li>
-                    <li><a href="#archive" class="text-slate-500 hover:text-sky-400 font-mono text-xs transition-colors flex items-center gap-2 group">
+                    <li><a href="#about" class="text-slate-500 hover:text-sky-400 font-mono text-xs transition-colors flex items-center gap-2 group">
                         <span class="w-0 group-hover:w-4 h-px bg-sky-500 transition-all"></span>ABOUT
                     </a></li>
                     <li><a href="#projects" class="text-slate-500 hover:text-sky-400 font-mono text-xs transition-colors flex items-center gap-2 group">
@@ -43,7 +43,7 @@ export const Footer = `
                 </ul>
             </div>
 
-            <div class="lg:col-span-4 space-y-6">
+            <div class="lg:col-span-4 space-y-6" data-aos="fade-up" data-aos-delay="400">
                 <h4 class="text-white font-black text-[10px] uppercase tracking-[0.4em] italic">System Architecture</h4>
                 <div class="p-6 bg-slate-900/30 border border-slate-800 rounded-3xl space-y-4">
                     <div class="flex justify-between items-center">
@@ -62,7 +62,7 @@ export const Footer = `
             </div>
         </div>
 
-        <div class="pt-12 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="pt-12 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-in">
             <p class="text-[10px] font-mono text-slate-600 uppercase tracking-widest italic">
                 &copy; 2026 NOTTBELL <span class="mx-2 text-slate-800">|</span> ALL RIGHTS RESERVED.
             </p>

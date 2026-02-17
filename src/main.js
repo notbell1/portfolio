@@ -18,7 +18,7 @@ import { initNav } from "./utils/navHandler.js";
 
 const app = document.querySelector("#app");
 
-// Render UI (Kembali ke struktur awal yang render semuanya)
+// 1. Render UI ke dalam DOM
 app.innerHTML = `
     ${Header}
     <main class="overflow-x-hidden pt-20"> 
@@ -34,7 +34,7 @@ app.innerHTML = `
     ${Footer}
 `;
 
-// Initialize Handlers
+// 2. Initialize Handlers
 if (window.lucide) {
   window.lucide.createIcons();
 }
@@ -43,10 +43,10 @@ initNav();
 initTyping();
 initAge(2002, 6, 20);
 initProjectDetail();
-initNewsDetail();
+initNewsDetail(); // Pastikan di dalam newsHandler.js kamu memanggil AOS.refresh() setelah render grid
 initContactForm();
 
-// Smooth Scroll
+// 3. Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -56,3 +56,24 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// 4. Pengaturan AOS yang diperkuat
+if (window.AOS) {
+  // Inisialisasi awal
+  window.AOS.init({
+    duration: 1000,
+    once: false, // Ubah ke false agar animasi bisa berulang (opsional, tapi lebih keren)
+    offset: 100,
+    easing: "ease-in-out",
+    mirror: true,
+  });
+
+  /**
+   * KUNCI UTAMA:
+   * Gunakan setTimeout untuk memastikan AOS memindai ulang elemen
+   * setelah innerHTML dan handler selesai bekerja sepenuhnya.
+   */
+  setTimeout(() => {
+    window.AOS.refresh();
+  }, 500);
+}

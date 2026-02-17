@@ -1,13 +1,11 @@
 export const Experience = `
 <section id="experience" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-10 lg:py-0 scroll-mt-16">
-  
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] lg:text-[25rem] font-black text-white/[0.012] select-none pointer-events-none uppercase tracking-widest leading-none">
-    Exp
-  </div>
+
+  <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none animate-pulse"></div>
 
   <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full">
     
-    <div class="mb-10 lg:mb-14">
+    <div class="mb-10 lg:mb-14" data-aos="fade-down">
       <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-2 italic flex items-center gap-3">
         <span class="h-[1px] w-10 bg-sky-500"></span>
         Experience
@@ -19,7 +17,8 @@ export const Experience = `
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
       
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-sky-500/30 transition-all duration-500">
+      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-sky-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="100">
         <div class="flex items-center justify-between mb-5">
             <div class="flex items-center gap-4">
                 <div class="p-2.5 bg-sky-500/10 rounded-xl text-sky-500"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
@@ -40,7 +39,8 @@ export const Experience = `
         </ul>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-emerald-500/30 transition-all duration-500">
+      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-emerald-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="200">
         <div class="flex items-center justify-between mb-5">
             <div class="flex items-center gap-4">
                 <div class="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-500"><i data-lucide="terminal" class="w-5 h-5"></i></div>
@@ -64,7 +64,8 @@ export const Experience = `
         </ul>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-purple-500/30 transition-all duration-500">
+      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-purple-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="300">
         <div class="flex items-center justify-between mb-5">
             <div class="flex items-center gap-4">
                 <div class="p-2.5 bg-purple-500/10 rounded-xl text-purple-500"><i data-lucide="users" class="w-5 h-5"></i></div>
@@ -85,7 +86,8 @@ export const Experience = `
         </ul>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-red-500/30 transition-all duration-500">
+      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-red-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="400">
         <div class="flex items-center justify-between mb-5">
             <div class="flex items-center gap-4">
                 <div class="p-2.5 bg-red-500/10 rounded-xl text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></div>

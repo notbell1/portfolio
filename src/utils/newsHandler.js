@@ -6,7 +6,7 @@ let selectedCategory = "all";
 let clockInterval = null;
 
 /**
- * HELPER: Membuat Slug dari Judul
+ * HELPER
  */
 const createSlug = (text) => {
   return text
@@ -57,9 +57,12 @@ const startClock = () => {
 
 /**
  * UI RENDERING
+ * Ditambahkan parameter 'index' untuk staggered animation delay
  */
-const createNewsCard = (item) => `
+const createNewsCard = (item, index) => `
     <article class="group bg-slate-800/10 border border-slate-800/40 rounded-[2.5rem] overflow-hidden hover:border-sky-500/30 transition-all duration-500 flex flex-col h-full cursor-pointer" 
+             data-aos="fade-up" 
+             data-aos-delay="${(index % 3) * 150}"
              onclick="openNewsDetail('${createSlug(item.title)}')">
         <div class="relative h-56 overflow-hidden bg-slate-900">
             <img src="${item.image}" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c';" loading="lazy" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
@@ -93,8 +96,12 @@ export const renderNewsGrid = () => {
       n.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  // Menggunakan index dalam map untuk delay animasi
   grid.innerHTML = filtered.length
-    ? filtered.slice(0, visibleCount).map(createNewsCard).join("")
+    ? filtered
+        .slice(0, visibleCount)
+        .map((item, index) => createNewsCard(item, index))
+        .join("")
     : `<div class="col-span-full py-20 text-center text-slate-700 font-mono text-[10px] uppercase tracking-[0.5em] italic border border-dashed border-slate-800 rounded-3xl">No Log Entries Found.</div>`;
 
   document
@@ -104,11 +111,18 @@ export const renderNewsGrid = () => {
     .getElementById("btnCloseMore")
     ?.classList.toggle("hidden", visibleCount <= 3);
 
+  // Refresh Lucide Icons
   if (window.lucide) window.lucide.createIcons();
+
+  // --- KUNCI UTAMA ---
+  // Memberitahu AOS bahwa ada elemen baru yang perlu dianimasikan
+  if (window.AOS) {
+    window.AOS.refresh();
+  }
 };
 
 /**
- * INITIALIZATION & ROUTING (MODIFIED TO QUERY PARAM)
+ * INITIALIZATION & ROUTING
  */
 export const initNewsDetail = () => {
   document.getElementById("newsSearch")?.addEventListener("input", (e) => {
@@ -135,7 +149,6 @@ export const initNewsDetail = () => {
     }
   });
 
-  // Handle Route berdasarkan Query Parameter ?id=slug
   const handleRoute = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get("id");
@@ -270,7 +283,7 @@ export const initNewsDetail = () => {
 };
 
 /**
- * GLOBAL NAVIGATION (QUERY PARAMETER)
+ * GLOBAL NAVIGATION
  */
 window.openNewsDetail = (slug) => {
   window.history.pushState({}, "", `?id=${slug}`);

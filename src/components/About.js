@@ -1,14 +1,12 @@
 export const About = `
 <section id="about" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-10 lg:py-0 scroll-mt-18">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] lg:text-[20rem] font-black text-white/[0.015] select-none pointer-events-none uppercase tracking-tighter">
-    About
-  </div>
+  
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none"></div>
   <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full">
     
-    <div class="mb-8 lg:mb-12">
+    <div class="mb-8 lg:mb-12" data-aos="fade-down" data-aos-duration="1000">
       <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-2 italic flex items-center gap-3">
         <span class="h-[1px] w-8 bg-sky-500"></span>About Me
       </h2>
@@ -19,7 +17,7 @@ export const About = `
 
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
       
-      <div class="lg:col-span-5">
+      <div class="lg:col-span-5" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
         <div class="bg-slate-800/20 border border-slate-800 p-6 lg:p-8 rounded-2xl backdrop-blur-sm shadow-2xl relative overflow-hidden group">
           <div class="absolute inset-0 bg-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
@@ -59,7 +57,7 @@ export const About = `
         </div>
       </div>
 
-      <div class="lg:col-span-7">
+      <div class="lg:col-span-7" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
         <div class="space-y-5 lg:space-y-6">
           <h4 class="text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tighter uppercase italic">
             A Lifelong Learner <span class="text-sky-500 font-black">Driven by Focus.</span>
@@ -77,7 +75,7 @@ export const About = `
             </p>
           </div>
 
-          <div class="flex gap-10 pt-5 border-t border-slate-800">
+          <div class="flex gap-10 pt-5 border-t border-slate-800" data-aos="fade-up" data-aos-offset="0" data-aos-delay="600">
             <div>
               <p class="text-3xl lg:text-4xl font-black text-white tracking-tighter">02+</p>
               <p class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mt-1">Years of Craft</p>
@@ -95,9 +93,6 @@ export const About = `
 </section>
 `;
 
-/**
- * Fungsi Realtime Age
- */
 export const initAge = (year, month, day) => {
   const ageElement = document.getElementById("realtime-age");
   if (ageElement) {

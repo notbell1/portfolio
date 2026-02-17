@@ -1,14 +1,11 @@
 export const Education = `
 <section id="education" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-10 lg:py-0 scroll-mt-10">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] lg:text-[20rem] font-black text-white/[0.015] select-none pointer-events-none uppercase tracking-tighter">
-    Study
-  </div>
 
-  <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full ">
     
-    <div class="mb-10 lg:mb-12">
+    <div class="mb-10 lg:mb-12" data-aos="fade-down">
       <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-1 italic flex items-center gap-3">
-        <span class="h-[1px] w-8 bg-sky-500"></span>
+        <span class="h-[1px] w-8 bg-sky-500 "></span>
         Education
       </h2>
       <h3 class="text-3xl lg:text-4xl font-black text-white tracking-tighter uppercase leading-none">
@@ -17,11 +14,11 @@ export const Education = `
     </div>
 
     <div class="relative">
-      <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-sky-500/50 via-slate-800 to-transparent"></div>
+      <div data-aos="fade-down" data-aos-duration="1500" class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-sky-500/50 via-slate-800 to-transparent"></div>
 
       <div class="space-y-6 lg:space-y-8">
         
-        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group" data-aos="fade-right" data-aos-delay="100">
           <div class="hidden md:block w-1/2 pr-10 text-right">
             <span class="text-sky-500 font-mono text-xs tracking-widest font-bold italic">2023 — Present</span>
           </div>
@@ -42,7 +39,7 @@ export const Education = `
           </div>
         </div>
 
-        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group">
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group" data-aos="fade-left" data-aos-delay="200">
           <div class="hidden md:block w-1/2 pl-10 text-left">
             <span class="text-slate-500 font-mono text-xs tracking-widest italic">Graduated 2023</span>
           </div>
@@ -62,7 +59,7 @@ export const Education = `
           </div>
         </div>
 
-        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group" data-aos="fade-right" data-aos-delay="300">
           <div class="hidden md:block w-1/2 pr-10 text-right">
             <span class="text-slate-500 font-mono text-xs tracking-widest italic opacity-60">Junior High</span>
           </div>
@@ -82,7 +79,7 @@ export const Education = `
           </div>
         </div>
 
-        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group">
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group" data-aos="fade-left" data-aos-delay="400">
           <div class="hidden md:block w-1/2 pl-10 text-left">
             <span class="text-slate-500 font-mono text-xs tracking-widest italic opacity-60">Primary School</span>
           </div>

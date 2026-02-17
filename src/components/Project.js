@@ -2,12 +2,10 @@ import { projects } from "../data/projects.js";
 
 export const Project = `
 <section id="project" class="min-h-screen flex items-center bg-slate-950 relative overflow-hidden py-20 scroll-mt-10">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] lg:text-[20rem] font-black text-white/[0.01] select-none pointer-events-none uppercase tracking-widest leading-none">
-    Work
-  </div>
 
   <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
-    <div class="mb-12">
+    
+    <div class="mb-12" data-aos="fade-down">
       <h2 class="text-sky-400 font-mono text-[10px] tracking-[0.4em] uppercase mb-2 italic flex items-center gap-3">
         <span class="h-[1px] w-8 bg-sky-500"></span>
         Portfolio
@@ -20,9 +18,12 @@ export const Project = `
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       ${projects
         .map(
-          (p) => `
-        <div class="group relative bg-slate-900/40 border border-slate-800/50 rounded-3xl overflow-hidden hover:border-sky-500/40 transition-all duration-500 flex h-[400px]">
-          
+          (p, index) => `
+        <div 
+          class="group relative bg-slate-900/40 border border-slate-800/50 rounded-3xl overflow-hidden hover:border-sky-500/40 transition-all duration-500 flex h-[400px]"
+          data-aos="fade-up" 
+          data-aos-delay="${index * 100}"
+        >
           <div class="w-12 border-r border-white/5 flex items-center justify-center bg-slate-950/40 relative z-20">
             <h4 class="text-white font-black uppercase tracking-[0.2em] text-[10px] whitespace-nowrap -rotate-90 origin-center opacity-60 group-hover:opacity-100 group-hover:text-sky-400 transition-all duration-500">
               ${p.title}

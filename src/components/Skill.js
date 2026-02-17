@@ -15,24 +15,24 @@ const renderProgressBar = (name, percent) => {
 export const Skill = `
 <section id="skill" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-20 scroll-mt-16">
   <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] lg:text-[20rem] font-black text-white/[0.015] select-none pointer-events-none uppercase tracking-tighter">
-    Skill
-  </div>
+  
+
   <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 w-full">
     
-    <div class="mb-14 lg:mb-20">
+    <div class="mb-14 lg:mb-20" data-aos="fade-down">
       <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-2 italic flex items-center gap-3">
         <span class="h-[1px] w-10 bg-sky-500"></span>
         Skills & Expertise
       </h2>
       <h3 class="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase leading-none">
-        Technical <span class="text-slate-500 italic">&</span> Professional <span class="text-slate-500 italic"></span>
+        Technical <span class="text-slate-500 italic">&</span> Professional
       </h3>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500">
+      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500" 
+           data-aos="fade-up" data-aos-delay="100">
         <div class="flex items-center gap-3 mb-8">
             <div class="p-2 bg-sky-500/10 rounded-lg"><i data-lucide="code-2" class="w-5 h-5 text-sky-500"></i></div>
             <h4 class="text-xs font-black text-white uppercase tracking-widest">Development</h4>
@@ -45,7 +45,8 @@ export const Skill = `
         </div>
       </div>
 
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500">
+      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="200">
         <div class="flex items-center gap-3 mb-8">
             <div class="p-2 bg-emerald-500/10 rounded-lg"><i data-lucide="calculator" class="w-5 h-5 text-emerald-500"></i></div>
             <h4 class="text-xs font-black text-white uppercase tracking-widest">Finance & Admin</h4>
@@ -58,7 +59,8 @@ export const Skill = `
         </div>
       </div>
 
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500">
+      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="300">
         <div class="flex items-center gap-3 mb-8">
             <div class="p-2 bg-purple-500/10 rounded-lg"><i data-lucide="brain-circuit" class="w-5 h-5 text-purple-500"></i></div>
             <h4 class="text-xs font-black text-white uppercase tracking-widest">Soft Skills</h4>
@@ -71,7 +73,8 @@ export const Skill = `
         </div>
       </div>
 
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500">
+      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="400">
         <div class="flex items-center gap-3 mb-8">
             <div class="p-2 bg-red-500/10 rounded-lg"><i data-lucide="shield-check" class="w-5 h-5 text-red-500"></i></div>
             <h4 class="text-xs font-black text-white uppercase tracking-widest">Interests</h4>
@@ -94,7 +97,8 @@ export const Skill = `
 
     </div>
 
-    <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-wrap justify-between items-center gap-6">
+    <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-wrap justify-between items-center gap-6" 
+         data-aos="fade-in" data-aos-delay="600" data-aos-offset="0">
         <div class="flex items-center gap-6">
             <span class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.3em]">Supplementary:</span>
             <div class="flex gap-6 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
