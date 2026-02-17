@@ -22,7 +22,7 @@
     <meta name="title" content="Nottbell Portfolio" />
     <meta
       name="description"
-      content="Personal portfolio of Nottbell. Professional Creative Developer specializing in high-performance web experiences."
+      content="Personal portfolio of Nottbell. Professional Creative Developer."
     />
 
     <meta property="og:type" content="website" />
@@ -30,7 +30,7 @@
     <meta property="og:title" content="Nottbell Portfolio" />
     <meta
       property="og:description"
-      content="Explore my projects and digital masteries. Crafted with logic and modern design."
+      content="Explore my projects and digital masteries."
     />
     <meta
       property="og:image"
@@ -38,86 +38,11 @@
     />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://nottbell.vercel.app/" />
     <meta property="twitter:title" content="Nottbell Portfolio" />
-    <meta
-      property="twitter:description"
-      content="Explore my projects and digital masteries. Crafted with logic and modern design."
-    />
     <meta
       property="twitter:image"
       content="https://nottbell.vercel.app/profile/profile_1.jpg"
     />
-
-    <script type="module">
-      import { news } from "/src/data/news.js";
-      import { projects } from "/src/data/projects.js";
-
-      const createSlug = (text) =>
-        text
-          .toLowerCase()
-          .replace(/[^\w ]+/g, "")
-          .replace(/ +/g, "-");
-      const path = window.location.pathname;
-
-      let metaTitle = "Nottbell Portfolio";
-      let metaDesc =
-        "Personal portfolio of Nottbell. Professional Creative Developer.";
-      let metaImg = "https://nottbell.vercel.app/profile/profile_1.jpg";
-
-      if (path.startsWith("/news/")) {
-        const slug = path.split("/")[2];
-        const item = news.find((n) => createSlug(n.title) === slug);
-        if (item) {
-          metaTitle = `${item.title} | Nottbell News`;
-          metaDesc = item.excerpt;
-          metaImg = item.image.startsWith("http")
-            ? item.image
-            : `https://nottbell.vercel.app${item.image}`;
-        }
-      } else if (path.startsWith("/project/")) {
-        const slug = path.split("/")[2];
-        const item = projects.find((p) => createSlug(p.title) === slug);
-        if (item) {
-          metaTitle = `${item.title} | Project`;
-          metaDesc = item.longDescription;
-          metaImg = item.mainImage.startsWith("http")
-            ? item.mainImage
-            : `https://nottbell.vercel.app${item.mainImage}`;
-        }
-      }
-
-      // Update Tag Head
-      document.title = metaTitle;
-      document
-        .querySelector('meta[name="title"]')
-        ?.setAttribute("content", metaTitle);
-      document
-        .querySelector('meta[name="description"]')
-        ?.setAttribute("content", metaDesc);
-
-      // Update Open Graph (WA/FB)
-      document
-        .querySelector('meta[property="og:title"]')
-        ?.setAttribute("content", metaTitle);
-      document
-        .querySelector('meta[property="og:description"]')
-        ?.setAttribute("content", metaDesc);
-      document
-        .querySelector('meta[property="og:image"]')
-        ?.setAttribute("content", metaImg);
-
-      // Update Twitter
-      document
-        .querySelector('meta[property="twitter:title"]')
-        ?.setAttribute("content", metaTitle);
-      document
-        .querySelector('meta[property="twitter:description"]')
-        ?.setAttribute("content", metaDesc);
-      document
-        .querySelector('meta[property="twitter:image"]')
-        ?.setAttribute("content", metaImg);
-    </script>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -126,20 +51,14 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              dark: "#0f172a",
-              primary: "#38bdf8",
-            },
-            animation: {
-              shimmer: "shimmer 2s infinite linear",
-            },
+            colors: { dark: "#0f172a", primary: "#38bdf8" },
+            animation: { shimmer: "shimmer 2s infinite linear" },
           },
         },
       };
     </script>
 
     <style>
-      /* Prism Fixes */
       pre[class*="language-"] {
         background: transparent !important;
         margin: 0 !important;
@@ -153,8 +72,6 @@
         color: #64748b !important;
         font-style: italic;
       }
-
-      /* Custom Scrollbar */
       .custom-scrollbar::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -166,11 +83,6 @@
         background: #1e293b;
         border-radius: 10px;
       }
-      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #0ea5e9;
-      }
-
-      /* Base Animations */
       @keyframes shimmer {
         0% {
           transform: translateX(-100%);
@@ -192,8 +104,6 @@
       .animate-fade-in {
         animation: fadeIn 0.8s ease-out forwards;
       }
-
-      /* Glassmorphism */
       .glass-effect {
         background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(12px);
@@ -205,6 +115,6 @@
     class="bg-slate-950 text-slate-100 selection:bg-sky-500/30 selection:text-sky-400"
   >
     <div id="app"></div>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
