@@ -6,6 +6,17 @@ let selectedCategory = "all";
 let clockInterval = null;
 
 /**
+ * HELPER: Membuat Slug dari Judul
+ * Mengubah "Update News!" menjadi "update-news"
+ */
+const createSlug = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w ]+/g, "") // Hapus simbol
+    .replace(/ +/g, "-"); // Ganti spasi dengan minus
+};
+
+/**
  * CORE UTILS
  */
 window.copyToClipboard = (text) => {
@@ -49,7 +60,8 @@ const startClock = () => {
  * UI RENDERING
  */
 const createNewsCard = (item) => `
-    <article class="group bg-slate-800/10 border border-slate-800/40 rounded-[2.5rem] overflow-hidden hover:border-sky-500/30 transition-all duration-500 flex flex-col h-full cursor-pointer" onclick="openNewsDetail('${item.id}')">
+    <article class="group bg-slate-800/10 border border-slate-800/40 rounded-[2.5rem] overflow-hidden hover:border-sky-500/30 transition-all duration-500 flex flex-col h-full cursor-pointer" 
+             onclick="openNewsDetail('${createSlug(item.title)}')">
         <div class="relative h-56 overflow-hidden bg-slate-900">
             <img src="${item.image}" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c';" loading="lazy" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
             <div class="absolute top-5 left-5">
@@ -100,7 +112,7 @@ export const renderNewsGrid = () => {
  * INITIALIZATION & ROUTING
  */
 export const initNewsDetail = () => {
-  // Event Listeners
+  // Listeners
   document.getElementById("newsSearch")?.addEventListener("input", (e) => {
     searchTerm = e.target.value;
     visibleCount = 3;
@@ -125,12 +137,16 @@ export const initNewsDetail = () => {
     }
   });
 
+  // Handle Route berdasarkan URL Path
   const handleRoute = () => {
-    const hash = window.location.hash;
-    if (hash.startsWith("#news/")) {
-      const data = news.find((n) => n.id === hash.split("/")[1]);
+    const path = window.location.pathname;
+
+    if (path.startsWith("/news/")) {
+      const slug = path.split("/")[2];
+      // Cari data berdasarkan kecocokan slug judul
+      const data = news.find((n) => createSlug(n.title) === slug);
+
       if (data) {
-        // PRISM LANGUAGE MAPPING
         const langMap = {
           "c#": "csharp",
           "c++": "cpp",
@@ -192,12 +208,12 @@ export const initNewsDetail = () => {
                                       ],
                                     ]
                                       .map(
-                                        (info) => `
-                                        <div class="flex justify-between items-center bg-slate-900/40 p-4 border border-slate-800/40 rounded-2xl">
+                                        (
+                                          info,
+                                        ) => `<div class="flex justify-between items-center bg-slate-900/40 p-4 border border-slate-800/40 rounded-2xl">
                                             <span class="text-slate-600 text-[8px] uppercase font-bold">${info[0]}</span>
                                             <span class="${info[2] || "text-white"} text-[10px] font-bold uppercase">${info[1]}</span>
-                                        </div>
-                                    `,
+                                        </div>`,
                                       )
                                       .join("")}
                                 </div>
@@ -208,9 +224,7 @@ export const initNewsDetail = () => {
                             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                                 <div class="lg:col-span-8 space-y-12">
                                     <div class="prose prose-invert max-w-none">
-                                        <p class="text-slate-300 text-xl md:text-2xl leading-relaxed italic font-light first-letter:text-7xl first-letter:font-black first-letter:text-white first-letter:mr-4 first-letter:float-left first-letter:leading-none">
-                                            ${data.excerpt}
-                                        </p>
+                                        <p class="text-slate-300 text-xl md:text-2xl leading-relaxed italic font-light first-letter:text-7xl first-letter:font-black first-letter:text-white first-letter:mr-4 first-letter:float-left first-letter:leading-none">${data.excerpt}</p>
                                         <div class="text-slate-400 text-lg md:text-xl leading-relaxed italic font-light mt-10 space-y-6">
                                             ${data.content
                                               .split("\n")
@@ -219,7 +233,6 @@ export const initNewsDetail = () => {
                                               .join("")}
                                         </div>
                                     </div>
-
                                     <div class="bg-slate-950 rounded-[2.5rem] border border-slate-800 overflow-hidden shadow-2xl relative">
                                         <div class="bg-slate-900/50 px-8 py-4 border-b border-slate-800 flex justify-between items-center">
                                             <div class="flex items-center gap-3">
@@ -232,13 +245,11 @@ export const initNewsDetail = () => {
                                             <pre class="!bg-transparent"><code class="language-${langClass}">${data.codeQuote}</code></pre>
                                         </div>
                                     </div>
-
                                     <button onclick="closeNewsDetail()" class="group flex items-center gap-4 bg-slate-900 hover:bg-sky-500/10 border border-slate-800 hover:border-sky-500/50 px-8 py-4 rounded-2xl transition-all">
                                         <i data-lucide="arrow-left" class="w-5 h-5 text-slate-500 group-hover:text-sky-500 group-hover:-translate-x-1 transition-all"></i>
                                         <span class="text-slate-500 group-hover:text-white font-mono text-[10px] uppercase tracking-[0.3em] italic">Back to Archive</span>
                                     </button>
                                 </div>
-
                                 <div class="lg:col-span-4 space-y-8">
                                     <div class="p-8 bg-sky-500/5 border border-sky-500/10 rounded-[2.5rem] space-y-5 relative overflow-hidden group">
                                         <i data-lucide="quote" class="w-8 h-8 text-sky-500/10 absolute -right-2 -top-2"></i>
@@ -257,8 +268,6 @@ export const initNewsDetail = () => {
         document.getElementById("newsModal").classList.remove("hidden");
         document.body.style.overflow = "hidden";
         startClock();
-
-        // RE-TRIGGER HIGHLIGHTING & ICONS
         setTimeout(() => {
           if (window.lucide) window.lucide.createIcons();
           if (window.Prism) window.Prism.highlightAll();
@@ -266,19 +275,25 @@ export const initNewsDetail = () => {
       }
     } else {
       document.getElementById("newsModal")?.classList.add("hidden");
-      if (!hash.includes("project")) document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
       if (clockInterval) clearInterval(clockInterval);
     }
   };
 
-  window.addEventListener("hashchange", handleRoute);
+  window.addEventListener("popstate", handleRoute);
   handleRoute();
   renderNewsGrid();
 };
 
-window.openNewsDetail = (id) => {
-  window.location.hash = `news/${id}`;
+/**
+ * GLOBAL NAVIGATION FUNCTIONS (MENGGUNAKAN SLUG)
+ */
+window.openNewsDetail = (slug) => {
+  window.history.pushState({}, "", `/news/${slug}`);
+  window.dispatchEvent(new PopStateEvent("popstate"));
 };
+
 window.closeNewsDetail = () => {
-  window.location.hash = `news`;
+  window.history.pushState({}, "", "/");
+  window.dispatchEvent(new PopStateEvent("popstate"));
 };

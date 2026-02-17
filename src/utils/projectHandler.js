@@ -1,7 +1,18 @@
 import { projects } from "../data/projects.js";
 
-const renderModalContent = (id) => {
-  const data = projects.find((p) => p.id === id);
+/**
+ * HELPER: Membuat Slug dari Judul Project
+ */
+const createSlug = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w ]+/g, "")
+    .replace(/ +/g, "-");
+};
+
+const renderModalContent = (slug) => {
+  // Mencari data berdasarkan slug judul
+  const data = projects.find((p) => createSlug(p.title) === slug);
   if (!data) return closeProjectDetail();
 
   const content = document.getElementById("modalContent");
@@ -86,13 +97,6 @@ const renderModalContent = (id) => {
              
              <div class="relative bg-slate-900 rounded-[2.8rem] overflow-hidden border border-slate-700/50 shadow-2xl">
                 <img src="${data.mainImage}" alt="${data.title}" class="w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out">
-                
-                <div class="absolute inset-0 bg-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none border-[12px] border-double border-white/5 p-6 flex flex-col justify-between">
-                    <div class="flex justify-between text-[10px] text-sky-400 font-black tracking-widest font-mono">
-                        <span>[ Abbel ]</span>
-                        
-                    </div>
-                </div>
              </div>
              <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-sky-500/50 rounded-tr-[3rem] pointer-events-none group-hover:scale-110 transition-transform"></div>
              <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-sky-500/50 rounded-bl-[3rem] pointer-events-none group-hover:scale-110 transition-transform"></div>
@@ -130,25 +134,46 @@ const renderModalContent = (id) => {
   if (window.lucide) window.lucide.createIcons();
 };
 
-window.openProjectDetail = (id) => {
-  window.location.hash = `project/${id}`;
+/**
+ * GLOBAL NAVIGATION FUNCTIONS
+ */
+window.openProjectDetail = (slugOrId) => {
+  // Cari data project dulu untuk mendapatkan slug dari judulnya
+  const item = projects.find(
+    (p) => p.id === slugOrId || createSlug(p.title) === slugOrId,
+  );
+  const finalSlug = item ? createSlug(item.title) : slugOrId;
+
+  window.history.pushState({}, "", `/project/${finalSlug}`);
+  window.dispatchEvent(new PopStateEvent("popstate"));
 };
+
 window.closeProjectDetail = () => {
-  window.location.hash = `project`;
+  window.history.pushState({}, "", "/");
+  window.dispatchEvent(new PopStateEvent("popstate"));
   document.getElementById("projectModal").classList.add("hidden");
   document.body.style.overflow = "auto";
 };
 
+/**
+ * INITIALIZATION & ROUTING
+ */
 export const initProjectDetail = () => {
   const handleRoute = () => {
-    const hash = window.location.hash;
-    if (hash.startsWith("#project/")) {
-      renderModalContent(hash.split("/")[1]);
+    const path = window.location.pathname;
+
+    if (path.startsWith("/project/")) {
+      const slug = path.split("/")[2];
+      renderModalContent(slug);
     } else {
       document.getElementById("projectModal")?.classList.add("hidden");
-      document.body.style.overflow = "auto";
+      // Hanya reset overflow jika tidak sedang membuka news (agar tidak konflik)
+      if (!path.startsWith("/news/")) {
+        document.body.style.overflow = "auto";
+      }
     }
   };
-  window.addEventListener("hashchange", handleRoute);
+
+  window.addEventListener("popstate", handleRoute);
   handleRoute();
 };
