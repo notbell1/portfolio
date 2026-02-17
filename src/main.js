@@ -20,9 +20,10 @@ import { initNav } from "./utils/navHandler.js";
 import { news } from "./data/news.js";
 import { projects } from "./data/projects.js";
 
+const app = document.querySelector("#app");
+
 /**
  * LOGIK DYNAMIC META
- * Mengubah Title, Desc, dan Image Meta Tag berdasarkan URL
  */
 const updateDynamicMeta = () => {
   const path = window.location.pathname;
@@ -32,7 +33,6 @@ const updateDynamicMeta = () => {
       .replace(/[^\w ]+/g, "")
       .replace(/ +/g, "-");
 
-  // Nilai Default
   let title = "Nottbell Portfolio";
   let desc =
     "Professional Creative Developer specializing in high-performance web experiences.";
@@ -60,7 +60,6 @@ const updateDynamicMeta = () => {
     }
   }
 
-  // Eksekusi Update ke DOM
   document.title = title;
   const setMeta = (selector, content) => {
     const el = document.querySelector(selector);
@@ -77,52 +76,66 @@ const updateDynamicMeta = () => {
   setMeta('meta[property="twitter:image"]', img);
 };
 
-const app = document.querySelector("#app");
-
-// Render UI
-app.innerHTML = `
-    ${Header}
-    <main class="overflow-x-hidden pt-20"> 
-        ${Home}
-        ${About}
-        ${Education}
-        ${Skill}
-        ${Experience}
-        ${Project}
-        ${News}
-        ${Contact}
-    </main>
-    ${Footer}
-`;
-
-// Initialize Lucide Icons
-if (window.lucide) {
-  window.lucide.createIcons();
-}
-
 /**
- * INITIALIZE ALL HANDLERS
+ * RENDER ENGINE
  */
-updateDynamicMeta(); // Jalankan meta update saat pertama kali load
-initNav();
-initTyping();
-initAge(2002, 6, 20);
-initProjectDetail();
-initNewsDetail();
-initContactForm();
+const render = () => {
+  const path = window.location.pathname;
 
-// Jalankan ulang meta update jika user navigasi (popstate)
-window.addEventListener("popstate", updateDynamicMeta);
+  // Update Meta Tag setiap kali render (untuk SEO & Browser Title)
+  updateDynamicMeta();
 
-// Smooth Scroll Handler
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
+  if (path === "/" || path === "/index.html") {
+    // Render Halaman Utama
+    app.innerHTML = `
+        ${Header}
+        <main class="overflow-x-hidden pt-20"> 
+            ${Home}
+            ${About}
+            ${Education}
+            ${Skill}
+            ${Experience}
+            ${Project}
+            ${News}
+            ${Contact}
+        </main>
+        ${Footer}
+    `;
+    // Init script khusus halaman utama
+    initTyping();
+    initAge(2002, 6, 20);
+  } else {
+    // Render Halaman Detail (Blank Container agar diisi oleh handler)
+    app.innerHTML = `
+        ${Header}
+        <main id="content-detail" class="overflow-x-hidden pt-20">
+            </main>
+        ${Footer}
+    `;
+  }
+
+  // Init global icons & nav
+  if (window.lucide) window.lucide.createIcons();
+  initNav();
+  initContactForm();
+
+  // Handler untuk mendeteksi rute detail
+  initProjectDetail();
+  initNewsDetail();
+};
+
+// Jalankan aplikasi
+render();
+
+// Handle navigasi (Tombol Back/Forward Browser)
+window.addEventListener("popstate", render);
+
+// Smooth Scroll Global
+document.addEventListener("click", (e) => {
+  const anchor = e.target.closest('a[href^="#"]');
+  if (anchor) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+  }
 });
