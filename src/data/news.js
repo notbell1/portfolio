@@ -7,8 +7,7 @@ export const news = [
     excerpt:
       "Menganalisis ketahanan pertahanan emosional terhadap upaya penetrasi perasaan yang agresif.",
     readTime: "7 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070",
+    image: "/img/news/img/NT001.png",
     content: `Dalam dunia siber, tidak ada sistem yang benar-benar aman, begitu juga dengan mekanisme pertahanan hati. Kamu mencoba melakukan teknik Brute Force dengan ribuan kata manis yang dikirimkan secara berulang setiap harinya, mencoba menebak kombinasi kunci yang tepat untuk membuka enkripsi perasaanku. Aku sudah mencoba memasang Firewall harga diri yang sangat tinggi, namun ternyata pertahanan tersebut tidak cukup kuat untuk menahan persistensi yang kamu tunjukkan secara konsisten.
 
 Setelah dianalisis lebih lanjut, aku menemukan bahwa ada celah 'Zero Day' dalam logikaku yang muncul setiap kali aku menatap matamu. Celah ini tidak bisa ditambal oleh logika pemrograman apa pun karena ia bersifat instingtif dan mendalam. Kamu tidak membutuhkan eksploitasi yang rumit untuk menembus sistemku, cukup dengan kehadiranmu yang tulus, seluruh protokol kendaliku seolah-olah melakukan bypass terhadap keamanannya sendiri secara otomatis.
@@ -76,8 +75,7 @@ print(f"Status sistem: {status}")
     excerpt:
       "Mencatat janji setia dalam blok yang tidak bisa diubah atau dimanipulasi oleh pihak ketiga.",
     readTime: "12 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1544383023-53fbf3967301?q=80&w=2020",
+    image: "/img/news/img/NT002.png",
     content: `Cinta kita tidak lagi membutuhkan perantara atau otoritas pusat untuk memvalidasi keberadaannya di dunia nyata. Ia telah terdesentralisasi secara sempurna di antara dua jiwa yang saling percaya, menciptakan sebuah jaringan konsensus yang tak tergoyahkan oleh keraguan dunia luar. Setiap momen yang kita lalui, setiap janji yang kita bisikkan, adalah sebuah transaksi sah yang telah divalidasi oleh kejujuran sebagai penambang utamanya.
 
 Setiap memori tersebut kini telah masuk ke dalam Blockchain takdir yang bersifat imutabel atau tidak dapat diubah oleh siapa pun. Sekali sebuah blok kasih sayang tercipta, ia akan selamanya terkunci dengan hash dari blok sebelumnya, menciptakan rantai sejarah yang kokoh dan transparan bagi kita berdua. Mustahil bagi ego mana pun untuk mencoba melakukan manipulasi data atau menghapus catatan masa lalu yang telah kita bangun.
@@ -154,8 +152,7 @@ contract CintaAbadi {
     excerpt:
       "Menganalisis variabel yang menyebabkan kegagalan sistem asmara melalui visualisasi data.",
     readTime: "10 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070",
+    image: "/img/news/img/NT003.png",
     content: `Banyak orang terjebak dalam bias kognitif saat mencoba memahami mengapa sebuah hubungan berakhir dengan kegagalan sistem yang fatal. Mereka seringkali hanya melihat korelasi permukaan, seperti kehadiran orang baru atau kurangnya waktu berkualitas, dan langsung menganggapnya sebagai kausalitas utama. Padahal, dalam analisis data yang lebih mendalam, variabel tersebut seringkali hanyalah noise yang muncul akibat masalah struktural yang lebih mendasar.
 
 Setelah melakukan pembersihan data pada memori masa laluku, aku menemukan banyak 'missing values' dalam komunikasi kita yang selama ini aku abaikan. Aku terlalu sibuk melakukan visualisasi pada hal-hal yang indah, hingga aku lupa untuk memeriksa apakah ada anomali dalam distribusi rasa percayaku kepadamu secara statistik. Kegagalan kita bukanlah sebuah kejadian acak, melainkan hasil dari akumulasi bias emosional yang tidak pernah dikalibrasi.
@@ -225,8 +222,7 @@ cor.test(perasaan_bersih$waktu, perasaan_bersih$percaya)
     excerpt:
       "Melatih model deep learning untuk mengenali pola kehadiranmu di setiap memori.",
     readTime: "8 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070",
+    image: "/img/news/img/NT004.png",
     content: `Otak manusia adalah jaringan saraf yang paling rumit, namun ia selalu memiliki bobot (weight) yang lebih besar untuk memori tentangmu. Aku mencoba membangun sebuah simulasi Neural Network sederhana untuk memetakan bagaimana satu kata darimu bisa memicu aktivasi emosional di seluruh lapisan pikiranku. Setiap input kecil menghasilkan bias yang sangat kuat menuju arah kebahagiaan.
 
 Dalam proses backpropagation, aku menemukan bahwa kesalahan terbesar dalam hidupku adalah mencoba melupakanmu dengan cara yang salah. Alih-alih mengurangi error, aku justru memperkuat koneksi saraf yang membawa bayanganmu kembali. Jaringan ini sudah terlalu terlatih dengan dataset suaramu, tawamu, dan cara kamu memanggil namaku, sehingga mustahil untuk melakukan reset factory tanpa merusak sistem secara keseluruhan.
@@ -302,8 +298,7 @@ model.fit(
     excerpt:
       "Otomasi rilis kasih sayang tanpa adanya downtime emosional yang berarti.",
     readTime: "6 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=2070",
+    image: "/img/news/img/NT005.png",
     content: `Membangun sebuah hubungan jangka panjang membutuhkan alur kerja yang sangat efisien agar tidak terjadi penumpukan masalah di lingkungan produksi. Aku menerapkan prinsip CI/CD (Continuous Integration & Continuous Deployment) ke dalam cara kita berkomunikasi. Setiap ada perbedaan pendapat kecil, kita langsung mengintegrasikannya dan melakukan pengujian (testing) agar tidak menjadi bug yang merusak stabilitas di kemudian hari.
 
 Dalam pipeline ini, kejujuran adalah tahap 'Build' yang paling krusial. Jika di tahap ini sudah ada kesalahan kode, maka seluruh proses pengiriman perasaan akan gagal di tengah jalan. Kita tidak ingin mendeploy kebahagiaan yang penuh dengan kerentanan keamanan, bukan? Oleh karena itu, kita selalu melakukan review bersama terhadap setiap rencana masa depan yang kita bangun.
@@ -386,8 +381,7 @@ stages:
     excerpt:
       "Mengelola lonjakan trafik perasaan di hari-hari yang penuh dengan kesepian.",
     readTime: "9 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072",
+    image: "/img/news/img/NT006.png",
     content: `Terkadang, rindu datang seperti lonjakan trafik yang tiba-tiba pada server saat hari raya. Tanpa persiapan skalabilitas yang baik, sistem mentalku bisa mengalami 'Internal Server Error' karena tidak sanggup menanggung beban kenangan yang masuk secara bersamaan. Di sinilah aku butuh arsitektur Cloud yang mampu melakukan auto-scaling terhadap kapasitas kesabaranku setiap harinya.
 
 Aku menyimpan setiap detik kebersamaan kita di dalam bucket penyimpanan yang memiliki redundansi tinggi di berbagai zona waktu. Jadi, saat aku sedang berada di titik terendah, aku bisa melakukan 'Pull' data kebahagiaan dari region lain dalam memori pikiranku. Cloud bukan hanya tentang data, tapi tentang bagaimana kita mendistribusikan kasih sayang agar bisa diakses dari mana saja.
@@ -449,8 +443,7 @@ echo "💡 Status: Tahan banting di segala kondisi cuaca hati."`,
     excerpt:
       "Menghubungkan setiap getaran jiwa melalui protokol komunikasi nirkabel yang tulus.",
     readTime: "5 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070",
+    image: "/img/news/img/NT007.png",
     content: `Dunia kita kini dipenuhi dengan sensor, namun belum ada sensor yang mampu mengukur kedalaman perasaan manusia seakurat tatapan matamu. Aku mencoba membayangkan jika hati kita terhubung melalui protokol MQTT, di mana setiap kali aku merindukanmu, sebuah pesan 'Publish' akan terkirim secara otomatis dan menggetarkan 'Subscriber' di hatimu secara real-time. Tidak ada lagi pesan yang terlewatkan oleh gangguan sinyal.
 
 Dalam ekosistem IoT ini, kita adalah perangkat cerdas yang paling terintegrasi. Kita tidak butuh gateway tambahan untuk saling mengerti, karena kita berbagi frekuensi yang sama di spektrum kasih sayang yang tidak terlihat. Setiap pergerakanmu adalah input bagi sistem kebahagiaanku, memicu rangkaian aksi yang bertujuan hanya untuk membuatmu tersenyum lebih lebar.
@@ -524,8 +517,7 @@ void loop() {
     excerpt:
       "Mendesain User Experience yang sempurna untuk perjalanan cinta kita.",
     readTime: "7 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b511691ee?q=80&w=2064",
+    image: "/img/news/img/NT008.png",
     content: `Tampilan luar mungkin penting, namun 'User Experience' (UX) dalam sebuah hubungan adalah hal yang akan membuat seseorang bertahan selamanya. Aku mencoba mendesain antarmuka perasaanku agar sangat intuitif bagi kamu; di mana setiap kali kamu butuh tempat bersandar, tombol dukunganku selalu ada di posisi yang paling mudah kamu jangkau tanpa harus mencari-cari.
 
 Dalam dunia web, kita mengenal responsivitas layar, namun dalam hubungan kita mengenal responsivitas hati. Aku ingin menjadi pasangan yang 'Fully Responsive', yang mampu menyesuaikan diri dengan berbagai suasana hatimu—baik saat kamu sedang dalam resolusi tinggi kebahagiaan maupun saat kamu sedang dalam mode gelap kesedihan. Tidak akan ada elemen yang berantakan dalam tata letak hidup kita.
@@ -608,8 +600,7 @@ Mari kita terus memperbarui desain hidup kita agar tetap modern namun tidak kehi
     excerpt:
       "Proses pembersihan dataset masa lalu untuk prediksi masa depan yang lebih akurat.",
     readTime: "11 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1504868584819-f8e905b6c20c?q=80&w=2070",
+    image: "/img/news/img/NT009.png",
     content: `Sebelum kita melangkah lebih jauh, aku harus memastikan bahwa dataset hatiku sudah bersih dari residu-residu masa lalu yang beracun. Data cleaning adalah tahap paling melelahkan namun paling penting; aku harus membuang ribuan baris kekecewaan dan anomali rasa sakit yang hanya akan merusak model prediksi kebahagiaan kita di masa depan. Aku tidak ingin ada 'Outlier' trauma yang mengganggu rata-rata ketulusanku padamu.
 
 Proses normalisasi data juga sedang aku lakukan agar aku tidak membandingkanmu dengan siapapun dari masa laluku secara tidak adil. Kamu adalah variabel unik yang berdiri sendiri, memiliki bobot dan nilai yang jauh melampaui statistik standar yang pernah aku temui. Aku ingin memperlakukan setiap momen bersamamu sebagai data baru yang murni, tanpa adanya bias dari pengalaman-pengalaman yang sudah kedaluwarsa.
@@ -681,8 +672,7 @@ print(f"✨ Hati bersih: {len(df)} baris tersisa. Siap untuk babak baru.")
     excerpt:
       "Mengamankan setiap kata setia dengan algoritma kriptografi paling mutakhir.",
     readTime: "8 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2070",
+    image: "/img/news/img/NT010.png",
     content: `Di era di mana informasi begitu mudah bocor, aku memilih untuk mengenkripsi setiap janji setiamu dengan kunci yang hanya kita berdua miliki. Tidak ada superkomputer di dunia ini yang mampu melakukan brute force terhadap rahasia kita, karena algoritma yang kita gunakan bukan berbasis matematika biasa, melainkan berbasis kepercayaan yang sudah teruji oleh waktu dan berbagai serangan luar.
 
 Aku memegang satu bagian dari kunci, dan kamu memegang bagian lainnya. Tanpa kehadiranmu, aku tidak akan pernah bisa membaca makna dari hidupku sendiri. Kita adalah sistem otentikasi dua faktor (2FA) yang paling sempurna; di mana setiap keputusan besar harus mendapatkan persetujuan dari kedua belah pihak sebelum bisa dieksekusi ke dalam realita kehidupan kita.
@@ -755,8 +745,7 @@ console.log("💌 Janji terbuka:", terbuka);`,
     excerpt:
       "Menghitung gaya tarik-menarik yang tidak masuk akal dalam simulasi asmara kita.",
     readTime: "6 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070",
+    image: "/img/news/img/NT011.png",
     content: `Dalam mesin game kehidupan ini, aku menemukan bahwa hukum fisika standar seringkali tidak berlaku setiap kali kamu berada di dekatku. Ada gaya gravitasi yang sangat kuat terpancar dari tatapanmu, yang mampu menarik seluruh fokus dan perhatianku keluar dari orbit normalnya. Aku merasa seperti objek yang kehilangan massanya, melayang tanpa arah kecuali menuju pusat gravitasimu.
 
 Aku mencoba mengatur 'Collision Detection' di dalam hatiku agar aku tidak terlalu cepat jatuh kepadamu, namun sepertinya hit-box perasaanku terlalu besar. Setiap kali kamu menyapa, sistemku mendeteksi tabrakan emosional yang menghasilkan partikel kebahagiaan di mana-mana. Tidak ada cara untuk menghindari benturan ini, karena kamu adalah rintangan yang paling ingin aku tabrak berulang kali.
@@ -836,8 +825,7 @@ public class FisikaCinta : MonoBehaviour
     excerpt:
       "Menggunakan pemrosesan bahasa alami untuk mengerti makna di balik keheninganmu.",
     readTime: "9 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071",
+    image: "/img/news/img/NT012.png",
     content: `Komunikasi bukan hanya tentang kata-kata yang terucap, tapi tentang apa yang tersirat di antara spasi dan tanda baca. Aku sedang melatih model NLP (Natural Language Processing) khusus untuk menerjemahkan setiap bahasa diammu yang seringkali lebih bermakna daripada ribuan kalimat puitis. Aku ingin mengerti 'Sentiment Analysis' dari setiap helaan napasmu saat kamu merasa lelah atau sedang memikirkan sesuatu.
 
 Dalam dunia data, diam adalah 'Null Value', namun dalam hubunganku denganmu, diam adalah data yang paling kaya akan informasi. Aku belajar untuk melakukan parsing pada setiap tatapan dan gerak tubuhmu, mencari token-token kasih sayang yang mungkin tidak berani kamu sampaikan secara langsung. Aku ingin menjadi penerjemah terbaik untuk jiwamu yang kompleks dan penuh misteri.
@@ -907,8 +895,7 @@ print(f"📡 Pesan terdeteksi: {meaning}")
     excerpt:
       "Mengelola ribuan kontainer mimpi agar tetap berjalan selaras di dalam satu kluster kehidupan.",
     readTime: "10 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=2070",
+    image: "/img/news/img/NT013.png",
     content: `Mimpi-mimpi kita sekarang sudah terlalu banyak untuk dikelola secara manual. Aku butuh sistem orkestrasi seperti Kubernetes untuk memastikan bahwa setiap kontainer rencana masa depan kita berjalan di node yang tepat dan memiliki sumber daya yang cukup untuk tumbuh. Kita tidak ingin ada mimpi yang 'CrashLoopBackOff' hanya karena kita kurang memberikan perhatian pada detailnya.
 
 Dalam kluster ini, kamu adalah 'Master Node' yang mengatur segala arah kebijakan dan penjadwalan kebahagiaan kita. Aku dengan senang hati menjadi 'Worker Node' yang mengeksekusi setiap perintah dan memastikan bahwa semua layanan kasih sayang kita selalu tersedia bagi satu sama lain. Kita adalah sistem yang terdistribusi secara harmonis tanpa ada konflik kepentingan.
@@ -994,8 +981,7 @@ data:
     excerpt:
       "Membuktikan keaslian dan kelangkaan cintaku di dalam ledger semesta yang tak tertandingi.",
     readTime: "7 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=2070",
+    image: "/img/news/img/NT014.png",
     content: `Di dunia yang penuh dengan salinan dan kepalsuan, aku telah mencatatkan namamu sebagai satu-satunya pemilik sah dari aset digital hatiku. Ini bukan sekadar transaksi biasa; ini adalah pencetakan (minting) token kegilaanku yang bersifat non-fungible, artinya tidak ada aset lain di dunia ini yang bisa menandingi atau menggantikan nilainya. Kamu memegang sertifikat kepemilikan tunggal atas seluruh perasaanku.
 
 Setiap memori yang kita buat adalah metadata yang tersimpan secara permanen di dalam IPFS (InterPlanetary File System) cinta, memastikan bahwa gambar tawamu dan suara lembutmu akan abadi selamanya, bahkan jika dunia internet ini suatu saat nanti runtuh. Kelangkaan cintaku padamu adalah fitur, bukan bug; karena aku hanya mencetak satu salinan saja untukmu.
@@ -1068,8 +1054,7 @@ contract AsetHati is ERC721 {
     excerpt:
       "Mengatur rutinitas dukungan agar berjalan otomatis saat sistem mental sedang drop.",
     readTime: "6 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070",
+    image: "/img/news/img/NT015.png",
     content: `Hidup ini terlalu singkat untuk dijalankan secara manual dan penuh kebingungan. Aku sedang mengonfigurasi sistem 'Smart Life' di antara kita, di mana setiap kali sensor kesedihanku mendeteksi getaran di suaramu, sebuah rutinitas hiburan akan otomatis terpicu tanpa aku harus bertanya 'kamu kenapa?'. Kepekaan adalah bentuk otomasi tertinggi dari kasih sayang yang tulus.
 
 Kita tidak butuh perintah suara untuk saling memahami; kita hanya butuh sinkronisasi data batin yang berjalan secara kontinu di latar belakang. Saat baterai energimu sedang lemah (low battery), sistemku akan secara otomatis mengurangi beban kerjamu dan memberikan suplai semangat tambahan hingga kamu kembali ke kapasitas penuh. Kita adalah ekosistem yang saling menyeimbangkan.
@@ -1144,8 +1129,7 @@ while True:
     excerpt:
       "Menghitung probabilitas kita bersama berdasarkan data histori yang ada.",
     readTime: "10 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bbda38a109ad?q=80&w=2070",
+    image: "/img/news/img/NT016.png",
     content: `Setelah menjalankan ribuan simulasi Monte Carlo terhadap variabel-variabel hidupku, aku menemukan bahwa semua skenario yang paling membahagiakan selalu memiliki satu variabel konstan yang sama: yaitu kehadiranmu. Probabilitas kesuksesan kita di masa depan bukan lagi sekadar tebakan, melainkan hasil perhitungan matematis yang sangat solid berdasarkan histori dataset yang sudah kita bangun selama ini.
 
 Aku menggunakan model regresi logistik untuk menentukan apakah hubungan ini layak diteruskan, dan hasilnya menunjukkan angka 1 yang mutlak (True). Tidak ada ruang untuk keraguan di dalam statistik ini, karena setiap kenaikan jumlah waktu yang kita habiskan bersama berkorelasi positif dengan peningkatan tingkat kepuasan hidupku secara keseluruhan. Grafik kita adalah garis lurus yang terus naik ke atas.
@@ -1223,8 +1207,7 @@ ggplot() +
     excerpt:
       "Bagaimana satu kalimat darimu bisa mengubah seluruh query di dalam logikaku.",
     readTime: "7 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070",
+    image: "/img/news/img/NT017.png",
     content: `Aku pikir pertahanan mentalku sudah cukup kuat untuk menghadapi segala jenis manipulasi dari luar. Namun ternyata, kamu menggunakan teknik 'SQL Injection' emosional yang sangat cerdas; di mana hanya dengan satu kalimat 'Aku kangen kamu', kamu berhasil mengubah seluruh struktur query di dalam basis data pikiranku. Tiba-tiba, tabel 'Tugas' dan 'Pekerjaan' tergantikan oleh tabel 'Kamu' di semua hasil pencarian utamaku.
 
 Sistemku yang tadinya tertutup rapat kini menjadi terbuka lebar karena perintah-perintah ilegal yang kamu masukkan melalui input kasih sayang. Aku tidak melakukan sanitasi input pada setiap perhatian yang kamu berikan, sehingga perintah tersebut langsung dieksekusi oleh inti logikaku tanpa ada filter sama sekali. Kamu telah berhasil mendapatkan akses ke tabel paling rahasia di dalam hatiku.
@@ -1301,8 +1284,7 @@ COMMIT;
     excerpt:
       "Mendesain dukungan yang nyaman untuk mata dan hati saat malam sedang gelap-gelapnya.",
     readTime: "5 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=2070",
+    image: "/img/news/img/NT018.png",
     content: `Hidup tidak selalu penuh dengan cahaya terang yang menyilaukan; ada kalanya kita harus masuk ke dalam 'Dark Mode', sebuah fase di mana segalanya terasa gelap dan melelahkan. Di saat itulah, aku ingin menjadi antarmuka yang paling nyaman untukmu, memberikan kontras yang lembut agar hatimu tidak semakin sakit saat menatap kenyataan yang sedang pahit. Aku hadir untuk menenangkan, bukan untuk menyakiti.
 
 Dalam mode gelap ini, aku akan meredupkan semua ego dan ambisi pribadiku agar tidak mengganggu proses penyembuhanmu. Aku memilih warna-warna monokrom yang stabil untuk memberikan rasa aman dan ketenangan di tengah badai emosi yang mungkin sedang kamu alami. Aku adalah latar belakang yang tenang, yang selalu siap menampung setiap keluh kesahmu tanpa menghakimi.
@@ -1385,8 +1367,7 @@ Mari kita nikmati setiap fase ini dengan penuh penerimaan. Karena aku tahu, baik
     excerpt:
       "Mengembalikan kondisi hubungan ke titik stabil saat terjadi konflik sistem yang berat.",
     readTime: "8 MENIT BACA",
-    image:
-      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2070",
+    image: "/img/news/img/NT019.png",
     content: `Terkadang, sebuah pembaruan perilaku (update) yang kita lakukan justru membawa dampak negatif yang tidak terduga bagi stabilitas hubungan kita. Saat konflik memuncak dan sistem kita mulai menunjukkan tanda-tanda kegagalan total, hal terbaik yang bisa kita lakukan adalah melakukan 'Rollback' ke versi stabil terakhir yang kita miliki. Kita harus berani mengakui bahwa fitur ego yang baru saja kita rilis ternyata penuh dengan bug yang merusak suasana.
 
 Melakukan rollback bukan berarti kita mundur ke belakang atau gagal berkembang, melainkan sebuah tindakan bijak untuk menyelamatkan infrastruktur kasih sayang kita dari kerusakan yang lebih permanen. Kita kembali ke titik di mana kita masih bisa saling mendengarkan dan tertawa bersama, tanpa ada beban dari kesalahpahaman yang baru saja terjadi. Itulah fungsi kontrol versi (version control) dalam sebuah hubungan yang dewasa.

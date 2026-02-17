@@ -60,7 +60,7 @@ export const Home = `
           <div class="relative w-64 h-64 md:w-80 md:h-80 transition-all duration-700 group-hover:scale-[1.03] group-hover:-rotate-2">
             <div class="absolute inset-0 bg-sky-500/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div class="relative w-full h-full bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden backdrop-blur-sm group-hover:border-sky-500/50 transition-colors duration-500">
-              <img src="/profile/profile_1.jpg" alt="Abbel" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
+              <img src="/img/profile/profile_1.jpg" alt="Abbel" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700"></div>
             </div>
           </div>
