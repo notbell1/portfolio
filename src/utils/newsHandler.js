@@ -6,7 +6,7 @@ let selectedCategory = "all";
 let clockInterval = null;
 
 /**
- * HELPER
+ * HELPER: Slug Generator
  */
 const createSlug = (text) => {
   return text
@@ -18,25 +18,6 @@ const createSlug = (text) => {
 /**
  * CORE UTILS
  */
-window.copyToClipboard = (text) => {
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      alert("SYSTEM: Link berhasil disalin.");
-    })
-    .catch((err) => console.error("Gagal menyalin:", err));
-};
-
-window.shareNews = (title) => {
-  if (navigator.share) {
-    navigator
-      .share({ title: title, url: window.location.href })
-      .catch(console.error);
-  } else {
-    window.copyToClipboard(window.location.href);
-  }
-};
-
 const startClock = () => {
   if (clockInterval) clearInterval(clockInterval);
   const update = () => {
@@ -56,53 +37,237 @@ const startClock = () => {
 };
 
 /**
- * UI RENDERING
- * Ditambahkan parameter 'index' untuk staggered animation delay
+ * COMPONENT: Navigation Buttons (Prev, Exit, Next)
  */
-const createNewsCard = (item, index) => `
-    <article class="group bg-slate-800/10 border border-slate-800/40 rounded-[2.5rem] overflow-hidden hover:border-sky-500/30 transition-all duration-500 flex flex-col h-full cursor-pointer" 
-             data-aos="fade-up" 
-             data-aos-delay="${(index % 3) * 150}"
-             onclick="openNewsDetail('${createSlug(item.title)}')">
-        <div class="relative h-56 overflow-hidden bg-slate-900">
-            <img src="${item.image}" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c';" loading="lazy" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
-            <div class="absolute top-5 left-5">
-                <span class="px-3 py-1 bg-slate-950/90 text-sky-400 text-[8px] font-black uppercase tracking-widest rounded-lg border border-sky-500/20 shadow-xl">${item.category}</span>
+const navButtonsComponent = (currentSlug) => {
+  const currentIndex = news.findIndex(
+    (n) => createSlug(n.title) === currentSlug,
+  );
+
+  const prevIndex = (currentIndex - 1 + news.length) % news.length;
+  const prevSlug = createSlug(news[prevIndex].title);
+
+  const nextIndex = (currentIndex + 1) % news.length;
+  const nextSlug = createSlug(news[nextIndex].title);
+
+  return `
+    <div class="flex flex-wrap items-center gap-3">
+     <button onclick="window.closeNewsDetail()" 
+                class="group relative px-5 py-2.5 bg-white hover:bg-red-500 transition-all duration-300 rounded-lg shadow-lg">
+            <span class="text-black group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
+                <i data-lucide="x-circle" class="w-4 h-4"></i>
+                EXIT
+            </span>
+        </button>
+        <button onclick="window.openNewsDetail('${prevSlug}')" 
+                class="group relative px-5 py-2.5 bg-zinc-800 hover:bg-sky-500 border border-white/10 transition-all duration-300 rounded-lg shadow-lg">
+            <span class="text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
+                <i data-lucide="chevron-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                PREV
+            </span>
+        </button>
+        <button onclick="window.openNewsDetail('${nextSlug}')" 
+                class="group relative px-5 py-2.5 bg-zinc-800 hover:bg-sky-500 border border-white/10 transition-all duration-300 rounded-lg shadow-lg">
+            <span class="text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
+                NEXT
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </span>
+        </button>
+        
+    </div>
+  `;
+};
+
+/**
+ * CARD RENDERING: News Grid
+ */
+const createNewsCard = (item, index) => {
+  const slug = createSlug(item.title);
+  return `
+    <article class="group relative bg-zinc-900 border border-zinc-800 rounded-[2rem] overflow-hidden hover:border-sky-500/40 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-56 overflow-hidden bg-black">
+            <img src="${item.image}" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c';" loading="lazy" 
+                 class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
+            <div class="absolute top-4 left-4">
+                <span class="px-2 py-1 bg-black/80 text-sky-400 text-[8px] font-black uppercase tracking-widest rounded border border-sky-500/30">${item.category}</span>
             </div>
         </div>
-        <div class="p-8 flex-grow flex flex-col justify-between">
-            <div class="space-y-4 mb-8">
-                <p class="text-slate-600 font-mono text-[9px] uppercase tracking-widest italic flex items-center gap-2">
-                    <span class="w-6 h-[1px] bg-sky-500"></span> ${item.date}
+
+        <div class="p-7 flex-grow flex flex-col justify-between font-mono">
+            <div class="space-y-3 mb-6">
+                <p class="text-zinc-600 text-[9px] uppercase tracking-[0.3em] italic flex items-center gap-2">
+                    <span class="w-4 h-[1px] bg-sky-500"></span> ${item.date}
                 </p>
-                <h4 class="text-xl font-bold text-white uppercase tracking-tight group-hover:text-sky-400 transition-colors italic leading-tight">${item.title}</h4>
-                <p class="text-slate-400 text-[12px] font-light italic leading-relaxed line-clamp-2">${item.excerpt}</p>
+                <h4 class="text-xl font-black text-white uppercase tracking-tighter italic leading-tight group-hover:text-sky-400 transition-colors">${item.title}</h4>
+                <p class="text-zinc-500 text-[11px] leading-relaxed line-clamp-2 italic font-medium">${item.excerpt}</p>
             </div>
-            <div class="pt-6 border-t border-slate-800/30 flex items-center justify-between">
-                <span class="text-white/50 font-black uppercase text-[8px] tracking-[0.2em] italic group-hover:text-sky-500">Read More</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-700 group-hover:text-sky-500 group-hover:translate-x-1 transition-all"></i>
+            
+            <div class="pt-5 border-t border-zinc-800 flex items-center">
+                <button onclick="window.openNewsDetail('${slug}')" 
+                        class="flex items-center gap-3 bg-white hover:bg-sky-500 px-5 py-2 rounded-md transition-all duration-300 cursor-pointer active:scale-95 shadow-md">
+                    <span class="text-black font-black uppercase text-[10px] tracking-widest">READ MORE</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-black"></i>
+                </button>
             </div>
         </div>
     </article>
-`;
+  `;
+};
 
+/**
+ * MODAL CONTENT RENDERER
+ */
+const renderModalContent = (data) => {
+  const langMap = {
+    js: "javascript",
+    py: "python",
+    sh: "bash",
+    "c++": "cpp",
+    cpp: "cpp",
+    "c#": "csharp",
+    cs: "csharp",
+  };
+  const langClass =
+    langMap[data.language.toLowerCase()] || data.language.toLowerCase();
+  const currentSlug = createSlug(data.title);
+
+  const modal = document.getElementById("newsModal");
+  modal.className =
+    "fixed inset-0 z-[100] overflow-y-auto bg-black hidden font-mono";
+
+  document.getElementById("newsModalContent").innerHTML = `
+        <div class="max-w-[1500px] mx-auto px-6 md:px-12 py-10 text-white">
+            
+            <div class="flex items-center justify-between mb-10 border-b border-white/10 pb-8">
+                ${navButtonsComponent(currentSlug)}
+                <div class="hidden md:flex items-center gap-6 bg-zinc-900/50 p-4 border border-zinc-800 rounded-xl">
+                    <span id="digitalClock" class="text-white text-xs font-black tracking-[0.2em] tabular-nums">00:00:00 WIB</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+                
+                <div class="lg:col-span-8 space-y-10">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-sky-500 text-[10px] font-black uppercase tracking-[0.5em]">
+                            <span class="w-12 h-0.5 bg-sky-500"></span> DETAILS
+                        </div>
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[1.1] italic">
+                            ${data.title}
+                        </h1>
+                    </div>
+
+                    <div class="rounded-[2.5rem] overflow-hidden border border-zinc-800 bg-zinc-900 relative group max-h-[500px]">
+                        <img src="${data.image}" class="w-full h-full object-cover opacity-90 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="prose prose-invert max-w-none">
+                        <p class="text-zinc-300 text-xl md:text-2xl font-black leading-tight uppercase italic tracking-tighter mb-12 border-l-4 border-sky-500 pl-8">
+                            "${data.excerpt}"
+                        </p>
+                        <div class="text-zinc-400 text-base md:text-lg leading-loose space-y-8 font-medium italic">
+                            ${data.content
+                              .split("\n")
+                              .filter((p) => p.trim())
+                              .map(
+                                (p) => `
+                                <p class="hover:text-white transition-colors flex gap-3">
+                                    <span class="text-sky-500 font-bold not-italic">>></span>
+                                    <span>${p.trim()}</span>
+                                </p>
+                            `,
+                              )
+                              .join("")}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 space-y-8">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-[2.5rem] p-8 shadow-2xl space-y-6">
+                        <h2 class="text-sky-500 font-black text-[11px] uppercase tracking-[0.4em] italic mb-8">INFORMATION</h2>
+                        
+                        <div class="bg-black/50 p-5 border border-zinc-800 rounded-xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-sky-500/50 shrink-0">
+                                <img src="/img/profile/profile_1.jpg" alt="Author" class="w-full h-full ">
+                            </div>
+                            <div>
+                                <span class="text-zinc-600 text-[9px] uppercase font-black tracking-[0.3em] block mb-1">AUTHOR</span>
+                                <span class="text-white text-lg font-black uppercase italic">${data.author}</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/50 p-5 border border-zinc-800 rounded-xl flex items-center gap-4">
+                            <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center border border-sky-500/20">
+                                <i data-lucide="tag" class="w-5 h-5 text-sky-500"></i>
+                            </div>
+                            <div>
+                                <span class="text-zinc-600 text-[9px] uppercase font-black tracking-[0.3em] block mb-1">CATEGORY</span>
+                                <span class="text-sky-500 text-lg font-black uppercase italic">${data.category}</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/50 p-5 border border-zinc-800 rounded-xl flex items-center gap-4">
+                            <div class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center border border-zinc-700">
+                                <i data-lucide="calendar" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <div>
+                                <span class="text-zinc-600 text-[9px] uppercase font-black tracking-[0.3em] block mb-1">DATE</span>
+                                <span class="text-zinc-400 text-lg font-black uppercase italic">${data.date}</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 rounded-xl overflow-hidden border border-zinc-800 bg-black">
+                            <div class="bg-zinc-800 px-4 py-2 flex justify-between items-center">
+                                <span class="text-[8px] text-zinc-400 font-black uppercase">${data.language}</span>
+                                <div class="w-2 h-2 rounded-full bg-emerald-500/50"></div>
+                            </div>
+                            <div class="p-5 text-[11px] overflow-x-auto custom-scrollbar">
+                                <pre class="!bg-transparent !m-0"><code class="language-${langClass}">${data.codeQuote}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-20 border-t border-zinc-900">
+                <p class="text-[10px] text-zinc-700 uppercase tracking-[1em] mb-10 font-black">--- END OF ARTICLE ---</p>
+                <div class="flex justify-center">
+                    ${navButtonsComponent(currentSlug)}
+                </div>
+            </div>
+        </div>
+    `;
+
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+  modal.scrollTo({ top: 0, behavior: "instant" });
+  startClock();
+
+  setTimeout(() => {
+    if (window.lucide) window.lucide.createIcons();
+    if (window.Prism) window.Prism.highlightAll();
+  }, 100);
+};
+
+/**
+ * CORE GRID LOGIC
+ */
 export const renderNewsGrid = () => {
   const grid = document.getElementById("newsGrid");
   if (!grid) return;
-
   const filtered = news.filter(
     (n) =>
       (selectedCategory === "all" || n.category === selectedCategory) &&
       n.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
-  // Menggunakan index dalam map untuk delay animasi
   grid.innerHTML = filtered.length
     ? filtered
         .slice(0, visibleCount)
         .map((item, index) => createNewsCard(item, index))
         .join("")
-    : `<div class="col-span-full py-20 text-center text-slate-700 font-mono text-[10px] uppercase tracking-[0.5em] italic border border-dashed border-slate-800 rounded-3xl">No Log Entries Found.</div>`;
+    : `<div class="col-span-full py-20 text-center text-zinc-800 font-black text-[10px] uppercase tracking-[0.5em]">ERR: DATA_NOT_FOUND</div>`;
 
   document
     .getElementById("btnLoadMore")
@@ -110,27 +275,16 @@ export const renderNewsGrid = () => {
   document
     .getElementById("btnCloseMore")
     ?.classList.toggle("hidden", visibleCount <= 3);
-
-  // Refresh Lucide Icons
   if (window.lucide) window.lucide.createIcons();
-
-  // --- KUNCI UTAMA ---
-  // Memberitahu AOS bahwa ada elemen baru yang perlu dianimasikan
-  if (window.AOS) {
-    window.AOS.refresh();
-  }
+  if (window.AOS) window.AOS.refresh();
 };
 
-/**
- * INITIALIZATION & ROUTING
- */
 export const initNewsDetail = () => {
   document.getElementById("newsSearch")?.addEventListener("input", (e) => {
     searchTerm = e.target.value;
     visibleCount = 3;
     renderNewsGrid();
   });
-
   document.getElementById("newsFilter")?.addEventListener("change", (e) => {
     selectedCategory = e.target.value;
     visibleCount = 3;
@@ -145,131 +299,16 @@ export const initNewsDetail = () => {
     if (e.target.closest("#btnCloseMore")) {
       visibleCount = 3;
       renderNewsGrid();
-      document.getElementById("news").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("news")?.scrollIntoView({ behavior: "smooth" });
     }
   });
 
   const handleRoute = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get("id");
-
     if (slug) {
       const data = news.find((n) => createSlug(n.title) === slug);
-
-      if (data) {
-        const langMap = {
-          "c#": "csharp",
-          "c++": "cpp",
-          js: "javascript",
-          yml: "yaml",
-        };
-        const langClass =
-          langMap[data.language.toLowerCase()] || data.language.toLowerCase();
-
-        document.getElementById("newsModalContent").innerHTML = `
-            <div class="max-w-6xl mx-auto px-6 md:px-10 animate-fade-in pb-20">
-                <div class="flex items-center justify-between mb-12 border-b border-slate-800/50 pb-6">
-                    <button onclick="closeNewsDetail()" class="text-slate-500 hover:text-sky-500 font-mono text-[10px] uppercase tracking-widest italic flex items-center gap-2 transition-colors">
-                        <i data-lucide="chevron-left" class="w-4 h-4"></i> BACK TO ARCHIVE
-                    </button>
-                    <div class="flex items-center gap-4 bg-sky-500/5 px-4 py-2 border border-sky-500/10 rounded-full">
-                        <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
-                        </span>
-                        <span id="digitalClock" class="text-white font-mono text-[11px] font-black tracking-widest italic tabular-nums">00:00:00 WIB</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-20">
-                    <div class="lg:col-span-7 space-y-8">
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-2 text-sky-500 font-mono text-[8px] font-black uppercase tracking-[0.4em]">
-                                <span class="w-10 h-[1px] bg-sky-500"></span> Details
-                            </div>
-                            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] italic">${data.title}</h1>
-                        </div>
-                        <div class="rounded-[3rem] overflow-hidden border border-slate-800 shadow-2xl aspect-video relative group bg-slate-900">
-                            <img src="${data.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]">
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5">
-                        <div class="bg-slate-950 border border-slate-800 rounded-[2.5rem] p-8 shadow-2xl space-y-3 font-mono">
-                            <h2 class="text-white font-black text-[10px] uppercase tracking-[0.4em] italic flex items-center gap-3 mb-5">
-                                <i data-lucide="database" class="w-4 h-4 text-sky-500"></i> Metadata
-                            </h2>
-                            ${[
-                              ["Author", data.author],
-                              ["Category", data.category, "text-sky-500"],
-                              ["Date Upload", data.date],
-                              ["Runtime Est", data.readTime, "text-white"],
-                              ["Language", data.language, "text-emerald-500"],
-                            ]
-                              .map(
-                                (info) => `
-                                <div class="flex justify-between items-center bg-slate-900/40 p-4 border border-slate-800/40 rounded-2xl">
-                                    <span class="text-slate-600 text-[8px] uppercase font-bold">${info[0]}</span>
-                                    <span class="${info[2] || "text-white"} text-[10px] font-bold uppercase">${info[1]}</span>
-                                </div>`,
-                              )
-                              .join("")}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-800/50 pt-16">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        <div class="lg:col-span-8 space-y-12">
-                            <div class="prose prose-invert max-w-none">
-                                <p class="text-slate-300 text-xl md:text-2xl leading-relaxed italic font-light first-letter:text-7xl first-letter:font-black first-letter:text-white first-letter:mr-4 first-letter:float-left first-letter:leading-none">${data.excerpt}</p>
-                                <div class="text-slate-400 text-lg md:text-xl leading-relaxed italic font-light mt-10 space-y-6">
-                                    ${data.content
-                                      .split("\n")
-                                      .filter((p) => p.trim())
-                                      .map((p) => `<p>${p.trim()}</p>`)
-                                      .join("")}
-                                </div>
-                            </div>
-                            <div class="bg-slate-950 rounded-[2.5rem] border border-slate-800 overflow-hidden shadow-2xl relative">
-                                <div class="bg-slate-900/50 px-8 py-4 border-b border-slate-800 flex justify-between items-center">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="file-code" class="w-4 h-4 text-sky-500"></i>
-                                        <span class="text-[9px] font-mono text-slate-500 tracking-[0.3em] uppercase italic">${data.fileName}</span>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-sky-500 font-bold uppercase tracking-widest">${data.language}</span>
-                                </div>
-                                <div class="p-10 font-mono text-xs md:text-sm leading-loose overflow-x-auto">
-                                    <pre class="!bg-transparent"><code class="language-${langClass}">${data.codeQuote}</code></pre>
-                                </div>
-                            </div>
-                            <button onclick="closeNewsDetail()" class="group flex items-center gap-4 bg-slate-900 hover:bg-sky-500/10 border border-slate-800 hover:border-sky-500/50 px-8 py-4 rounded-2xl transition-all">
-                                <i data-lucide="arrow-left" class="w-5 h-5 text-slate-500 group-hover:text-sky-500 group-hover:-translate-x-1 transition-all"></i>
-                                <span class="text-slate-500 group-hover:text-white font-mono text-[10px] uppercase tracking-[0.3em] italic">Back to Archive</span>
-                            </button>
-                        </div>
-                        <div class="lg:col-span-4 space-y-8">
-                            <div class="p-8 bg-sky-500/5 border border-sky-500/10 rounded-[2.5rem] space-y-5 relative overflow-hidden group">
-                                <i data-lucide="quote" class="w-8 h-8 text-sky-500/10 absolute -right-2 -top-2"></i>
-                                <h5 class="text-white font-black text-[10px] uppercase tracking-widest italic">Motivational</h5>
-                                <p class="text-slate-400 text-sm leading-relaxed italic font-mono tracking-tighter uppercase">"${data.motivation}"</p>
-                            </div>
-                            <div class="p-8 border border-dashed border-slate-800 rounded-[2.5rem] flex justify-center gap-10 text-slate-600">
-                                <button onclick="shareNews('${data.title}')" class="hover:text-sky-500 transition-all transform hover:scale-110"><i data-lucide="share-2"></i></button>
-                                <button onclick="copyToClipboard(window.location.href)" class="hover:text-emerald-500 transition-all transform hover:scale-110"><i data-lucide="copy"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        document.getElementById("newsModal").classList.remove("hidden");
-        document.body.style.overflow = "hidden";
-        startClock();
-        setTimeout(() => {
-          if (window.lucide) window.lucide.createIcons();
-          if (window.Prism) window.Prism.highlightAll();
-        }, 50);
-      }
+      if (data) renderModalContent(data);
     } else {
       document.getElementById("newsModal")?.classList.add("hidden");
       document.body.style.overflow = "auto";
@@ -282,9 +321,6 @@ export const initNewsDetail = () => {
   renderNewsGrid();
 };
 
-/**
- * GLOBAL NAVIGATION
- */
 window.openNewsDetail = (slug) => {
   window.history.pushState({}, "", `?id=${slug}`);
   window.dispatchEvent(new PopStateEvent("popstate"));
