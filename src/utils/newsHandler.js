@@ -189,7 +189,7 @@ const renderModalContent = (data) => {
                         
                         <div class="bg-black/50 p-5 border border-zinc-800 rounded-xl flex items-center gap-4">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-sky-500/50 shrink-0">
-                                <img src="/img/profile/profile_1.jpg" alt="Author" class="w-full h-full ">
+                                <img src="/img/profile/profile.jpg" alt="Author" class="w-full h-full ">
                             </div>
                             <div>
                                 <span class="text-zinc-600 text-[9px] uppercase font-black tracking-[0.3em] block mb-1">AUTHOR</span>
