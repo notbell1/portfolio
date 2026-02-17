@@ -16,126 +16,43 @@ import { initNewsDetail } from "./utils/newsHandler.js";
 import { initContactForm } from "./utils/contactHandler.js";
 import { initNav } from "./utils/navHandler.js";
 
-// Import Data untuk Dynamic Meta
-import { news } from "./data/news.js";
-import { projects } from "./data/projects.js";
-
 const app = document.querySelector("#app");
 
-/**
- * LOGIK DYNAMIC META
- */
-const updateDynamicMeta = () => {
-  const path = window.location.pathname;
-  const createSlug = (text) =>
-    text
-      .toLowerCase()
-      .replace(/[^\w ]+/g, "")
-      .replace(/ +/g, "-");
+// Render UI (Kembali ke struktur awal yang render semuanya)
+app.innerHTML = `
+    ${Header}
+    <main class="overflow-x-hidden pt-20"> 
+        ${Home}
+        ${About}
+        ${Education}
+        ${Skill}
+        ${Experience}
+        ${Project}
+        ${News}
+        ${Contact}
+    </main>
+    ${Footer}
+`;
 
-  let title = "Nottbell Portfolio";
-  let desc =
-    "Professional Creative Developer specializing in high-performance web experiences.";
-  let img = "https://nottbell.vercel.app/profile/profile_1.jpg";
+// Initialize Handlers
+if (window.lucide) {
+  window.lucide.createIcons();
+}
 
-  if (path.startsWith("/news/")) {
-    const slug = path.split("/")[2];
-    const item = news.find((n) => createSlug(n.title) === slug);
-    if (item) {
-      title = `${item.title} | Nottbell News`;
-      desc = item.excerpt;
-      img = item.image.startsWith("http")
-        ? item.image
-        : `https://nottbell.vercel.app${item.image}`;
-    }
-  } else if (path.startsWith("/project/")) {
-    const slug = path.split("/")[2];
-    const item = projects.find((p) => createSlug(p.title) === slug);
-    if (item) {
-      title = `${item.title} | Project`;
-      desc = item.longDescription;
-      img = item.mainImage.startsWith("http")
-        ? item.mainImage
-        : `https://nottbell.vercel.app${item.mainImage}`;
-    }
-  }
+initNav();
+initTyping();
+initAge(2002, 6, 20);
+initProjectDetail();
+initNewsDetail();
+initContactForm();
 
-  document.title = title;
-  const setMeta = (selector, content) => {
-    const el = document.querySelector(selector);
-    if (el) el.setAttribute("content", content);
-  };
-
-  setMeta('meta[name="title"]', title);
-  setMeta('meta[name="description"]', desc);
-  setMeta('meta[property="og:title"]', title);
-  setMeta('meta[property="og:description"]', desc);
-  setMeta('meta[property="og:image"]', img);
-  setMeta('meta[property="twitter:title"]', title);
-  setMeta('meta[property="twitter:description"]', desc);
-  setMeta('meta[property="twitter:image"]', img);
-};
-
-/**
- * RENDER ENGINE
- */
-const render = () => {
-  const path = window.location.pathname;
-
-  // Update Meta Tag setiap kali render (untuk SEO & Browser Title)
-  updateDynamicMeta();
-
-  if (path === "/" || path === "/index.html") {
-    // Render Halaman Utama
-    app.innerHTML = `
-        ${Header}
-        <main class="overflow-x-hidden pt-20"> 
-            ${Home}
-            ${About}
-            ${Education}
-            ${Skill}
-            ${Experience}
-            ${Project}
-            ${News}
-            ${Contact}
-        </main>
-        ${Footer}
-    `;
-    // Init script khusus halaman utama
-    initTyping();
-    initAge(2002, 6, 20);
-  } else {
-    // Render Halaman Detail (Blank Container agar diisi oleh handler)
-    app.innerHTML = `
-        ${Header}
-        <main id="content-detail" class="overflow-x-hidden pt-20">
-            </main>
-        ${Footer}
-    `;
-  }
-
-  // Init global icons & nav
-  if (window.lucide) window.lucide.createIcons();
-  initNav();
-  initContactForm();
-
-  // Handler untuk mendeteksi rute detail
-  initProjectDetail();
-  initNewsDetail();
-};
-
-// Jalankan aplikasi
-render();
-
-// Handle navigasi (Tombol Back/Forward Browser)
-window.addEventListener("popstate", render);
-
-// Smooth Scroll Global
-document.addEventListener("click", (e) => {
-  const anchor = e.target.closest('a[href^="#"]');
-  if (anchor) {
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute("href"));
-    if (target) target.scrollIntoView({ behavior: "smooth" });
-  }
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 });

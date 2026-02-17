@@ -135,21 +135,21 @@ const renderModalContent = (slug) => {
 };
 
 /**
- * GLOBAL NAVIGATION FUNCTIONS
+ * GLOBAL NAVIGATION FUNCTIONS (MODIFIED TO QUERY PARAM)
  */
 window.openProjectDetail = (slugOrId) => {
-  // Cari data project dulu untuk mendapatkan slug dari judulnya
   const item = projects.find(
     (p) => p.id === slugOrId || createSlug(p.title) === slugOrId,
   );
   const finalSlug = item ? createSlug(item.title) : slugOrId;
 
-  window.history.pushState({}, "", `/project/${finalSlug}`);
+  // Menggunakan ?id= alih-alih /project/
+  window.history.pushState({}, "", `?id=${finalSlug}`);
   window.dispatchEvent(new PopStateEvent("popstate"));
 };
 
 window.closeProjectDetail = () => {
-  window.history.pushState({}, "", "/");
+  window.history.pushState({}, "", window.location.pathname);
   window.dispatchEvent(new PopStateEvent("popstate"));
   document.getElementById("projectModal").classList.add("hidden");
   document.body.style.overflow = "auto";
@@ -160,15 +160,19 @@ window.closeProjectDetail = () => {
  */
 export const initProjectDetail = () => {
   const handleRoute = () => {
-    const path = window.location.pathname;
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("id");
 
-    if (path.startsWith("/project/")) {
-      const slug = path.split("/")[2];
+    // Cek apakah ID yang ada di URL milik sebuah project
+    const isProject = projects.some((p) => createSlug(p.title) === slug);
+
+    if (slug && isProject) {
       renderModalContent(slug);
     } else {
       document.getElementById("projectModal")?.classList.add("hidden");
-      // Hanya reset overflow jika tidak sedang membuka news (agar tidak konflik)
-      if (!path.startsWith("/news/")) {
+      // Reset overflow hanya jika tidak sedang membuka news
+      const isNews = urlParams.has("id") && !isProject;
+      if (!isNews) {
         document.body.style.overflow = "auto";
       }
     }
