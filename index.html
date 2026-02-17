@@ -2,46 +2,21 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/profile/icon.png" type="image/x-icon" />
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
       rel="stylesheet"
     />
-    <style>
-      /* Menyesuaikan tampilan dengan desain Slate Anda */
-      pre[class*="language-"] {
-        background: transparent !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      code[class*="language-"] {
-        text-shadow: none !important;
-        font-family: "JetBrains Mono", "Fira Code", monospace !important;
-      }
-      /* Warna komentar agar lebih kontras di background gelap */
-      .token.comment,
-      .token.prolog,
-      .token.doctype,
-      .token.cdata {
-        color: #64748b !important;
-        font-style: italic;
-      }
-    </style>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-solidity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="/profile/icon.png" type="image/x-icon" />
 
     <title>Nottbell Portfolio</title>
     <meta name="title" content="Nottbell Portfolio" />
@@ -74,6 +49,76 @@
       content="https://nottbell.vercel.app/profile/profile_1.jpg"
     />
 
+    <script type="module">
+      import { news } from "./data/news.js";
+      import { projects } from "./data/projects.js";
+
+      const createSlug = (text) =>
+        text
+          .toLowerCase()
+          .replace(/[^\w ]+/g, "")
+          .replace(/ +/g, "-");
+      const path = window.location.pathname;
+
+      let metaTitle = "Nottbell Portfolio";
+      let metaDesc =
+        "Personal portfolio of Nottbell. Professional Creative Developer.";
+      let metaImg = "https://nottbell.vercel.app/profile/profile_1.jpg";
+
+      if (path.startsWith("/news/")) {
+        const slug = path.split("/")[2];
+        const item = news.find((n) => createSlug(n.title) === slug);
+        if (item) {
+          metaTitle = `${item.title} | Nottbell News`;
+          metaDesc = item.excerpt;
+          metaImg = item.image.startsWith("http")
+            ? item.image
+            : `https://nottbell.vercel.app${item.image}`;
+        }
+      } else if (path.startsWith("/project/")) {
+        const slug = path.split("/")[2];
+        const item = projects.find((p) => createSlug(p.title) === slug);
+        if (item) {
+          metaTitle = `${item.title} | Project`;
+          metaDesc = item.longDescription;
+          metaImg = item.mainImage.startsWith("http")
+            ? item.mainImage
+            : `https://nottbell.vercel.app${item.mainImage}`;
+        }
+      }
+
+      // Update Tag Head
+      document.title = metaTitle;
+      document
+        .querySelector('meta[name="title"]')
+        ?.setAttribute("content", metaTitle);
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute("content", metaDesc);
+
+      // Update Open Graph (WA/FB)
+      document
+        .querySelector('meta[property="og:title"]')
+        ?.setAttribute("content", metaTitle);
+      document
+        .querySelector('meta[property="og:description"]')
+        ?.setAttribute("content", metaDesc);
+      document
+        .querySelector('meta[property="og:image"]')
+        ?.setAttribute("content", metaImg);
+
+      // Update Twitter
+      document
+        .querySelector('meta[property="twitter:title"]')
+        ?.setAttribute("content", metaTitle);
+      document
+        .querySelector('meta[property="twitter:description"]')
+        ?.setAttribute("content", metaDesc);
+      document
+        .querySelector('meta[property="twitter:image"]')
+        ?.setAttribute("content", metaImg);
+    </script>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -94,6 +139,21 @@
     </script>
 
     <style>
+      /* Prism Fixes */
+      pre[class*="language-"] {
+        background: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      code[class*="language-"] {
+        text-shadow: none !important;
+        font-family: "JetBrains Mono", monospace !important;
+      }
+      .token.comment {
+        color: #64748b !important;
+        font-style: italic;
+      }
+
       /* Custom Scrollbar */
       .custom-scrollbar::-webkit-scrollbar {
         width: 6px;
@@ -119,16 +179,6 @@
           transform: translateX(100%);
         }
       }
-
-      @keyframes scan-line {
-        0% {
-          transform: translateY(-100%);
-        }
-        100% {
-          transform: translateY(100vh);
-        }
-      }
-
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -139,26 +189,15 @@
           transform: translateY(0);
         }
       }
-
       .animate-fade-in {
         animation: fadeIn 0.8s ease-out forwards;
       }
 
-      /* Glassmorphism Utility */
+      /* Glassmorphism */
       .glass-effect {
         background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-      }
-
-      /* Image Overlay Gradient */
-      .img-gradient {
-        background: linear-gradient(
-          to top,
-          #020617,
-          rgba(2, 6, 23, 0.5),
-          transparent
-        );
       }
     </style>
   </head>
@@ -166,7 +205,6 @@
     class="bg-slate-950 text-slate-100 selection:bg-sky-500/30 selection:text-sky-400"
   >
     <div id="app"></div>
-
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
