@@ -16,7 +16,7 @@ export const initContactForm = () => {
     const message = form.message.value.trim();
     const honey = form.anti_spam_honey.checked;
 
-    // Anti-Spam Honeypot
+    // Honeypot
     if (honey) return;
 
     // Rate limit

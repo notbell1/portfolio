@@ -11,7 +11,6 @@ const createSlug = (text) => {
 };
 
 const renderModalContent = (slug) => {
-  // Mencari data berdasarkan slug judul
   const data = projects.find((p) => createSlug(p.title) === slug);
   if (!data) return closeProjectDetail();
 
@@ -143,7 +142,6 @@ window.openProjectDetail = (slugOrId) => {
   );
   const finalSlug = item ? createSlug(item.title) : slugOrId;
 
-  // Menggunakan ?id= alih-alih /project/
   window.history.pushState({}, "", `?id=${finalSlug}`);
   window.dispatchEvent(new PopStateEvent("popstate"));
 };
@@ -163,14 +161,12 @@ export const initProjectDetail = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get("id");
 
-    // Cek apakah ID yang ada di URL milik sebuah project
     const isProject = projects.some((p) => createSlug(p.title) === slug);
 
     if (slug && isProject) {
       renderModalContent(slug);
     } else {
       document.getElementById("projectModal")?.classList.add("hidden");
-      // Reset overflow hanya jika tidak sedang membuka news
       const isNews = urlParams.has("id") && !isProject;
       if (!isNews) {
         document.body.style.overflow = "auto";

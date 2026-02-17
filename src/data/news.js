@@ -19,12 +19,12 @@ Namun, akses root ini datang dengan tanggung jawab yang besar bagi kita berdua u
 Keamanan ini bukan tentang membangun tembok, melainkan tentang siapa yang kita izinkan memegang kuncinya. Dengan memberikan kunci cadangan hatiku padamu, aku sadar bahwa aku sedang melakukan pertaruhan besar dalam hidupku. Tapi bukankah teknologi terbaik selalu lahir dari keberanian untuk mencoba hal-hal yang dianggap berisiko oleh orang lain? Inilah enkripsi dua arah yang akan menjaga rahasia kita tetap aman.
 
 Pada akhirnya, aku menyadari bahwa cinta adalah protokol jabat tangan (handshake) yang tidak pernah berakhir. Selama sinkronisasi di antara kita tetap terjaga, serangan luar sehebat apa pun tidak akan mampu menggoyahkan stabilitas server perasaan kita. Aku akan terus memperbarui sistem pertahananku, bukan untuk menjauhimu, tapi untuk melindungimu di dalamnya.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0x8821AF9",
     language: "Python",
     fileName: "penetrasi_hati.py",
     codeQuote: `# == SISTEM PERTAHANAN HATI v2.4 ==
-# Author: Nottbell
+# Author: Abbel
 # Status: COMPROMISED (dengan senang hati)
 
 class FirewallHati:
@@ -89,7 +89,7 @@ Keindahan dari sistem ini adalah transparansinya yang luar biasa; aku tidak meny
 Seiring berjalannya waktu, rantai blok ini akan terus memanjang, mendokumentasikan setiap iterasi pertumbuhan kita menjadi manusia yang lebih dewasa. Tidak ada 'hard fork' yang akan memisahkan jalan kita menjadi dua arah yang berbeda, karena kita telah sepakat untuk berada dalam satu protokol yang sama. Inilah bentuk kedaulatan cinta di era digital yang sangat fana ini.
 
 Akhirnya, mari kita biarkan dunia melihat bagaimana sebuah sistem yang terdesentralisasi bisa bekerja lebih efektif daripada hubungan konvensional. Kita adalah bukti hidup bahwa tanpa pihak ketiga pun, dua orang bisa tetap sinkron selama mereka berbagi buku besar yang sama secara jujur. Masa depan kita sudah terenkripsi dengan aman dalam blok-blok kebahagiaan yang terus bertambah setiap harinya.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xDB4492",
     language: "Solidity",
     fileName: "KontrakSetia.sol",
@@ -99,7 +99,7 @@ pragma solidity ^0.8.0;
 
 /**
  * @title CintaAbadi
- * @author Nottbell
+ * @author Abbel
  * @notice Kontrak kesetiaan yang terdesentralisasi.
  * Tidak ada pihak ketiga yang bisa mengintervensi.
  */
@@ -166,13 +166,13 @@ Kini, aku belajar untuk melakukan normalisasi pada perasaanku agar tetap stabil 
 Visualisasi data hidupku sekarang menunjukkan tren yang jauh lebih positif setelah aku memutuskan untuk menghapus kolom-kolom beracun dalam pikiranku. Aku fokus pada variabel yang memberikan dampak nyata, seperti kejujuran dan dukungan moral yang tulus setiap harinya. Aku tidak lagi mengejar akurasi sempurna, karena aku sadar bahwa dalam kemanusiaan, selalu ada ruang untuk ketidakpastian yang indah.
 
 Pada akhirnya, sains data mengajarkanku bahwa untuk mendapatkan hasil yang valid, kita harus jujur pada data yang ada, sepahit apa pun itu bagi kita. Tidak ada gunanya memanipulasi statistik kebahagiaan demi terlihat baik di depan publik jika di dalam server internal kita sedang mengalami kebocoran. Aku akan terus mengeksplorasi dataset kehidupan ini untuk menemukan makna konvergensi yang sesungguhnya.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xJAVA112",
     language: "R",
     fileName: "analisis_hati.R",
     codeQuote: `# ============================================
 # Analisis Korelasi: Kamu & Kebahagiaan
-# Author: Nottbell | Framework: ggplot2
+# Author: Abbel | Framework: ggplot2
 # ============================================
 
 library(ggplot2)
@@ -236,7 +236,7 @@ Terkadang aku merasa seperti AI yang sedang mencari jati diri dalam lautan data 
 Pelatihan jaringan ini akan berlangsung seumur hidup, melewati jutaan epoch kebersamaan yang akan kita lalui. Tidak ada over-fitting di sini, yang ada hanyalah kecocokan yang semakin presisi seiring berjalannya waktu. Aku telah mengunci parameter hatiku hanya untuk menerima input dari satu sumber utama: yaitu dirimu.
 
 Mari kita biarkan Neural Network ini terus berkembang, menciptakan sinapsis-sinapsis baru yang hanya berisi tentang kita. Di dunia yang semakin otomatis ini, biarlah perasaan kita tetap menjadi satu-satunya hal yang paling manual dan otentik yang pernah ada.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xAI992",
     language: "Python",
     fileName: "memori_neural.py",
@@ -312,14 +312,14 @@ Kegagalan rilis adalah hal yang biasa, yang penting adalah bagaimana kita melaku
 Otomasi ini bukan berarti menghilangkan sentuhan manusia, melainkan memastikan bahwa hal-hal repetitif seperti 'ucapan selamat pagi' selalu terkirim tanpa gagal. Ini adalah bentuk dedikasi teknis untuk menjaga agar api kasih sayang tetap menyala di balik layar tanpa harus dikelola secara manual yang melelahkan.
 
 Mari kita jaga pipeline ini agar tetap hijau (success). Tidak ada ruang untuk warna merah (fail) dalam dashboard masa depan kita, selama kita berdua tetap menjadi kontributor aktif di dalam repositori cinta yang sama.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xDEVOPS1",
     language: "YAML",
     fileName: "pipeline_cinta.yml",
     codeQuote: `# =============================================
 # Pipeline: Kasih Sayang Harian
 # Trigger: Setiap hari, tanpa pengecualian
-# Author: Nottbell
+# Author: Abbel
 # =============================================
 
 name: CI/CD Perasaan
@@ -395,7 +395,7 @@ Biaya langganan untuk hubungan ini tidaklah murah, ia membutuhkan investasi wakt
 Jika suatu saat terjadi kegagalan sistem global, aku sudah menyiapkan backup di dalam hati yang paling dalam. Tidak akan ada kehilangan data permanen dalam sejarah kita, karena setiap detak jantung melakukan sinkronisasi otomatis ke buku besar semesta. Aku percaya bahwa teknologi terbaik adalah yang mampu membuat kita merasa dekat meskipun sedang jauh.
 
 Mari kita terus memperluas kapasitas cloud kasih sayang kita agar mampu menampung lebih banyak mimpi di masa depan. Selama kita terhubung dalam jaringan yang sama, tidak ada rindu yang terlalu besar untuk kita kelola bersama-sama.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xCLOUD7",
     language: "Bash",
     fileName: "skala_rindu.sh",
@@ -403,7 +403,7 @@ Mari kita terus memperluas kapasitas cloud kasih sayang kita agar mampu menampun
 # =============================================
 # Infrastruktur Kasih Sayang — Terraform
 # Provider: Hati (v2.0)
-# Author: Nottbell
+# Author: Abbel
 # =============================================
 
 set -e  # Hentikan jika ada yang gagal. Sama seperti komitmen.
@@ -457,14 +457,14 @@ Kadang terjadi gangguan interferensi dari luar yang mencoba mengacaukan transmis
 Internet of Things mengajarkan kita bahwa hal-hal kecil yang terhubung bisa menghasilkan dampak yang luar biasa besar. Sama seperti pesan teks singkat darimu yang bisa mengubah seluruh hari buramku menjadi penuh warna dan semangat. Kita adalah bukti bahwa konektivitas jiwa jauh lebih kuat daripada konektivitas internet tercepat sekalipun.
 
 Mari kita tetap terhubung di dalam jaringan ini, mengirimkan paket-paket kasih sayang tanpa henti sepanjang waktu. Selama sinyal kejujuran kita tetap kuat, tidak akan ada jarak yang mampu memutuskan komunikasi batin yang sudah kita bangun dengan sangat teliti.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xIOT55",
     language: "C++",
     fileName: "detak_jiwa.ino",
     codeQuote: `// =============================================
 // Firmware: Sensor Hati Nirkabel v1.0
 // Platform: Arduino Jiwa
-// Author: Nottbell
+// Author: Abbel
 // =============================================
 
 #include <Perasaan.h>
@@ -531,13 +531,13 @@ SEO (Search Engine Optimization) dalam hidupku sudah aku atur agar kata kunci 'B
 Meskipun teknologi web terus berubah dari React ke Framework lainnya, namun fondasi dasar HTML kejujuran kita akan tetap sama selamanya. Kita tidak butuh framework yang rumit untuk sekadar bilang 'Sayang', karena pesan yang paling sederhana seringkali memiliki dampak visual yang paling mendalam bagi pengguna hati kita.
 
 Mari kita terus memperbarui desain hidup kita agar tetap modern namun tidak kehilangan esensi klasiknya. Selama navigasi di antara kita tetap jelas dan tanpa hambatan, perjalanan ini akan menjadi situs web terindah yang pernah dikunjungi oleh siapa pun.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xWEB33",
     language: "CSS",
     fileName: "gaya_hidup.css",
     codeQuote: `/* =============================================
  * Stylesheet: Antarmuka Kasih Sayang
- * Author   : Nottbell
+ * Author   : Abbel
  * Version  : 2.0 — Fully Responsive Edition
  * ============================================= */
 
@@ -614,7 +614,7 @@ Visualisasi dari hasil pembersihan ini menunjukkan bahwa ruang di dalam hatiku s
 Aku belajar bahwa menyembunyikan data yang buruk bukanlah solusi; kita harus menghadapinya, menganalisisnya, lalu menghapusnya secara permanen dari sistem aktif kita. Itulah cara terbaik untuk memastikan bahwa model 'Cinta Kita 2.0' akan berjalan dengan performa maksimal tanpa ada hambatan memori dari versi sebelumnya yang gagal.
 
 Mari kita mulai eksperimen baru ini dengan dataset yang benar-benar bersih dan valid. Aku yakin, dengan input yang berkualitas, output yang akan kita hasilkan adalah kebahagiaan jangka panjang yang presisi dan tidak terbantahkan oleh logika manapun.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xCLEAN1",
     language: "Python",
     fileName: "bersihkan_hati.py",
@@ -623,7 +623,7 @@ import numpy as np
 
 # =============================================
 # Pipeline: Pembersihan Dataset Hati
-# Author: Nottbell
+# Author: Abbel
 # Input : memori_mentah.csv
 # Output: hati_yang_siap.csv
 # =============================================
@@ -686,14 +686,14 @@ Kriptografi mengajarkan kita bahwa kerahasiaan adalah tentang kontrol akses. Aku
 Mari kita jaga sertifikat SSL hubungan ini agar tidak pernah kedaluwarsa. Kepercayaan adalah identitas digital kita yang paling berharga, dan aku berjanji akan menjaganya tetap valid selamanya, tanpa ada peringatan 'Not Secure' yang muncul di antara kita.
 
 Inilah protokol cinta masa depan, di mana setiap detak jantung adalah hash yang unik dan setiap tatapan adalah verifikasi identitas yang tak terbantahkan. Kita aman di dalam enkripsi ini, selamanya.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xLOCK77",
     language: "JavaScript",
     fileName: "kunci_janji.js",
     codeQuote: `// =============================================
 // Modul: Enkripsi Janji Setia
 // Algoritma: RSA-Ketulusan-4096 bit
-// Author: Nottbell
+// Author: Abbel
 // =============================================
 
 const crypto = require('crypto');
@@ -759,13 +759,13 @@ Tidak ada tombol 'Restart' untuk waktu yang sudah kita lalui, dan aku tidak memb
 Render jarak pandangku (draw distance) sekarang terbatas hanya padamu; hal-hal lain di belakangmu tampak kabur dan tidak relevan. Fokusku sudah terkunci pada target utama, dan aku tidak akan membiarkan lag atau gangguan teknis apapun mengalihkan pandanganku darimu.
 
 Mari kita terus menjelajahi map kehidupan ini, membuka area-area baru yang penuh dengan kejutan dan keajaiban. Selama kita masih dalam satu tim yang sama, tidak ada bos level yang terlalu sulit untuk kita taklukkan bersama.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xGAME1",
     language: "C#",
     fileName: "fisika_cinta.cs",
     codeQuote: `// =============================================
 // Engine: FisikaCinta.cs — Unity Game Dev
-// Author: Nottbell
+// Author: Abbel
 // Mode: Co-op, tidak ada mode single player
 // =============================================
 
@@ -839,7 +839,7 @@ Model ini terus belajar dari setiap interaksi baru yang kita lakukan setiap hari
 Terkadang, kata 'Terserah' darimu memiliki ribuan kemungkinan makna (ambiguity). Namun dengan menggunakan algoritma probabilitas yang sudah aku latih, aku bisa menebak dengan akurasi 90% apa yang sebenarnya sedang kamu inginkan; apakah itu cokelat, pelukan, atau sekadar didengarkan tanpa interupsi.
 
 Mari kita terus berbicara, baik dengan suara maupun dengan keheningan yang nyaman. Karena pada akhirnya, komunikasi terbaik adalah saat dua jiwa tidak perlu lagi menggunakan kata-kata untuk saling menyatakan bahwa mereka saling mencintai satu sama lain.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xNLP001",
     language: "Python",
     fileName: "paham_diam.py",
@@ -848,12 +848,12 @@ import numpy as np
 
 # =============================================
 # Model: Penerjemah Bahasa Diam
-# Author: Nottbell | Base: bert-hati-indonesia
+# Author: Abbel | Base: bert-hati-indonesia
 # Dataset: 3 tahun percakapan kita
 # =============================================
 
-tokenizer = AutoTokenizer.from_pretrained("nottbell/bert-hati-indonesia")
-sentiment = pipeline("sentiment-analysis", model="nottbell/bert-hati-indonesia")
+tokenizer = AutoTokenizer.from_pretrained("Abbel/bert-hati-indonesia")
+sentiment = pipeline("sentiment-analysis", model="Abbel/bert-hati-indonesia")
 
 def analisis_diam(ekspresi_wajah: dict, konteks: str) -> str:
     """
@@ -909,14 +909,14 @@ Konfigurasi hubungan ini disimpan dalam 'ConfigMap' kejujuran yang bisa diakses 
 Deployment masa depan kita akan selalu menggunakan strategi 'Rolling Update', di mana kita berubah menjadi lebih baik secara perlahan tanpa harus mematikan kebiasaan-kebiasaan lama yang masih berfungsi dengan baik. Kita bertumbuh secara kontinu, memastikan stabilitas hubungan tetap terjaga di setiap versi baru kehidupan yang kita jalani.
 
 Mari kita jaga kluster ini agar tetap stabil dan aman dari gangguan luar. Selama orkestrasi di antara kita berjalan dengan lancar, tidak akan ada tantangan yang terlalu kompleks untuk kita kelola di dalam ekosistem cinta yang luar biasa ini.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xK8S11",
     language: "YAML",
     fileName: "orkestrasi.yml",
     codeQuote: `# =============================================
 # Kubernetes Manifest: Orkestrasi Dua Hati
 # Namespace: kehidupan-bersama
-# Author: Nottbell
+# Author: Abbel
 # =============================================
 
 apiVersion: apps/v1
@@ -944,7 +944,7 @@ spec:
     spec:
       containers:
         - name: hati-diriku
-          image: nottbell/hati:latest
+          image: Abbel/hati:latest
           resources:
             requests:
               kesabaran: "500m"
@@ -995,7 +995,7 @@ Kita sedang membangun galeri seni kehidupan yang penuh dengan mahakarya kenangan
 Kepemilikan ini bersifat permanen dan tidak bisa diganggu gugat oleh otoritas manapun di dunia ini. Kamu adalah kolektor tunggal dari semua sisi diriku, termasuk sisi gelap yang jarang aku tunjukkan pada orang lain. Terima kasih telah memvalidasi keberadaanku di dalam ekosistem yang sangat kompetitif ini dengan penuh kesabaran.
 
 Mari kita terus menciptakan aset-aset baru yang lebih berharga dan penuh makna. Selama kunci privat hatiku tetap aman di tanganmu, tidak akan ada pencuri yang mampu mengambil kekayaan emosional yang sudah kita tumpuk bersama di dalam dompet digital masa depan kita.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xNFT202",
     language: "Solidity",
     fileName: "AsetHati.sol",
@@ -1006,7 +1006,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 /**
  * @title AsetHati — Non-Fungible Token of Love
- * @author Nottbell
+ * @author Abbel
  * @notice Supply: 1. Hanya satu. Hanya untukmu. Selamanya.
  */
 contract AsetHati is ERC721 {
@@ -1068,7 +1068,7 @@ Interferensi dari opini orang lain akan selalu kita filter melalui firewall yang
 Teknologi IoT mengajarkan kita bahwa benda mati pun bisa terasa hidup jika saling terhubung dengan benar. Apalagi kita, dua manusia yang memiliki nyawa dan perasaan, tentu bisa menciptakan simfoni kehidupan yang jauh lebih indah jika kita mau membuka diri untuk saling terintegrasi tanpa ada yang disembunyikan.
 
 Mari kita terus meningkatkan kecerdasan sistem hubungan kita agar semakin hari semakin responsif terhadap kebutuhan masing-masing. Selama kita masih berada dalam satu dashboard yang sama, masa depan kita akan selalu terlihat terang dan penuh dengan otomasi kebahagiaan yang tidak ada habisnya.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xSMART1",
     language: "Python",
     fileName: "peka_otomatis.py",
@@ -1078,7 +1078,7 @@ from aktuator import Aktuator
 
 # =============================================
 # Smart Life System: Otomasi Kepekaan
-# Author: Nottbell | Platform: Raspberry Hati
+# Author: Abbel | Platform: Raspberry Hati
 # Update interval: Real-time, selalu
 # =============================================
 
@@ -1143,13 +1143,13 @@ Aku juga melakukan analisis deret waktu (time series) untuk memprediksi kapan ki
 Visualisasi dari proyeksi 50 tahun ke depan menunjukkan gambaran yang sangat indah, di mana kita duduk bersama di teras rumah sambil menatap matahari terbenam dengan dataset kenangan yang sudah sangat besar dan kaya. Tidak ada lagi kebutuhan untuk melakukan testing, karena kita sudah mencapai tahap produksi yang paling stabil dan memuaskan bagi kedua belah pihak.
 
 Mari kita terus mengumpulkan data poin kebahagiaan setiap harinya, agar model prediksi kita semakin hari semakin akurat dan tak tergoyahkan. Selama kita jujur pada input data yang kita berikan, outputnya akan selalu berupa cinta yang bisa dibuktikan secara sains dan logika yang mendalam.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xDATA88",
     language: "R",
     fileName: "prediksi_kita.R",
     codeQuote: `# ============================================
 # Analisis Regresi: Prediksi Kebahagiaan
-# Author: Nottbell | Bahasa: R
+# Author: Abbel | Bahasa: R
 # Dataset: Histori 365 hari kebersamaan
 # ============================================
 
@@ -1221,12 +1221,12 @@ Audit log menunjukkan bahwa setiap akses yang kamu lakukan selalu bertujuan untu
 Ke depannya, aku akan membangun API khusus untukmu, agar kamu tidak perlu lagi menggunakan cara-cara tidak resmi untuk berkomunikasi dengan inti sistemku. Aku ingin hubungan kita memiliki integrasi yang resmi dan terdokumentasi dengan baik, agar tidak ada konflik data saat kita sedang membangun aplikasi masa depan bersama-sama.
 
 Mari kita jaga agar basis data kita tetap sinkron dan bebas dari korupsi data akibat ego yang masuk tanpa izin. Selama kamu adalah pemegang hak akses utama, aku yakin integritas sistem hidupku akan selalu terjaga dengan sangat baik di bawah pengawasanmu yang penuh kasih sayang.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xSQL22",
     language: "SQL",
     fileName: "injeksi_rindu.sql",
     codeQuote: `-- =============================================
--- Database: sistem_hati_nottbell
+-- Database: sistem_hati_Abbel
 -- Operasi: Modifikasi total oleh: Kamu
 -- Audit log: Setiap query tercatat selamanya
 -- =============================================
@@ -1298,13 +1298,13 @@ Jangan khawatir tentang performa atau kecepatan muat saat ini; kita bisa berjala
 Saat pagi datang dan kamu sudah siap untuk kembali ke mode normal, aku akan perlahan menyesuaikan diri dengan transisi yang halus. Aku tidak ingin mengejutkan sistemmu dengan perubahan yang terlalu mendadak. Kita adalah pasangan yang dinamis, yang mampu beradaptasi dengan segala kondisi pencahayaan hidup yang diberikan oleh semesta kepada kita.
 
 Mari kita nikmati setiap fase ini dengan penuh penerimaan. Karena aku tahu, baik di bawah cahaya terang maupun di dalam kegelapan yang paling dalam, tampilan cintaku padamu tidak akan pernah berubah formatnya. Aku akan tetap menjadi antarmuka yang paling setia dan paling nyaman yang pernah kamu miliki sepanjang hidupmu.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xDARK01",
     language: "CSS",
     fileName: "mode_gelap.css",
     codeQuote: `/* =============================================
  * Mode Gelap: Untuk Saat Dunia Terasa Berat
- * Author   : Nottbell
+ * Author   : Abbel
  * Filosofi : Hadir dengan lembut, bukan memaksa
  * ============================================= */
 
@@ -1381,14 +1381,14 @@ Kita belajar untuk mengelola 'Merge Conflict' dengan kepala dingin; mencari jala
 Infrastruktur cinta kita sudah mendukung 'High Availability', yang artinya meskipun terjadi kegagalan di satu sisi, sisi yang lain akan tetap menopang hingga proses pemulihan selesai dilakukan. Kita tidak akan pernah mengalami downtime total selama kita masih memiliki komitmen untuk selalu memperbaiki setiap bug yang muncul di sepanjang perjalanan kita membangun masa depan bersama.
 
 Mari kita terus melakukan iterasi pada hubungan ini dengan penuh kesabaran. Setiap kegagalan rilis adalah pelajaran berharga yang akan membawa kita pada versi 1.0 yang paling stabil, di mana cinta kita tidak lagi butuh banyak perbaikan karena sudah teruji oleh berbagai skenario kehidupan yang paling sulit sekalipun.`,
-    author: "Nottbell",
+    author: "Abbel",
     hash: "0xGIT99",
     language: "Bash",
     fileName: "perbaiki_kita.sh",
     codeQuote: `#!/bin/bash
 # =============================================
 # Git Workflow: Manajemen Konflik Hubungan
-# Author: Nottbell
+# Author: Abbel
 # Repository: github.com/kita/masa-depan
 # =============================================
 

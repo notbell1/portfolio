@@ -1,35 +1,45 @@
 export const Home = `
-<section id="home" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden pt-20">
+<section id="home" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden pt-20 font-mono">
   <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-    <div class="absolute top-[20%] left-[10%] w-[30%] h-[30%] bg-sky-500/5 blur-[120px] rounded-full"></div>
+    <div class="absolute top-[20%] left-[10%] w-[40%] h-[40%] bg-sky-500/10 blur-[130px] rounded-full animate-pulse"></div>
+    <div class="absolute bottom-[10%] right-[5%] w-[30%] h-[30%] bg-red-500/5 blur-[100px] rounded-full"></div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-10 relative z-10 w-full">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
       
-      <div class="text-center lg:text-left">
-        <h2 class="text-sky-400 font-mono text-sm tracking-[0.3em] uppercase mb-4 italic flex justify-center lg:justify-start items-center">
-          > <span id="typing-text" class="ml-2 border-r-2 border-sky-400 pr-1"></span>
+      <div class="text-center lg:text-left order-2 lg:order-1">
+        <h2 class="text-sky-400 font-mono text-sm tracking-[0.4em] uppercase mb-6 italic flex justify-center lg:justify-start items-center">
+          <span class="text-white mr-2">></span> 
+          <span id="typing-text" class="border-r-2 border-sky-400 pr-1 min-h-[1.2em]"></span>
         </h2>
-        <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tighter uppercase">
-          Crafting <br/> <span class="text-slate-500 italic">Digital</span> <br/> Experiences
+
+        <h1 class="text-4xl md:text-5xl lg:text-5xl font-black text-white leading-[1.05] mb-8 tracking-tighter uppercase">
+          Let's Learn 
+          <br class="hidden lg:block" /> 
+          <span class="text-sky-500 animate-pulse">Code</span> 
+          to Make 
+          <br class="hidden lg:block" /> 
+          More 
+          <span class="text-red-500 animate-pulse">Exploitation!</span>
         </h1>
-        <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-8 opacity-80 max-w-md mx-auto lg:mx-0">
-          I am a Frontend Developer dedicated to mastering immersive interfaces. My technical curiosity extends beyond the surface; I have a deep interest in backend systems like Laravel and MySQL, and I am actively exploring Ethical Hacking and Roblox Luau.
+
+        <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-10 opacity-80 max-w-lg mx-auto lg:mx-0 border-l-2 border-slate-800 pl-6 italic">
+          I am a Frontend Developer, dedicated to mastering immersive interfaces. My technical curiosity extends beyond the surface. I have a deep interest in backend systems like Laravel and MySQL, and I am actively exploring Ethical Hacking and Roblox Luau.
         </p>
         
-        <div class="mt-10 space-y-8">
-          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <a href="#project" class="group relative px-8 py-4 bg-slate-800 text-white font-bold rounded-full transition-all duration-500 overflow-hidden border border-slate-700 hover:border-sky-500 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]">
-              <span class="relative z-10 flex items-center gap-3 uppercase tracking-[0.2em] text-[10px]">
+        <div class="space-y-10">
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-5">
+            <a href="#project" class="group relative px-10 py-4 bg-slate-800 text-white font-bold rounded-xl transition-all duration-500 overflow-hidden border border-slate-700 hover:border-sky-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.3)] text-center">
+              <span class="relative z-10 flex items-center justify-center gap-3 uppercase tracking-[0.2em] text-[10px]">
                 View My Work 
                 <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"></i>
               </span>
               <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             </a>
 
-            <a href="/cv/abbel-cv.pdf" download="Abbel_CV.pdf" class="group relative px-8 py-4 bg-sky-500 text-slate-950 font-bold rounded-full transition-all duration-500 overflow-hidden hover:bg-sky-400 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 active:scale-95">
-              <span class="relative z-10 flex items-center gap-3 uppercase tracking-[0.2em] text-[10px]">
+            <a href="/cv/abbel-cv.pdf" download="Abbel_CV.pdf" class="group relative px-10 py-4 bg-sky-500 text-slate-950 font-bold rounded-xl transition-all duration-500 overflow-hidden hover:bg-sky-400 hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] hover:scale-105 active:scale-95 text-center">
+              <span class="relative z-10 flex items-center justify-center gap-3 uppercase tracking-[0.2em] text-[10px]">
                 Download CV
                 <i data-lucide="download" class="w-4 h-4 group-hover:animate-bounce"></i>
               </span>
@@ -51,17 +61,18 @@ export const Home = `
         </div>
       </div>
 
-      <div class="relative flex items-center justify-center lg:justify-end">
+      <div class="relative flex items-center justify-center lg:justify-end order-1 lg:order-2">
         <div class="relative group cursor-pointer">
-          <div class="absolute inset-[-50px] border border-slate-800 rounded-full animate-[spin_12s_linear_infinite] opacity-40 group-hover:opacity-100 group-hover:border-sky-500/30 transition-all duration-700">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-sky-400 rounded-full shadow-[0_0_15px_#38bdf8]"></div>
+          <div class="absolute inset-[-60px] border border-slate-800 rounded-full animate-[spin_12s_linear_infinite] opacity-40 group-hover:opacity-100 group-hover:border-sky-500/30 transition-all duration-700">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-sky-400 rounded-full shadow-[0_0_15px_#38bdf8]"></div>
           </div>
-          <div class="absolute inset-[-25px] border border-sky-500/10 rounded-full animate-[spin_8s_linear_infinite_reverse] group-hover:border-sky-500/40 transition-all duration-700"></div>
-          <div class="relative w-64 h-64 md:w-80 md:h-80 transition-all duration-700 group-hover:scale-[1.03] group-hover:-rotate-2">
+          <div class="absolute inset-[-30px] border border-sky-500/10 rounded-full animate-[spin_8s_linear_infinite_reverse] group-hover:border-sky-500/40 transition-all duration-700"></div>
+          
+          <div class="relative w-72 h-72 md:w-96 md:h-96 transition-all duration-700 group-hover:scale-[1.03]">
             <div class="absolute inset-0 bg-sky-500/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div class="relative w-full h-full bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden backdrop-blur-sm group-hover:border-sky-500/50 transition-colors duration-500">
-              <img src="/img/profile/profile_1.jpg" alt="Abbel" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700"></div>
+            <div class="relative w-full h-full bg-slate-800 p-4 rounded-3xl border border-slate-700 shadow-2xl overflow-hidden backdrop-blur-sm group-hover:border-sky-500/50 transition-colors duration-500">
+              <img src="/img/profile/profile.jpg" alt="Abbel" class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700"></div>
             </div>
           </div>
         </div>
@@ -70,6 +81,12 @@ export const Home = `
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+</style>
 `;
 
 export const initTyping = () => {
@@ -77,10 +94,18 @@ export const initTyping = () => {
   if (!textElement) return;
 
   const phrases = [
-    "Hello, World...!",
-    "My Name is Abbel...!",
-    "Frontend Developer...!",
-    "Tech Enthusiast...!",
+    "Hello, World !",
+    "My Name is Abbel",
+    "Frontend Developer",
+    "Tech Enthusiast",
+    "Roblox Luau Scripter",
+    "Learning Ethical Hacking",
+    "Cybersecurity Explorer",
+    "Curious About New Tech",
+    "Building Ideas Into Reality",
+    "Passionate About Clean Code",
+    "Security-Minded Developer",
+    "Exploring the Future of Tech",
     "Explore Me Now...!",
   ];
 
