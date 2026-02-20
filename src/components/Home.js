@@ -72,7 +72,7 @@ export const Home = `
           <div class="relative w-72 h-72 md:w-96 md:h-96 transition-all duration-700 group-hover:scale-[1.03]">
             <div class="absolute inset-0 bg-sky-500/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div class="relative w-full h-full bg-slate-800 p-4 rounded-3xl border border-slate-700 shadow-2xl overflow-hidden backdrop-blur-sm group-hover:border-sky-500/50 transition-colors duration-500">
-              <img src="/img/profile/profile.jpg" alt="Abbel" class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
+              <img src="/img/profile/profile_1.jpg" alt="Abbel" class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100">
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700"></div>
             </div>
           </div>
