@@ -1,3 +1,6 @@
+// Import CSS
+import "./style.css";
+
 // Import components
 import { Header } from "./components/Header.js";
 import { Home, initTyping } from "./components/Home.js";
@@ -6,14 +9,11 @@ import { Education } from "./components/Education.js";
 import { Skill } from "./components/Skill.js";
 import { Experience } from "./components/Experience.js";
 import { Project } from "./components/Project.js";
-import { News } from "./components/News.js";
 import { Contact } from "./components/Contact.js";
 import { Footer } from "./components/Footer.js";
 
-// Import handler
+// Import handlers
 import { initProjectDetail } from "./utils/projectHandler.js";
-import { initNewsDetail } from "./utils/newsHandler.js";
-import { initContactForm } from "./utils/contactHandler.js";
 import { initNav } from "./utils/navHandler.js";
 
 const app = document.querySelector("#app");
@@ -21,85 +21,84 @@ const app = document.querySelector("#app");
 // Render UI
 app.innerHTML = `
     ${Header}
-    <main class="overflow-x-hidden pt-20"> 
+    <main class="w-full"> 
         ${Home}
         ${About}
         ${Education}
         ${Skill}
         ${Experience}
         ${Project}
-        ${News}
         ${Contact}
     </main>
     ${Footer}
 `;
 
-// Handler
+// Initialize Icons
 if (window.lucide) {
   window.lucide.createIcons();
 }
 
+// Initialize Interactive Handlers
 initNav();
 initTyping();
 initAge(2002, 6, 20);
 initProjectDetail();
-initNewsDetail();
-initContactForm();
 
-// Active Nav
+// Active Navbar Indicator on Scroll
 const handleActiveNavbar = () => {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
-  const underlines = document.querySelectorAll(".nav-underline");
 
   let currentSection = "";
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.scrollY >= sectionTop - 150) {
+    if (window.scrollY >= sectionTop - 200) {
       currentSection = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach((link, idx) => {
-    link.classList.remove("text-white");
-    link.querySelector("span")?.classList.add("opacity-0");
-    underlines[idx].style.width = "0%";
+  navLinks.forEach((link) => {
+    const underline = link.querySelector(".nav-underline");
+    const isCurrent = link.getAttribute("data-section") === currentSection;
 
-    if (link.getAttribute("data-section") === currentSection) {
-      link.classList.add("text-white");
-      link.querySelector("span")?.classList.remove("opacity-0");
-      underlines[idx].style.width = "100%";
+    if (isCurrent) {
+      link.classList.add("text-neutral-950", "font-semibold");
+      link.classList.remove("text-neutral-600");
+      if (underline) underline.classList.replace("scale-x-0", "scale-x-100");
+    } else {
+      link.classList.remove("text-neutral-950", "font-semibold");
+      link.classList.add("text-neutral-600");
+      if (underline) underline.classList.replace("scale-x-100", "scale-x-0");
     }
   });
 };
 
 window.addEventListener("scroll", handleActiveNavbar);
 
-// Scroll
+// Smooth Scrolling Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+    const href = this.getAttribute("href");
+    if (!href || href === "#") return;
+    const target = document.querySelector(href);
     if (target) {
+      e.preventDefault();
       target.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
 
-// AOS Library
+// AOS Animation Library
 if (window.AOS) {
-  // Inisialisasi awal
   window.AOS.init({
-    duration: 1000,
+    duration: 700,
     once: false,
-    offset: 100,
-    easing: "ease-in-out",
-    mirror: true,
+    offset: 50,
+    easing: "ease-out",
   });
 
   setTimeout(() => {
     window.AOS.refresh();
-  }, 500);
+  }, 400);
 }

@@ -9,113 +9,21 @@
       type="image/x-icon"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-solidity.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <title>Abbel - Portfolio</title>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { dark: "#0f172a", primary: "#38bdf8" },
-            animation: {
-              shimmer: "shimmer 2s infinite linear",
-              "fade-in": "fadeIn 0.8s ease-out forwards",
-            },
-          },
-        },
-      };
-    </script>
-
-    <style>
-      pre[class*="language-"] {
-        background: transparent !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      code[class*="language-"] {
-        text-shadow: none !important;
-        font-family: "JetBrains Mono", monospace !important;
-      }
-      .token.comment {
-        color: #64748b !important;
-        font-style: italic;
-      }
-
-      body::-webkit-scrollbar {
-        width: 8px;
-      }
-      body::-webkit-scrollbar-track {
-        background: #020617;
-      }
-      body::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 10px;
-        border: 2px solid #020617;
-      }
-      body::-webkit-scrollbar-thumb:hover {
-        background: #38bdf8;
-      }
-
-      @keyframes shimmer {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    <title>Abbel - Frontend Developer Portfolio</title>
   </head>
   <body
-    class="bg-slate-950 text-slate-100 selection:bg-sky-500/30 selection:text-sky-400 custom-scrollbar"
+    class="bg-[#fafbfc] text-neutral-800 font-sans antialiased selection:bg-neutral-900 selection:text-white"
   >
     <div id="app"></div>
-
-    <div
-      id="newsModal"
-      class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl overflow-y-auto hidden"
-    >
-      <div id="newsModalContent" class="min-h-screen py-10"></div>
-    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="/src/main.js"></script>

@@ -1,67 +1,108 @@
 import { projects } from "../data/projects.js";
 
 export const Project = `
-<section id="project" class="min-h-screen flex items-center bg-slate-950 relative overflow-hidden py-20 scroll-mt-10">
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+<section id="project" class="bg-[#fafbfc] relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8">
+  <div class="max-w-6xl w-full mx-auto flex flex-col justify-center">
     
-    <div class="mb-12" data-aos="fade-down">
-      <h2 class="text-sky-400 font-mono text-[10px] tracking-[0.4em] uppercase mb-2 italic flex items-center gap-3">
-        <span class="h-[1px] w-8 bg-sky-500"></span>
-        Portfolio
+    <!-- Section Header -->
+    <div class="mb-3 sm:mb-5" data-aos="fade-down" data-aos-duration="600">
+      <span class="text-neutral-500 font-mono text-[10px] sm:text-xs uppercase tracking-widest block mb-1">Portfolio</span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight">
+        Featured Projects
       </h2>
-      <h3 class="text-3xl lg:text-4xl font-black text-white tracking-tighter uppercase leading-none">
-        Logic <span class="text-slate-700 italic">&</span> Design
-      </h3>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Responsive Grid: Natural Columns on Mobile, Tablet & Desktop (NO Swipe) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
       ${projects
         .map(
           (p, index) => `
         <div 
-          class="group relative bg-slate-900/40 border border-slate-800/50 rounded-3xl overflow-hidden hover:border-sky-500/40 transition-all duration-500 flex h-[400px]"
+          class="w-full bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
           data-aos="fade-up" 
           data-aos-delay="${index * 100}"
         >
-          <div class="w-12 border-r border-white/5 flex items-center justify-center bg-slate-950/40 relative z-20">
-            <h4 class="text-white font-black uppercase tracking-[0.2em] text-[10px] whitespace-nowrap -rotate-90 origin-center opacity-60 group-hover:opacity-100 group-hover:text-sky-400 transition-all duration-500">
-              ${p.title}
-            </h4>
+          <!-- Image Banner -->
+          <div class="relative h-44 sm:h-52 md:h-56 overflow-hidden bg-neutral-100">
+            <img 
+              src="${p.mainImage}" 
+              alt="${p.title}" 
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur text-[10px] font-mono font-medium text-neutral-800 shadow-2xs">
+                ${p.year}
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-neutral-900/80 backdrop-blur text-[10px] font-mono font-medium text-white shadow-2xs">
+                ${p.category}
+              </span>
+            </div>
+            ${
+              p.liveUrl && p.liveUrl !== "#"
+                ? `
+            <div class="absolute top-3 right-3">
+              <a 
+                href="${p.liveUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="px-2.5 py-0.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-[10px] font-medium text-white shadow-2xs inline-flex items-center gap-1 transition-colors"
+                title="Open Live Website"
+              >
+                <span>Live Site</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+            `
+                : ""
+            }
           </div>
 
-          <div class="flex-1 relative flex flex-col justify-end p-6 overflow-hidden">
-            
-            <div class="absolute inset-0 z-0 pointer-events-none">
-               <img src="${p.mainImage}" alt="${p.title}" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700">
-               <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+          <!-- Body Info -->
+          <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+            <div class="mb-3">
+              <h3 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight mb-1.5 group-hover:text-neutral-700 transition-colors">
+                ${p.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed line-clamp-2">
+                ${p.longDescription}
+              </p>
             </div>
 
-            <div class="relative z-30 w-full">
-              <span class="text-sky-500 font-mono text-[9px] tracking-[0.3em] uppercase mb-2 block">
-                NOTTBELL
-              </span>
-              
-              <p class="text-slate-400 text-[11px] leading-relaxed italic mb-6 line-clamp-3 opacity-80">
-                ${p.longDescription || "No description available."}
-              </p>
-              
-              <div class="flex flex-wrap gap-1.5 mb-8">
+            <!-- Footer: Tech Badges + Action Buttons -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <div class="flex flex-wrap gap-1.5">
                 ${p.stack
-                  .slice(0, 3)
+                  .slice(0, 4)
                   .map(
                     (s) => `
-                  <span class="text-[7px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/10 uppercase tracking-widest">${s}</span>
+                  <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">${s}</span>
                 `,
                   )
                   .join("")}
               </div>
 
-              <button 
-                onclick="openProjectDetail('${p.id}')" 
-                class="w-full py-3.5 bg-white text-slate-950 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all hover:bg-sky-500 hover:text-white active:scale-95 shadow-xl cursor-pointer">
-                View Details
-              </button>
+              <div class="grid ${p.liveUrl && p.liveUrl !== "#" ? "grid-cols-2" : "grid-cols-1"} gap-2 pt-1">
+                <button 
+                  onclick="openProjectDetail('${p.id}')" 
+                  class="w-full py-2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-lg sm:rounded-xl text-xs font-medium transition-colors cursor-pointer active:scale-98 flex items-center justify-center gap-1.5 shadow-2xs">
+                  <span>View Details</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </button>
+                ${
+                  p.liveUrl && p.liveUrl !== "#"
+                    ? `
+                <a 
+                  href="${p.liveUrl}" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-full py-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 rounded-lg sm:rounded-xl text-xs font-medium transition-colors active:scale-98 flex items-center justify-center gap-1.5">
+                  <span>Visit Website</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                `
+                    : ""
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -69,15 +110,14 @@ export const Project = `
         )
         .join("")}
     </div>
+
   </div>
 
-  <div id="projectModal" class="fixed inset-0 z-[200] hidden">
-    <div class="absolute inset-0 bg-slate-950/98 backdrop-blur-3xl" onclick="closeProjectDetail()"></div>
-    <div class="relative h-full w-full overflow-y-auto custom-scrollbar">
-       <div id="modalContent" class="max-w-4xl mx-auto py-20 px-6 animate-fade-in"></div>
-       <button onclick="closeProjectDetail()" class="fixed top-6 right-6 p-4 bg-white text-slate-900 rounded-full shadow-2xl hover:rotate-90 transition-all z-[210]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-       </button>
+  <!-- Detail Modal -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-5 md:p-6">
+    <div class="fixed inset-0 bg-neutral-900/60 backdrop-blur-xs transition-opacity" onclick="closeProjectDetail()"></div>
+    <div class="relative w-full max-w-2xl my-auto z-10 animate-fade-in">
+       <div id="modalContent" class="w-full"></div>
     </div>
   </div>
 </section>

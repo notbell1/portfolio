@@ -1,116 +1,140 @@
-const renderProgressBar = (name, percent) => {
+const renderSkill = (name, percent) => {
   return `
-    <div class="space-y-1.5">
-      <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest">
-        <span class="text-slate-400 group-hover:text-slate-200 transition-colors">${name}</span>
-        <span class="text-sky-500 font-mono">${percent}%</span>
+    <div class="space-y-1">
+      <div class="flex justify-between items-center text-xs">
+        <span class="text-neutral-700 font-medium truncate">${name}</span>
+        <span class="text-neutral-500 font-mono text-[10px] shrink-0 ml-1">${percent}%</span>
       </div>
-      <div class="h-[3px] w-full bg-slate-800 rounded-full overflow-hidden">
-        <div class="h-full bg-sky-500 group-hover:bg-sky-400 transition-all duration-1000 ease-out shadow-[0_0_8px_rgba(56,189,248,0.5)]" style="width: ${percent}%"></div>
+      <div class="h-1.5 w-full bg-neutral-100 rounded-full overflow-hidden">
+        <div class="h-full bg-neutral-900 rounded-full transition-all duration-500" style="width: ${percent}%"></div>
       </div>
     </div>
   `;
 };
 
 export const Skill = `
-<section id="skill" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-20 scroll-mt-16">
-  <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-  
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 w-full">
+<section id="skill" class="bg-[#fafbfc] relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8">
+  <div class="max-w-6xl w-full mx-auto flex flex-col justify-center">
     
-    <div class="mb-14 lg:mb-20" data-aos="fade-down">
-      <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-2 italic flex items-center gap-3">
-        <span class="h-[1px] w-10 bg-sky-500"></span>
-        Skills & Expertise
+    <!-- Section Header -->
+    <div class="mb-3 sm:mb-5" data-aos="fade-down" data-aos-duration="600">
+      <span class="text-neutral-500 font-mono text-[10px] sm:text-xs uppercase tracking-widest block mb-1">Expertise</span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight">
+        Skills &amp; Competencies
       </h2>
-      <h3 class="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase leading-none">
-        Technical <span class="text-slate-500 italic">&</span> Professional
-      </h3>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+    <!-- Cards: Compact 1 Column on Mobile, Grid on Tablet/Desktop -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
       
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500" 
-           data-aos="fade-up" data-aos-delay="100">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="p-2 bg-sky-500/10 rounded-lg"><i data-lucide="code-2" class="w-5 h-5 text-sky-500"></i></div>
-            <h4 class="text-xs font-black text-white uppercase tracking-widest">Development</h4>
-        </div>
-        <div class="space-y-6">
-          ${renderProgressBar("Frontend / JS", 85)}
-          ${renderProgressBar("Laravel / PHP", 80)}
-          ${renderProgressBar("MySQL / SQL", 75)}
-          ${renderProgressBar("Luau Scripting", 70)}
-        </div>
-      </div>
-
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="200">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="p-2 bg-emerald-500/10 rounded-lg"><i data-lucide="calculator" class="w-5 h-5 text-emerald-500"></i></div>
-            <h4 class="text-xs font-black text-white uppercase tracking-widest">Finance & Admin</h4>
-        </div>
-        <div class="space-y-6">
-          ${renderProgressBar("Tax", 75)}
-          ${renderProgressBar("Financial Report", 75)}
-          ${renderProgressBar("MS Office", 85)}
-          ${renderProgressBar("Data Entry", 90)}
-        </div>
-      </div>
-
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="300">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="p-2 bg-purple-500/10 rounded-lg"><i data-lucide="brain-circuit" class="w-5 h-5 text-purple-500"></i></div>
-            <h4 class="text-xs font-black text-white uppercase tracking-widest">Soft Skills</h4>
-        </div>
-        <div class="space-y-6">
-          ${renderProgressBar("Public Speaking", 75)}
-          ${renderProgressBar("Critical Thinking", 80)}
-          ${renderProgressBar("Problem Solving", 80)}
-          ${renderProgressBar("Collaboration", 80)}
-        </div>
-      </div>
-
-      <div class="bg-slate-800/10 border border-slate-800/50 p-7 rounded-3xl backdrop-blur-md group hover:border-sky-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="400">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="p-2 bg-red-500/10 rounded-lg"><i data-lucide="shield-check" class="w-5 h-5 text-red-500"></i></div>
-            <h4 class="text-xs font-black text-white uppercase tracking-widest">Interests</h4>
-        </div>
-        <div class="grid grid-cols-1 gap-3">
-          <div class="flex items-center justify-between p-4 bg-slate-900/40 rounded-2xl border border-slate-800/50 group-hover:border-red-500/20 transition-all">
-            <span class="text-[10px] text-slate-300 uppercase font-bold tracking-widest">Ethical Hacking</span>
-            <i data-lucide="terminal" class="w-3 h-3 text-red-500"></i>
-          </div>
-          <div class="flex items-center justify-between p-4 bg-slate-900/40 rounded-2xl border border-slate-800/50 group-hover:border-blue-500/20 transition-all">
-            <span class="text-[10px] text-slate-300 uppercase font-bold tracking-widest">OSINT Search</span>
-            <i data-lucide="search" class="w-3 h-3 text-blue-500"></i>
-          </div>
-          <div class="flex items-center justify-between p-4 bg-slate-900/40 rounded-2xl border border-slate-800/50 group-hover:border-emerald-500/20 transition-all">
-            <span class="text-[10px] text-slate-300 uppercase font-bold tracking-widest">System Audit</span>
-            <i data-lucide="file-check" class="w-3 h-3 text-emerald-400"></i>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-wrap justify-between items-center gap-6" 
-         data-aos="fade-in" data-aos-delay="600" data-aos-offset="0">
-        <div class="flex items-center gap-6">
-            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.3em]">Supplementary:</span>
-            <div class="flex gap-6 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                 <i data-lucide="figma" class="w-4 h-4 cursor-help"></i>
-                 <i data-lucide="github" class="w-4 h-4 cursor-help"></i>
-                 <i data-lucide="database" class="w-4 h-4 cursor-help"></i>
+      <!-- Development (Updated to React, TypeScript, Tailwind, Laravel) -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="p-2 rounded-xl bg-neutral-100 text-neutral-800">
+              <i data-lucide="code-2" class="w-4 h-4"></i>
             </div>
+            <h3 class="text-xs sm:text-sm font-bold text-neutral-900 uppercase tracking-wider">Development</h3>
+          </div>
+          <div class="space-y-2.5">
+            ${renderSkill("React.js", 90)}
+            ${renderSkill("TypeScript & JS", 85)}
+            ${renderSkill("Tailwind CSS", 92)}
+            ${renderSkill("Laravel & PHP", 82)}
+          </div>
         </div>
-        <div class="px-5 py-1.5 bg-sky-500/5 border border-sky-500/20 rounded-full">
-            <span class="text-[9px] text-sky-400 font-bold uppercase tracking-[0.3em] animate-pulse italic">Deep Work</span>
+      </div>
+
+      <!-- Finance & Admin -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="p-2 rounded-xl bg-neutral-100 text-neutral-800">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-neutral-900 uppercase tracking-wider">Finance &amp; Admin</h3>
+          </div>
+          <div class="space-y-2.5">
+            ${renderSkill("Tax Compliance", 75)}
+            ${renderSkill("Financial Report", 75)}
+            ${renderSkill("MS Office Suite", 85)}
+            ${renderSkill("Data Admin", 90)}
+          </div>
         </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="p-2 rounded-xl bg-neutral-100 text-neutral-800">
+              <i data-lucide="brain-circuit" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-neutral-900 uppercase tracking-wider">Soft Skills</h3>
+          </div>
+          <div class="space-y-2.5">
+            ${renderSkill("Communication", 80)}
+            ${renderSkill("Critical Thinking", 80)}
+            ${renderSkill("Problem Solving", 85)}
+            ${renderSkill("Collaboration", 85)}
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialized Focus -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="p-2 rounded-xl bg-neutral-100 text-neutral-800">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-neutral-900 uppercase tracking-wider">Security &amp; Tools</h3>
+          </div>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between p-2 bg-neutral-50 rounded-lg border border-neutral-100">
+              <span class="text-neutral-700 font-medium">Ethical Hacking</span>
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-neutral-400"></i>
+            </div>
+            <div class="flex items-center justify-between p-2 bg-neutral-50 rounded-lg border border-neutral-100">
+              <span class="text-neutral-700 font-medium">OSINT Research</span>
+              <i data-lucide="search" class="w-3.5 h-3.5 text-neutral-400"></i>
+            </div>
+            <div class="flex items-center justify-between p-2 bg-neutral-50 rounded-lg border border-neutral-100">
+              <span class="text-neutral-700 font-medium">System Audit</span>
+              <i data-lucide="file-check" class="w-3.5 h-3.5 text-neutral-400"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Supplementary Pill Row -->
+    <div class="mt-6 pt-4 border-t border-neutral-200/80 flex flex-wrap justify-between items-center gap-3 text-xs text-neutral-500">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="font-mono text-neutral-400"> Techstack:</span>
+        <div class="flex flex-wrap items-center gap-3 text-neutral-600 font-medium">
+          <span>React</span>
+          <span>&bull;</span>
+          <span>TypeScript</span>
+          <span>&bull;</span>
+          <span>Tailwind CSS</span>
+          <span>&bull;</span>
+          <span>Laravel</span>
+          <span>&bull;</span>
+          <span>MySQL</span>
+          <span>&bull;</span>
+          <span>Git / GitHub</span>
+          <span>&bull;</span>
+          <span>Figma</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5 text-neutral-600">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Continuously learning</span>
+      </div>
+    </div>
+
   </div>
 </section>
 `;

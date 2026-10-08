@@ -1,106 +1,79 @@
 export const Education = `
-<section id="education" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-10 lg:py-0 scroll-mt-10">
-
-  <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full ">
+<section id="education" class="bg-[#fafbfc] relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8">
+  <div class="max-w-5xl w-full mx-auto flex flex-col justify-center">
     
-    <div class="mb-10 lg:mb-12" data-aos="fade-down">
-      <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-1 italic flex items-center gap-3">
-        <span class="h-[1px] w-8 bg-sky-500 "></span>
-        Education
+    <!-- Section Header -->
+    <div class="mb-3 sm:mb-5" data-aos="fade-down" data-aos-duration="600">
+      <span class="text-neutral-500 font-mono text-[10px] sm:text-xs uppercase tracking-widest block mb-1">Education</span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight">
+        Academic Journey
       </h2>
-      <h3 class="text-3xl lg:text-4xl font-black text-white tracking-tighter uppercase leading-none">
-        Academic <span class="text-slate-500 italic">Journey</span>
-      </h3>
     </div>
 
-    <div class="relative">
-      <div data-aos="fade-down" data-aos-duration="1500" class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-sky-500/50 via-slate-800 to-transparent"></div>
+    <!-- Timeline Container -->
+    <div class="relative space-y-4 sm:space-y-6 max-w-3xl mx-auto w-full">
+      
+      <!-- Central Line -->
+      <div class="absolute left-3 sm:left-6 top-3 bottom-3 w-[2px] bg-neutral-200"></div>
 
-      <div class="space-y-6 lg:space-y-8">
-        
-        <div class="relative flex flex-col md:flex-row items-start md:items-center group" data-aos="fade-right" data-aos-delay="100">
-          <div class="hidden md:block w-1/2 pr-10 text-right">
-            <span class="text-sky-500 font-mono text-xs tracking-widest font-bold italic">2023 — Present</span>
-          </div>
-          <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 bg-slate-900 border-2 border-sky-500 rounded-full z-10 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.3)] group-hover:scale-110 transition-transform duration-500">
-            <div class="w-2 h-2 bg-sky-500 rounded-full animate-ping"></div>
-          </div>
-          <div class="w-full md:w-1/2 md:pl-10 pl-12">
-            <div class="bg-slate-800/20 border border-slate-800 p-4 lg:p-5 rounded-xl backdrop-blur-sm group-hover:border-sky-500/40 transition-all duration-500">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h4 class="text-base lg:text-lg font-bold text-white uppercase tracking-tight">S1 Information Systems</h4>
-                  <p class="text-slate-400 text-xs lg:text-sm mb-2">West Sumatra Islamic University</p>
-                </div>
-                <a href="https://uisb.ac.id" target="_blank" class="p-2 bg-slate-800 rounded-lg text-slate-500 hover:text-sky-400 hover:bg-sky-500/10 transition-all" title="Visit Site"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-              </div>
-              <span class="inline-block text-[9px] text-sky-400 font-bold uppercase tracking-[0.2em] px-2 py-0.5 bg-sky-500/10 border border-sky-500/20 rounded">Active Student</span>
+      <!-- Item 1: University -->
+      <div class="relative pl-8 sm:pl-16 group" data-aos="fade-up" data-aos-delay="100">
+        <!-- Node Dot -->
+        <div class="absolute left-1.5 sm:left-4.5 top-5 w-3.5 h-3.5 -translate-x-1/2 rounded-full bg-white border-2 border-neutral-900 z-10 transition-transform group-hover:scale-125"></div>
+
+        <div class="bg-white border border-neutral-200/90 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <div>
+              <span class="text-[10px] sm:text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider block mb-0.5">2023 — Present</span>
+              <h3 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">S1 Information Systems</h3>
+              <p class="text-xs sm:text-sm text-neutral-600">West Sumatra Islamic University (UISB)</p>
+            </div>
+            
+            <div class="flex items-center gap-1.5">
+              <span class="px-2.5 py-0.5 bg-neutral-100 text-neutral-800 text-[10px] sm:text-xs font-medium rounded-full">
+                Active Student
+              </span>
+              <a href="https://uisb.ac.id" target="_blank" class="p-1 text-neutral-400 hover:text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors" title="Visit Campus Website" aria-label="Visit Campus Website">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
             </div>
           </div>
+          <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+            Focusing on software development, database administration, information systems architecture, and web systems design.
+          </p>
         </div>
-
-        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group" data-aos="fade-left" data-aos-delay="200">
-          <div class="hidden md:block w-1/2 pl-10 text-left">
-            <span class="text-slate-500 font-mono text-xs tracking-widest italic">Graduated 2023</span>
-          </div>
-          <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 bg-slate-900 border-2 border-slate-700 rounded-full z-10 flex items-center justify-center group-hover:border-sky-500/50 transition-colors duration-500">
-            <i data-lucide="award" class="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-500"></i>
-          </div>
-          <div class="w-full md:w-1/2 md:pr-10 pl-12 text-right">
-            <div class="bg-slate-800/20 border border-slate-800 p-4 lg:p-5 rounded-xl backdrop-blur-sm group-hover:border-sky-500/40 transition-all duration-500">
-               <div class="flex justify-between md:flex-row-reverse items-start gap-4">
-                  <div class="text-left md:text-right">
-                    <h4 class="text-base lg:text-lg font-bold text-white uppercase tracking-tight">Science Stream</h4>
-                    <p class="text-slate-400 text-xs lg:text-sm">SMA Negeri 1 Batang Anai</p>
-                  </div>
-                  <a href="https://sma1batanganai.sch.id/" target="_blank" class="p-2 bg-slate-800 rounded-lg text-slate-500 hover:text-sky-400 hover:bg-sky-500/10 transition-all"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative flex flex-col md:flex-row items-start md:items-center group" data-aos="fade-right" data-aos-delay="300">
-          <div class="hidden md:block w-1/2 pr-10 text-right">
-            <span class="text-slate-500 font-mono text-xs tracking-widest italic opacity-60">Junior High</span>
-          </div>
-          <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 bg-slate-900 border-2 border-slate-700 rounded-full z-10 flex items-center justify-center group-hover:border-sky-500/50 transition-colors duration-500">
-            <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-500"></i>
-          </div>
-          <div class="w-full md:w-1/2 md:pl-10 pl-12">
-            <div class="bg-slate-800/20 border border-slate-800 p-4 lg:p-5 rounded-xl backdrop-blur-sm group-hover:border-sky-500/40 transition-all duration-500">
-               <div class="flex justify-between items-start">
-                  <div>
-                    <h4 class="text-base lg:text-lg font-bold text-white uppercase tracking-tight text-left">General Studies</h4>
-                    <p class="text-slate-400 text-xs lg:text-sm text-left">SMP Negeri 1 Batang Anai</p>
-                  </div>
-                  <a href="https://smp1batanganai.id/" target="_blank" class="p-2 bg-slate-800 rounded-lg text-slate-500 hover:text-sky-400 hover:bg-sky-500/10 transition-all"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group" data-aos="fade-left" data-aos-delay="400">
-          <div class="hidden md:block w-1/2 pl-10 text-left">
-            <span class="text-slate-500 font-mono text-xs tracking-widest italic opacity-60">Primary School</span>
-          </div>
-          <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 bg-slate-900 border-2 border-slate-700 rounded-full z-10 flex items-center justify-center group-hover:border-sky-500/50 transition-colors duration-500">
-            <i data-lucide="school" class="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-500"></i>
-          </div>
-          <div class="w-full md:w-1/2 md:pr-10 pl-12 text-right">
-            <div class="bg-slate-800/20 border border-slate-800 p-4 lg:p-5 rounded-xl backdrop-blur-sm group-hover:border-sky-500/40 transition-all duration-500">
-               <div class="flex justify-between md:flex-row-reverse items-start gap-4">
-                  <div class="text-left md:text-right">
-                    <h4 class="text-base lg:text-lg font-bold text-white uppercase tracking-tight">Primary Education</h4>
-                    <p class="text-slate-400 text-xs lg:text-sm">SD Negeri 13 Batang Anai</p>
-                  </div>
-                  <a href="https://sekolah.data.kemendikdasmen.go.id/profil-sekolah/507A9C78-2FF5-E011-BF41-5B903C9B1EF4" target="_blank" class="p-2 bg-slate-800 rounded-lg text-slate-500 hover:text-sky-400 hover:bg-sky-500/10 transition-all"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-               </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Item 2: High School -->
+      <div class="relative pl-8 sm:pl-16 group" data-aos="fade-up" data-aos-delay="200">
+        <!-- Node Dot -->
+        <div class="absolute left-1.5 sm:left-4.5 top-5 w-3.5 h-3.5 -translate-x-1/2 rounded-full bg-white border-2 border-neutral-400 z-10 transition-transform group-hover:scale-125"></div>
+
+        <div class="bg-white border border-neutral-200/90 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xs hover:shadow-sm transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <div>
+              <span class="text-[10px] sm:text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider block mb-0.5">Graduated 2023</span>
+              <h3 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Science Stream (IPA)</h3>
+              <p class="text-xs sm:text-sm text-neutral-600">SMA Negeri 1 Batang Anai</p>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <span class="px-2.5 py-0.5 bg-neutral-100 text-neutral-600 text-[10px] sm:text-xs font-medium rounded-full">
+                Graduate
+              </span>
+              <a href="https://sma1batanganai.sch.id/" target="_blank" class="p-1 text-neutral-400 hover:text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors" title="Visit School Website" aria-label="Visit School Website">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+            Concentrated on analytical sciences, mathematics, and introductory computing methodologies.
+          </p>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 `;

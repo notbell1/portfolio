@@ -1,114 +1,141 @@
 export const Experience = `
-<section id="experience" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden py-10 lg:py-0 scroll-mt-16">
-
-  <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none animate-pulse"></div>
-
-  <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 w-full">
+<section id="experience" class="bg-[#fafbfc] relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8">
+  <div class="max-w-6xl w-full mx-auto flex flex-col justify-center">
     
-    <div class="mb-10 lg:mb-14" data-aos="fade-down">
-      <h2 class="text-sky-400 font-mono text-xs lg:text-sm tracking-[0.3em] uppercase mb-2 italic flex items-center gap-3">
-        <span class="h-[1px] w-10 bg-sky-500"></span>
-        Experience
+    <!-- Section Header -->
+    <div class="mb-3 sm:mb-5" data-aos="fade-down" data-aos-duration="600">
+      <span class="text-neutral-500 font-mono text-[10px] sm:text-xs uppercase tracking-widest block mb-1">Work History</span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight">
+        Experience &amp; Leadership
       </h2>
-      <h3 class="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase leading-none">
-        Professional <span class="text-slate-500 italic">&</span> Social <span class="text-slate-500 italic">Impact</span>
-      </h3>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+    <!-- Responsive Grid: Clean, Balanced, Chronological Order -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
       
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-sky-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="100">
-        <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-4">
-                <div class="p-2.5 bg-sky-500/10 rounded-xl text-sky-500"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-tight">Tax Staff</h4>
+      <!-- 1. Fullstack Intern (Feb — Mar 2026) -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1.5">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 bg-neutral-100 rounded-xl text-neutral-800 shrink-0">
+                <i data-lucide="terminal" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">Fullstack Intern</h3>
+                <p class="text-xs text-neutral-500">Diskominfo Kota Pariaman</p>
+              </div>
             </div>
-            <span class="text-[9px] font-mono text-slate-500 bg-slate-900 px-2 py-1 rounded">2020 — 2022</span>
+            <span class="text-[10px] sm:text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 shrink-0">
+              Feb — Mar 2026
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed mt-2.5">
+            Engineered <strong class="text-neutral-900 font-semibold">"Puskeswan"</strong> — an administrative veterinary health record system using Laravel 12 &amp; Alpine JS with relational database architecture.
+          </p>
         </div>
-        <p class="text-sky-400 text-xs font-bold mb-3 uppercase tracking-wider italic">Lilisen Tax Consultant Pekanbaru</p>
-        <ul class="space-y-2 text-slate-400 text-[13px] leading-relaxed italic">
-            <li class="flex gap-2 items-start">
-                <span class="text-sky-500 mt-1">•</span>
-                <span>Managed monthly financial reporting and handled PPh 21, 23, 25, & PPN tax compliance.</span>
-            </li>
-            <li class="flex gap-2 items-start">
-                <span class="text-sky-500 mt-1">•</span>
-                <span>Represented clients at the Directorate General of Taxes (DJP) for administrative matters.</span>
-            </li>
-        </ul>
+
+        <div class="flex flex-wrap gap-1.5 pt-3 mt-3 border-t border-neutral-100">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Laravel 12</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Alpine JS</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">MySQL</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Web App</span>
+        </div>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-emerald-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="200">
-        <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-4">
-                <div class="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-500"><i data-lucide="terminal" class="w-5 h-5"></i></div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-tight">Fullstack Intern</h4>
+      <!-- 2. Executive Leader (June 2025) -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1.5">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 bg-neutral-100 rounded-xl text-neutral-800 shrink-0">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">Executive Leader</h3>
+                <p class="text-xs text-neutral-500">PSAABR Budi Utama</p>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
-                <span class="text-[9px] font-mono text-emerald-500 bg-emerald-500/5 px-2 py-1 rounded uppercase">Feb — Mar 2026</span>
-            </div>
+            <span class="text-[10px] sm:text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 shrink-0">
+              June 2025
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed mt-2.5">
+            Delivered community empowerment training on digital privacy, security awareness, and online entrepreneurship for local youth.
+          </p>
         </div>
-        <p class="text-emerald-400 text-xs font-bold mb-3 uppercase tracking-wider italic">Dinas Komunikasi dan Informatika Kota Pariaman</p>
-        <ul class="space-y-2 text-slate-400 text-[13px] leading-relaxed italic">
-            <li class="flex gap-2 items-start">
-                <span class="text-emerald-500 mt-1">•</span>
-                <span>Engineered <strong class="text-slate-200">"Puskeswan"</strong> — A veterinary medical record app using Laravel 12 & Alpine JS.</span>
-            </li>
-            <li class="flex gap-2 items-start">
-                <span class="text-emerald-500 mt-1">•</span>
-                <span>Designed database schemas with MySQL for efficient livestock medical history tracking.</span>
-            </li>
-        </ul>
+
+        <div class="flex flex-wrap gap-1.5 pt-3 mt-3 border-t border-neutral-100">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Digital Privacy</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Cyber Awareness</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Mentorship</span>
+        </div>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-purple-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="300">
-        <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-4">
-                <div class="p-2.5 bg-purple-500/10 rounded-xl text-purple-500"><i data-lucide="users" class="w-5 h-5"></i></div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-tight">Chairman</h4>
+      <!-- 3. Chairman (Jul — Aug 2024) -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1.5">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 bg-neutral-100 rounded-xl text-neutral-800 shrink-0">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">Chairman</h3>
+                <p class="text-xs text-neutral-500">ICT Volunteers (RTIK) — UISB</p>
+              </div>
             </div>
-            <span class="text-[9px] font-mono text-slate-500 bg-slate-900 px-2 py-1 rounded">Jul — Aug 2024</span>
+            <span class="text-[10px] sm:text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 shrink-0">
+              Jul — Aug 2024
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed mt-2.5">
+            Led technical student units, coordinated regional digital literacy seminars, and organized university workshops across West Sumatra.
+          </p>
         </div>
-        <p class="text-purple-400 text-xs font-bold mb-3 uppercase tracking-wider italic">ICT Volunteers (RTIK) — UISB</p>
-        <ul class="space-y-2 text-slate-400 text-[13px] leading-relaxed italic">
-            <li class="flex gap-2 items-start">
-                <span class="text-purple-500 mt-1">•</span>
-                <span>Organized professional Laravel development workshops featuring expert faculty lecturers.</span>
-            </li>
-            <li class="flex gap-2 items-start">
-                <span class="text-purple-500 mt-1">•</span>
-                <span>Supervised technical student units and coordinated digital literacy outreach programs.</span>
-            </li>
-        </ul>
+
+        <div class="flex flex-wrap gap-1.5 pt-3 mt-3 border-t border-neutral-100">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Leadership</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Event Coordination</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Public Speaking</span>
+        </div>
       </div>
 
-      <div class="group bg-slate-800/10 border border-slate-800/50 p-6 lg:p-7 rounded-3xl backdrop-blur-md hover:border-red-500/30 transition-all duration-500"
-           data-aos="fade-up" data-aos-delay="400">
-        <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-4">
-                <div class="p-2.5 bg-red-500/10 rounded-xl text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-tight">Executive Leader</h4>
+      <!-- 4. Tax Staff (2020 — 2022) -->
+      <div class="bg-white border border-neutral-200/90 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1.5">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 bg-neutral-100 rounded-xl text-neutral-800 shrink-0">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">Tax Staff</h3>
+                <p class="text-xs text-neutral-500">Lilisen Tax Consultant Pekanbaru</p>
+              </div>
             </div>
-            <span class="text-[9px] font-mono text-slate-500 bg-slate-900 px-2 py-1 rounded">June 2025</span>
+            <span class="text-[10px] sm:text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 shrink-0">
+              2020 — 2022
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed mt-2.5">
+            Administered monthly financial reporting, corporate tax compliance (PPh 21, 23, 25 &amp; PPN), and direct administrative representation.
+          </p>
         </div>
-        <p class="text-red-400 text-xs font-bold mb-3 uppercase tracking-wider italic">PSAABR Budi Utama Lubuk Alung</p>
-        <ul class="space-y-2 text-slate-400 text-[13px] leading-relaxed italic">
-            <li class="flex gap-2 items-start">
-                <span class="text-red-500 mt-1">•</span>
-                <span>Initiated educational training on digital security importance and online business strategies.</span>
-            </li>
-            <li class="flex gap-2 items-start">
-                <span class="text-red-500 mt-1">•</span>
-                <span>Facilitated empowerment sessions for youth at UPTD social services through ICT skill-sharing.</span>
-            </li>
-        </ul>
+
+        <div class="flex flex-wrap gap-1.5 pt-3 mt-3 border-t border-neutral-100">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Tax Compliance</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Financial Reports</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-50 border border-neutral-200/60 text-neutral-600">Administration</span>
+        </div>
       </div>
 
     </div>
+
   </div>
 </section>
 `;
