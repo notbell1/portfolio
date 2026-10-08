@@ -95,7 +95,7 @@ export const Home = `
           <!-- Photo Frame with Soft Shadow -->
           <div class="w-48 h-48 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 bg-white border border-neutral-200/90 shadow-xl shadow-neutral-200/60 transition-transform duration-300 group-hover:scale-[1.02]">
             <img 
-              src="/img/profile/2359201015_Abbel.webp" 
+              src="/img/profile/profile.jpg" 
               alt="Abbel" 
               class="w-full h-full object-cover object-center rounded-xl sm:rounded-2xl"
             />
