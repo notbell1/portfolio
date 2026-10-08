@@ -93,7 +93,7 @@ export const Home = `
       <div class="lg:col-span-5 flex items-center justify-center order-1 lg:order-2" data-aos="fade-left" data-aos-duration="700">
         <div class="relative group">
           <!-- Photo Frame with Soft Shadow -->
-          <div class="w-28 h-28 sm:w-44 sm:h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2.5 bg-white border border-neutral-200/90 shadow-xl shadow-neutral-200/60 transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="w-48 h-48 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 bg-white border border-neutral-200/90 shadow-xl shadow-neutral-200/60 transition-transform duration-300 group-hover:scale-[1.02]">
             <img 
               src="/img/profile/2359201015_Abbel.webp" 
               alt="Abbel" 
