@@ -1,104 +1,116 @@
-// Import CSS
+// Import CSS & Tailwind tokens
 import "./style.css";
 
-// Import components
+// Import Components
 import { Header } from "./components/Header.js";
-import { Home, initTyping } from "./components/Home.js";
+import { Hero } from "./components/Hero.js";
 import { About, initAge } from "./components/About.js";
-import { Education } from "./components/Education.js";
+import { Project } from "./components/Project.js";
 import { Skill } from "./components/Skill.js";
 import { Experience } from "./components/Experience.js";
-import { Project } from "./components/Project.js";
-import { Contact } from "./components/Contact.js";
 import { Footer } from "./components/Footer.js";
 
-// Import handlers
-import { initProjectDetail } from "./utils/projectHandler.js";
+// Import 3D Developer Solar System
+import { SolarSystem } from "./solar/SolarSystem.js";
+import { technologies } from "./solar/technologies.js";
+
+// Import Navigation & Project Handlers
 import { initNav } from "./utils/navHandler.js";
+import { initProjectDetail } from "./utils/projectHandler.js";
 
 const app = document.querySelector("#app");
 
-// Render UI
+// Render Complete Portfolio Structure:
+// 1. Fixed full-page 3D Solar System Canvas in background
+// 2. Gradient Shadow Overlay (darkening to the left, 20% reveal from right)
+// 3. Foreground scrollable content with translucent glass styling
 app.innerHTML = `
+  <!-- Full-Page Static/Ambient 3D Solar System Background Canvas -->
+  <div 
+    id="solar-canvas-mount" 
+    class="fixed inset-0 w-full h-full pointer-events-none z-0 select-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Gradient Shadow Overlay: 40% darkness on left, fading to transparent on right -->
+  <div 
+    id="solar-gradient-shadow"
+    class="fixed inset-0 w-full h-full pointer-events-none z-[1] select-none"
+    style="background: linear-gradient(to right, rgba(9, 9, 11, 0.40) 0%, rgba(9, 9, 11, 0.32) 40%, rgba(9, 9, 11, 0.15) 75%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Foreground Scrollable Website Content -->
+  <div class="relative z-10 w-full">
     ${Header}
-    <main class="w-full"> 
-        ${Home}
-        ${About}
-        ${Education}
-        ${Skill}
-        ${Experience}
-        ${Project}
-        ${Contact}
+    <main class="w-full">
+      ${Hero}
+      ${About}
+      ${Project}
+      ${Skill}
+      ${Experience}
     </main>
     ${Footer}
+  </div>
+
+  <!-- Standalone Project Detail Modal for Deep-Dives -->
+  <div 
+    id="projectModal" 
+    class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm  items-center justify-center p-3 sm:p-6 select-auto"
+  >
+    <div id="modalContent" class="w-full max-w-3xl max-h-[92vh] animate-panel-in">
+      <!-- Populated by initProjectDetail -->
+    </div>
+  </div>
 `;
 
-// Initialize Icons
+// Initialize UI Icons & Scroll Animations
 if (window.lucide) {
   window.lucide.createIcons();
+}
+if (window.AOS) {
+  window.AOS.init({
+    duration: 600,
+    once: true,
+  });
 }
 
 // Initialize Interactive Handlers
 initNav();
-initTyping();
 initAge(2002, 6, 20);
 initProjectDetail();
 
-// Active Navbar Indicator on Scroll
-const handleActiveNavbar = () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
+// ----------------------------------------------------
+// 3D DEVELOPER SOLAR SYSTEM INITIALIZATION
+// ----------------------------------------------------
+let solarSystemInstance = null;
+const solarMount = document.getElementById("solar-canvas-mount");
 
-  let currentSection = "";
+if (solarMount) {
+  try {
+    solarSystemInstance = new SolarSystem(solarMount);
+  } catch (err) {
+    console.warn("WebGL background initialization failed:", err);
+  }
+}
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 200) {
-      currentSection = section.getAttribute("id");
+// ----------------------------------------------------
+// KEYBOARD ESC & BACKDROP EVENTS FOR PROJECT MODAL
+// ----------------------------------------------------
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const projModal = document.getElementById("projectModal");
+    if (projModal && !projModal.classList.contains("hidden")) {
+      window.closeProjectDetail();
     }
-  });
-
-  navLinks.forEach((link) => {
-    const underline = link.querySelector(".nav-underline");
-    const isCurrent = link.getAttribute("data-section") === currentSection;
-
-    if (isCurrent) {
-      link.classList.add("text-neutral-950", "font-semibold");
-      link.classList.remove("text-neutral-600");
-      if (underline) underline.classList.replace("scale-x-0", "scale-x-100");
-    } else {
-      link.classList.remove("text-neutral-950", "font-semibold");
-      link.classList.add("text-neutral-600");
-      if (underline) underline.classList.replace("scale-x-100", "scale-x-0");
-    }
-  });
-};
-
-window.addEventListener("scroll", handleActiveNavbar);
-
-// Smooth Scrolling Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (!href || href === "#") return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
+  }
 });
 
-// AOS Animation Library
-if (window.AOS) {
-  window.AOS.init({
-    duration: 700,
-    once: false,
-    offset: 50,
-    easing: "ease-out",
+const projModal = document.getElementById("projectModal");
+if (projModal) {
+  projModal.addEventListener("click", (e) => {
+    if (e.target === projModal) {
+      window.closeProjectDetail();
+    }
   });
-
-  setTimeout(() => {
-    window.AOS.refresh();
-  }, 400);
 }

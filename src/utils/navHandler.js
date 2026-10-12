@@ -1,40 +1,45 @@
 export const initNav = () => {
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const toggleBtn = document.getElementById("mobile-menu-toggle") || document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobile-menu") || document.getElementById("mobileMenu");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link, .mobile-link");
 
-  const l1 = document.getElementById("line1");
-  const l2 = document.getElementById("line2");
-  const l3 = document.getElementById("line3");
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-  const mobileLinks = document.querySelectorAll(".mobile-link");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
 
-  if (!menuBtn || !mobileMenu) return;
+  // Active Navbar Indicator on Scroll
+  const handleActiveNavbar = () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-  const toggleMenu = () => {
-    const isClosed =
-      mobileMenu.style.maxHeight === "0px" || mobileMenu.style.maxHeight === "";
+    let currentSection = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 180) {
+        currentSection = section.getAttribute("id");
+      }
+    });
 
-    if (isClosed) {
-      mobileMenu.style.maxHeight = "500px";
-
-      // Animasi hamburger
-      l1.style.transform = "translateY(7px) rotate(45deg)";
-      l2.style.opacity = "0";
-      l3.style.transform = "translateY(-7px) rotate(-45deg)";
-    } else {
-      closeMenu();
-    }
+    navLinks.forEach((link) => {
+      const isCurrent = link.getAttribute("data-section") === currentSection;
+      if (isCurrent) {
+        link.classList.add("text-white", "bg-[#800020]/25", "border", "border-[#800020]/40", "font-semibold");
+        link.classList.remove("text-zinc-400");
+      } else {
+        link.classList.remove("text-white", "bg-[#800020]/25", "border", "border-[#800020]/40", "font-semibold");
+        link.classList.add("text-zinc-400");
+      }
+    });
   };
 
-  const closeMenu = () => {
-    mobileMenu.style.maxHeight = "0px";
-
-    // Kembalikan hamburger
-    l1.style.transform = "translateY(0) rotate(0)";
-    l2.style.opacity = "1";
-    l3.style.transform = "translateY(0) rotate(0)";
-  };
-
-  menuBtn.addEventListener("click", toggleMenu);
-  mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  window.addEventListener("scroll", handleActiveNavbar, { passive: true });
+  handleActiveNavbar();
 };

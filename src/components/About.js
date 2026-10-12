@@ -1,119 +1,119 @@
+import { profile } from "../data/profile.js";
 import { projects } from "../data/projects.js";
 
 export const About = `
-<section id="about" class="bg-[#fafbfc] relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8">
-  <div class="max-w-6xl w-full mx-auto flex flex-col justify-center">
+<section id="about" class="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+  
+  <!-- Section Header -->
+  <div class="mb-8 sm:mb-10" data-aos="fade-down">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+      Personal &amp; Professional Journey
+    </h2>
+    <p class="text-xs sm:text-sm text-zinc-400 max-w-xl mt-1.5">
+      Continuous learner dedicated to clean code, systematic architecture, and robust web applications.
+    </p>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="grid lg:grid-cols-12 gap-5 items-stretch">
     
-    <!-- Section Header -->
-    <div class="mb-3 sm:mb-5" data-aos="fade-down" data-aos-duration="600">
-      <span class="text-neutral-500 font-mono text-[10px] sm:text-xs uppercase tracking-widest block mb-1">About Me</span>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight">
-        Personal &amp; Professional
-      </h2>
+    <!-- Profile & Vital Info Card (Left) -->
+    <div class="lg:col-span-5 flex flex-col" data-aos="fade-right">
+      <div class="bg-[#121217] border border-[#27272a] p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-[#27272a]">
+            <div class="w-12 h-12 rounded-xl overflow-hidden border border-[#800020]/60 shadow-md shrink-0 bg-[#181820]">
+              <img src="${profile.photo}" alt="${profile.name}" class="w-full h-full object-cover object-top" />
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white tracking-tight">${profile.name}</h3>
+              <p class="text-xs text-zinc-400">${profile.subtitle}</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+              <span class="text-zinc-400">Full Name</span>
+              <span class="text-white font-medium">${profile.fullName}</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+              <span class="text-zinc-400">Location</span>
+              <span class="text-white font-medium text-right">West Sumatra, ID</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+              <span class="text-zinc-400">Age</span>
+              <span class="text-white font-medium font-mono"><span id="realtime-age">24</span> Years</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+              <span class="text-zinc-400">Specialty</span>
+              <span class="text-white font-medium text-right">Full-Stack &amp; 3D Web</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5">
+              <span class="text-zinc-400">Education</span>
+              <span class="text-white font-medium text-right">B.S. in Information Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-3 border-t border-[#27272a] flex items-center justify-between text-xs text-zinc-400">
+          <span>University</span>
+          <span class="px-2 py-0.5 rounded bg-[#800020]/20 text-[#ff8fa3] border border-[#800020]/30 font-medium">Universitas Islam Sumatera Barat</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Content Grid -->
-    <div class="grid lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-      
-      <!-- Identity Card (Left) -->
-      <div class="lg:col-span-5 flex flex-col" data-aos="fade-right" data-aos-duration="700">
-        <div class="bg-white border border-neutral-200/90 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xs flex flex-col justify-between h-full">
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-neutral-400 font-mono mb-3 sm:mb-4 flex items-center gap-1.5">
-              <i data-lucide="user" class="w-4 h-4 text-neutral-600"></i>
-              Personal Information
-            </h3>
-
-            <div class="space-y-2.5 sm:space-y-4 text-xs sm:text-sm">
-              <div class="flex justify-between items-center pb-2 border-b border-neutral-100">
-                <span class="text-neutral-500 text-xs">Full Name</span>
-                <span class="text-neutral-900 font-medium">Abbel</span>
-              </div>
-              <div class="flex justify-between items-center pb-2 border-b border-neutral-100">
-                <span class="text-neutral-500 text-xs">Birthday</span>
-                <span class="text-neutral-900 font-medium">June 20, 2002</span>
-              </div>
-              <div class="flex justify-between items-center pb-2 border-b border-neutral-100">
-                <span class="text-neutral-500 text-xs">Age</span>
-                <span class="text-neutral-900 font-medium font-mono"><span id="realtime-age">--</span> Years</span>
-              </div>
-              <div class="flex justify-between items-center pb-2 border-b border-neutral-100">
-                <span class="text-neutral-500 text-xs">Location</span>
-                <span class="text-neutral-900 font-medium text-right">Padang Pariaman, ID</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-neutral-500 text-xs">Status</span>
-                <span class="text-neutral-900 font-medium text-right">React &amp; Systems</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500">
-            <span>Education</span>
-            <span class="px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 font-medium">S1 Information Systems</span>
+    <!-- Narrative & Highlights (Right) -->
+    <div class="lg:col-span-7 flex flex-col justify-between" data-aos="fade-left">
+      <div class="bg-[#121217] border border-[#27272a] p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full space-y-4">
+        <div>
+          <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mb-2.5">
+            Lifelong Learner Driven by Purpose &amp; Focus.
+          </h3>
+          
+          <div class="text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-3">
+            <p>
+              I engineer web applications that are responsive, accessible, and fast. My work spans from interactive 3D virtual spaces and developer extensions to full-stack administrative platforms.
+            </p>
+            <p>
+              Beyond the visual surface, I build resilient backend APIs with PHP/Laravel and relational databases, incorporating defensive security patterns like SSRF firewalling, CSRF validation, and input sanitization.
+            </p>
+            <p>
+              I believe in clean architecture, purposeful design, and building software that feels intuitive and enjoyable to use.
+            </p>
           </div>
         </div>
-      </div>
 
-      <!-- Narrative & Highlights (Right) -->
-      <div class="lg:col-span-7 flex flex-col justify-between" data-aos="fade-left" data-aos-duration="700">
-        <div class="bg-white border border-neutral-200/90 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xs flex flex-col justify-between h-full space-y-4 sm:space-y-5">
-          <div>
-            <h3 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight mb-2 sm:mb-3">
-              Lifelong Learner Driven by Purpose &amp; Focus.
-            </h3>
-            
-            <div class="text-neutral-600 text-xs sm:text-sm leading-relaxed space-y-2.5 sm:space-y-3">
-              <p>
-                I specialize in frontend technologies with a primary focus on React, TypeScript, and modern component systems. I engineer web applications that are responsive, accessible, and fast.
-              </p>
-              <p>
-                Beyond frontend interfaces, I build fullstack applications with Laravel backend APIs and relational databases. I believe in clean code, disciplined architecture, and purposeful design.
-              </p>
-            </div>
+        <!-- Highlight Metrics -->
+        <div class="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#27272a] text-center">
+          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+            <span class="block text-lg sm:text-2xl font-bold text-white font-mono">${profile.yearsCraft}</span>
+            <span class="text-[10px] sm:text-xs text-zinc-400">Years Craft</span>
           </div>
-
-          <!-- Quick Highlight Metrics (Synchronized) -->
-          <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-neutral-100 text-center">
-            <div class="p-2 sm:p-3 bg-neutral-50 rounded-xl">
-              <span class="block text-base sm:text-2xl font-bold text-neutral-900 font-mono">02+</span>
-              <span class="text-[9px] sm:text-xs text-neutral-500">Years Craft</span>
-            </div>
-            <div class="p-2 sm:p-3 bg-neutral-50 rounded-xl">
-              <span class="block text-base sm:text-2xl font-bold text-neutral-900 font-mono">${String(projects.length).padStart(2, "0")}</span>
-              <span class="text-[9px] sm:text-xs text-neutral-500">Projects</span>
-            </div>
-            <div class="p-2 sm:p-3 bg-neutral-50 rounded-xl">
-              <span class="block text-base sm:text-2xl font-bold text-neutral-900 font-mono">100%</span>
-              <span class="text-[9px] sm:text-xs text-neutral-500">Integrity</span>
-            </div>
+          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+            <span class="block text-lg sm:text-2xl font-bold text-[#ff8fa3] font-mono">${String(projects.length).padStart(2, "0")}</span>
+            <span class="text-[10px] sm:text-xs text-zinc-400">Projects</span>
           </div>
-
+          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+            <span class="block text-lg sm:text-2xl font-bold text-white font-mono">${profile.integrity}</span>
+            <span class="text-[10px] sm:text-xs text-zinc-400">Quality</span>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
 
   </div>
 </section>
 `;
 
-export const initAge = (year, month, day) => {
-  const ageElement = document.getElementById("realtime-age");
-  if (!ageElement) return;
-
-  const today = new Date();
-  const birthDate = new Date(year, month - 1, day);
-
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-
-  if (
-    monthDiff < 0 ||
-    (monthDiff === 0 && today.getDate() < birthDate.getDate())
-  ) {
+export const initAge = (birthYear = 2002, birthMonth = 6, birthDay = 20) => {
+  const el = document.getElementById("realtime-age");
+  if (!el) return;
+  const now = new Date();
+  let age = now.getFullYear() - birthYear;
+  const m = now.getMonth() + 1 - birthMonth;
+  if (m < 0 || (m === 0 && now.getDate() < birthDay)) {
     age--;
   }
-
-  ageElement.innerText = age;
+  el.textContent = age;
 };

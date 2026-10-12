@@ -1,107 +1,88 @@
-# 💼 Abbel Kadafi — Personal Portfolio
+# 🪐 Developer Solar System Portfolio — Abbel
 
-A modern, high-performance personal portfolio built with clean architecture, minimalist aesthetic, and zero heavyweight runtime dependencies. Focused on performance, accessibility, and thoughtful design.
+An interactive 3D developer portfolio featuring a full-viewport **Developer Solar System** powered by **Three.js (WebGL)**, paired with a modern, high-contrast dark obsidian & maroon aesthetic.
 
-[🌐 Live Preview](https://nottbell.vercel.app) • [🐙 GitHub Repository](https://github.com/notbell1/portfolio)
+The background solar system renders 20 sculpted 3D technology stack emblems revolving across 6 concentric, dynamically gapped orbital rings (`----icon----`), accompanied by an interactive **Live Orbit Radar** for featured projects.
 
----
-
-## 🛠️ Tech Stack
-
-Engineered with modern web fundamentals for maximum speed, maintainability, and clean code principles:
-
-- **Core & Runtime:** Vanilla JavaScript (ES6+ Modular Architecture)
-- **Styling & Design System:** Tailwind CSS v4 (Native Vite pipeline)
-- **Icons & Visuals:** Lucide Icons & Custom SVG graphics
-- **Animations:** AOS (Animate On Scroll) & Custom CSS keyframes
-- **Bundler & Dev Server:** Vite 5
-- **Deployment:** Vercel
+[🌐 Live Portfolio](https://nottbell.vercel.app) • [🐙 GitHub Repository](https://github.com/notbell1/portfolio)
 
 ---
 
-## ✨ Key Highlights & Features
+## ✨ Key Highlights
 
-- **⚡ Lightweight Architecture:** Modular component structure using clean ES6 template literals with near-instant page loads.
-- **🎨 Minimalist Soft Aesthetic:** Clean white/neutral theme with balanced typography, subtle borders, and harmonious spacing.
-- **📱 True Responsive Design:** Natural vertical layouts across mobile, tablet, and desktop without forced horizontal carousels or swipe friction.
-- **🔍 Deep-linked Modal System:** Dynamic project detail modal with clean URL parameter routing (`?id=project-slug`), keyboard `ESC` dismiss, and sticky actions.
-- **📊 Synchronized Project Metrics:** Dynamic counter calculations automatically synced with active project entries.
-- **🎯 Interactive Elements:** Typewriter career headline animation, real-time age computation, and responsive scroll-spy navigation.
+- **3D Developer Solar System (`SolarSystem.js`):**
+  - Full-screen (`100vh`) fixed ambient WebGL background that stays seamlessly in view across all sections down to the footer.
+  - **6 Spacious Concentric Orbit Rings** with dynamic angular line segmentation (`----icon----`) and WebGL depth-buffer occlusion masks so orbit lines never overlap or cut through icons.
+  - **20 Sculpted 3D Tech Stack Emblems:** High-resolution 512×512 vector logos (`Path2D`) with 16-step solid isometric 3D block extrusion and directional specular lighting, locked upright facing the camera in world space.
+  - **40% Directional Gradient Shadow Overlay:** Ensures optimal text legibility on the left while showcasing the 3D solar system on the right.
+- **Interactive Projects Live Orbit Radar (`Project.js`):**
+  - Synchronized orbital radar visualizer where each featured project orbits the core as a live interactive satellite capsule.
+  - **Independent Hover-to-Pause:** Hovering over any individual project satellite pauses only that specific satellite for inspection and one-click modal deep-dives while all other satellites continue orbiting smoothly.
+  - Dynamic category filtering (`All`, `Cyber Security & Audit`, `Developer Tools & CTF`, `VS Code Extension`, `Browser Extension`, `Fullstack Web App`, etc.) that synchronizes both the orbital radar and project cards in real time.
+- **Technical Skills & Technology Stack Index (`Skill.js` & `techIcons.js`):**
+  - Categorized breakdown of all 20 technologies with custom official vector SVG icons.
+
+---
+
+## 🛠️ Technology Stack (20 Orbiting Technologies)
+
+### 1. Programming Languages & Web
+- **TypeScript (TS)** • **JavaScript (JS)** • **PHP** • **Python** • **Lua / Luau** • **HTML5** • **CSS3**
+
+### 2. Framework, Library & Development Tools
+- **React** • **Laravel** • **Node.js** • **Vite** • **Tailwind CSS** • **Bootstrap**
+
+### 3. Database & Backend Services
+- **MySQLi** • **PostgreSQL** • **Supabase**
+
+### 4. Deployment & Version Control
+- **Vercel** • **Git** • **GitHub** • **Wuaze**
 
 ---
 
 ## 🚀 Featured Projects
 
-1. **[Balai Gadang Village Web Profile](https://balai-gadang.vercel.app/)** *(August 2026)*  
-   *Web GIS & Public Portal* — Built with React, Leaflet JS, and Tailwind CSS to map public amenities, village zoning, and local demographic statistics.
-
-2. **[Balai Gadang KKN Logbook](https://kkn-uisb-balaigadang.vercel.app/)** *(August 2026)*  
+1. **[XeooAuditor — Web Security & Visibility](https://xeooauditor.xo.je/)** *(October 2026)*  
+   *Cyber Security & Audit* — Automated web diagnostics with zero-PII ephemeral retention, server-side SSRF boundary firewall, and 5-pillar audit engine.
+2. **[XeooTools — Developer & Cyber Suite](https://xeootools.site.je/)** *(October 2026)*  
+   *Developer Tools & CTF* — 30+ interactive developer tools, client-side media lab, and an isolated Defacement CTF cyber security platform.
+3. **[Xeoo Theme Suite — VS Code Studio](https://github.com/notbell1/zx-theme)** *(October 2026)*  
+   *VS Code Extension* — 15 color families and 43 variants with full UI elevation and 1-Click Studio Switcher.
+4. **[Core Vitality — Coding Health Tracker](https://github.com/notbell1/core-vitality)** *(October 2026)*  
+   *Developer Experience* — Real-time health tracker in VS Code with dynamic evolving SVG avatar companion and automated error incident logger.
+5. **[Nttbell Assistant — Screen Shield](https://github.com/notbell1/nttbell-assistant)** *(October 2026)*  
+   *Browser Extension* — WhatsApp Web anti-shoulder surfing shield with real-time blur engine, hover-to-reveal, and 100% local processing.
+6. **[Balai Gadang Village Web Profile](https://balai-gadang.vercel.app/)** *(August 2026)*  
+   *Web GIS & Portal* — Official profile mapping public facilities, MSME catalogs, and RW demographics in Padang City.
+7. **[Balai Gadang KKN Digital Portal](https://kkn-uisb-balaigadang.vercel.app/)** *(August 2026)*  
    *Web Application* — Digital journal and work program documentation platform for university community service initiatives.
-
-3. **Puskeswan Apps** *(2026)*  
-   *Fullstack Web App* — Centralized veterinary electronic medical record system engineered with Laravel 12, MySQL, and Alpine JS for Diskominfo & UPT Puskeswan Kota Pariaman.
+8. **Puskeswan Apps — Veterinary Record System** *(March 2026)*  
+   *Fullstack Web App* — Centralized veterinary electronic medical record system engineered with Laravel 12, MySQL, and Alpine JS for Diskominfo Kota Pariaman.
 
 ---
 
-## 📂 Project Structure
+## 💻 Local Development
 
-```text
-my-portfolio/
-├── public/
-│   ├── cv/              # Downloadable curriculum vitae (PDF)
-│   └── img/             # Optimized WebP/PNG assets & project screenshots
-├── src/
-│   ├── components/      # UI modules (Header, Home, About, Education, Skill, Experience, Project, Contact)
-│   ├── data/            # Structured data (projects.js)
-│   ├── utils/           # Client handlers (navHandler.js, projectHandler.js)
-│   ├── style.css        # Tailwind CSS v4 import & custom styles
-│   └── main.js          # Main application entry point & router
-├── index.html           # Root HTML document
-├── vite.config.js       # Vite configuration
-└── package.json         # Dependencies and scripts
+```bash
+# Clone the repository
+git clone https://github.com/notbell1/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build production bundle
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ---
 
-## 💻 Getting Started Locally
+## 📄 License
 
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm or pnpm
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/notbell1/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
----
-
-## 📬 Contact & Connect
-
-- **Author:** Abbel Kadafi
-- **Email:** [abbelkadafi@gmail.com](mailto:abbelkadafi@gmail.com)
-- **LinkedIn:** [linkedin.com/in/abbel](https://www.linkedin.com/in/abbel)
-- **GitHub:** [@notbell1](https://github.com/notbell1)
-- **Location:** Padang Pariaman, West Sumatra, Indonesia
-
----
-
-&copy; 2026 Abbel Kadafi. Licensed under the [MIT License](LICENSE).
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
