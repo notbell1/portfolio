@@ -1,4 +1,4 @@
-# 🪐 Developer Solar System Portfolio — Abbel
+# 🪐 Developer — Abbel
 
 An interactive 3D developer portfolio featuring a full-viewport **Developer Solar System** powered by **Three.js (WebGL)**, paired with a modern, high-contrast dark obsidian & maroon aesthetic.
 
@@ -10,7 +10,7 @@ The background solar system renders 20 sculpted 3D technology stack emblems revo
 
 ## ✨ Key Highlights
 
-- **3D Developer Solar System (`SolarSystem.js`):**
+- **Developer System (`SolarSystem.js`):**
   - Full-screen (`100vh`) fixed ambient WebGL background that stays seamlessly in view across all sections down to the footer.
   - **6 Spacious Concentric Orbit Rings** with dynamic angular line segmentation (`----icon----`) and WebGL depth-buffer occlusion masks so orbit lines never overlap or cut through icons.
   - **20 Sculpted 3D Tech Stack Emblems:** High-resolution 512×512 vector logos (`Path2D`) with 16-step solid isometric 3D block extrusion and directional specular lighting, locked upright facing the camera in world space.
