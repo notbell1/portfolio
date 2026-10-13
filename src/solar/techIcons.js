@@ -198,7 +198,40 @@ export const techIcons = {
   `,
 };
 
+export const techSvgMap = {
+  typescript: "/svg/typescript.svg",
+  javascript: "/svg/javascript.svg",
+  php: "/svg/php.svg",
+  python: "/svg/python.svg",
+  lua: "/svg/luau.svg",
+  html5: "/svg/html5.svg",
+  css3: "/svg/css3.svg",
+  react: "/svg/react.svg",
+  laravel: "/svg/laravel.svg",
+  nodejs: "/svg/nodejs.svg",
+  vite: "/svg/vitejs.svg",
+  tailwindcss: "/svg/tailwind-css.svg",
+  bootstrap: "/svg/bootstrap.svg",
+  mysqli: "/svg/mysql.svg",
+  postgresql: "/svg/postgresql.svg",
+  supabase: "/svg/supabase.svg",
+  vercel: "/svg/vercel-line.svg",
+  git: "/svg/git.svg",
+  github: "/svg/github.svg",
+  wuaze: "/svg/wuaze.svg",
+  msoffice: "/svg/microsoft.svg",
+  leaflet: "/svg/leaflet.svg",
+  vscode_api: "/svg/vscode.svg",
+  chrome_extension: "/svg/baseline-extension.svg",
+  cybersecurity: "/svg/web-security.svg",
+  ui_ux: "/svg/figma.svg",
+};
+
 export const getTechIconSvg = (techId) => {
+  const svgPath = techSvgMap[techId];
+  if (svgPath) {
+    return `<img src="${svgPath}" alt="${techId}" class="w-full h-full object-contain pointer-events-none select-none" loading="lazy" />`;
+  }
   return techIcons[techId] || techIcons.javascript;
 };
 

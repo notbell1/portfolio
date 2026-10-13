@@ -51,7 +51,7 @@ export const Skill = `
                 class="w-full text-left p-2.5 rounded-xl bg-[#181820] hover:bg-[#1e1e28] border border-[#27272a] hover:border-[#800020]/70 shadow-sm transition-all flex items-center justify-between group cursor-default"
               >
                 <div class="flex items-center gap-2.5 min-w-0">
-                  <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg p-1 bg-[#121217] border border-[#27272a] group-hover:border-[#ff8fa3]/60 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 shadow-sm">
+                  <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg p-1 bg-[#121217] border border-[#27272a] group-hover:border-[#ff8fa3]/60 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 shadow-sm overflow-hidden">
                     ${getTechIconSvg(tech.id)}
                   </div>
                   <div class="truncate">
@@ -110,7 +110,7 @@ export const Skill = `
             <div>
               <div class="flex items-center justify-between mb-2.5">
                 <div class="flex items-center gap-2.5 min-w-0">
-                  <div class="w-8 h-8 rounded-lg p-1.5 bg-[#121217] border border-[#27272a] group-hover:border-[#ff8fa3]/60 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 shadow-sm">
+                  <div class="w-8 h-8 rounded-lg p-1.5 bg-[#121217] border border-[#27272a] group-hover:border-[#ff8fa3]/60 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 shadow-sm overflow-hidden">
                     ${getTechIconSvg(comp.id)}
                   </div>
                   <div class="truncate">
