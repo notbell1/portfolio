@@ -32,11 +32,11 @@ app.innerHTML = `
     aria-hidden="true"
   ></div>
 
-  <!-- Gradient Shadow Overlay: 60% darkness on left, fading to 18% on right (+20% darkness) -->
+  <!-- Gradient Shadow Overlay: 75% darkness on left, smooth transition starting 40% from right (60% to 100% open) -->
   <div 
     id="solar-gradient-shadow"
     class="fixed inset-0 w-full h-full pointer-events-none z-[1] select-none"
-    style="background: linear-gradient(to right, rgba(9, 9, 11, 0.60) 0%, rgba(9, 9, 11, 0.48) 40%, rgba(9, 9, 11, 0.28) 75%, rgba(9, 9, 11, 0.18) 100%);"
+    style="background: linear-gradient(to right, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.75) 25%, rgba(9, 9, 11, 0.52) 42%, rgba(9, 9, 11, 0.20) 60%, rgba(9, 9, 11, 0.05) 85%, transparent 100%);"
     aria-hidden="true"
   ></div>
 

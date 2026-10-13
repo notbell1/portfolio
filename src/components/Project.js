@@ -23,7 +23,7 @@ const orbit2 = projects.filter((_, i) => i % 3 === 1);
 const orbit3 = projects.filter((_, i) => i % 3 === 2);
 
 export const Project = `
-<section id="project" class="py-14 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+<section id="project" class="py-14 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
   
   <!-- Clean Section Header (No redundant badge) -->
   <div class="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4" data-aos="fade-down">
@@ -223,17 +223,17 @@ export const Project = `
   </div>
 
   <!-- 2. CARD GRID VIEW (Alternative Static View) -->
-  <div id="project-grid-container" class="hidden  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div id="project-grid-container" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
     ${projects
       .map(
         (p, index) => `
       <div 
         class="w-full bg-[#121217]/90 backdrop-blur-md border border-[#27272a] hover:border-[#800020]/70 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between group"
         data-aos="fade-up" 
-        data-aos-delay="${(index % 3) * 100}"
+        data-aos-delay="${(index % 4) * 80}"
       >
         <!-- Project Preview Banner -->
-        <div class="relative h-44 sm:h-48 overflow-hidden bg-[#181820]">
+        <div class="relative h-40 sm:h-44 overflow-hidden bg-[#181820]">
           <img 
             src="${p.mainImage}" 
             alt="${p.title}" 
@@ -289,9 +289,9 @@ export const Project = `
         </div>
 
         <!-- Project Content Body -->
-        <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+        <div class="p-4 flex flex-col justify-between flex-1">
           <div class="mb-3">
-            <h3 class="text-base font-bold text-white tracking-tight mb-1.5 group-hover:text-[#ff8fa3] transition-colors">
+            <h3 class="text-sm sm:text-base font-bold text-white tracking-tight mb-1.5 group-hover:text-[#ff8fa3] transition-colors leading-snug">
               ${p.title}
             </h3>
             <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
@@ -303,7 +303,7 @@ export const Project = `
           <div class="space-y-3 pt-3 border-t border-[#27272a]">
             <div class="flex flex-wrap gap-1">
               ${p.stack
-                .slice(0, 4)
+                .slice(0, 3)
                 .map(
                   (s) => `
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#181820] text-[#ff8fa3] border border-[#27272a]">${s}</span>
@@ -312,10 +312,10 @@ export const Project = `
                 .join("")}
             </div>
 
-            <div class="grid ${(p.liveUrl && p.liveUrl !== "#") || (p.githubUrl && p.githubUrl !== "#") ? "grid-cols-2" : "grid-cols-1"} gap-2 pt-1">
+            <div class="grid ${(p.liveUrl && p.liveUrl !== "#") || (p.githubUrl && p.githubUrl !== "#") ? "grid-cols-2" : "grid-cols-1"} gap-1.5 sm:gap-2 pt-1">
               <button 
                 onclick="openProjectDetail('${p.id}')" 
-                class="w-full py-2 bg-[#800020] hover:bg-[#9b111e] text-white rounded-xl text-xs font-medium transition-colors cursor-pointer active:scale-98 flex items-center justify-center gap-1.5 shadow-md border border-[#9b111e]/40"
+                class="w-full py-2 bg-[#800020] hover:bg-[#9b111e] text-white rounded-xl text-xs font-medium transition-colors cursor-pointer active:scale-98 flex items-center justify-center gap-1 shadow-md border border-[#9b111e]/40"
               >
                 <span>Details</span>
                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>

@@ -8,7 +8,7 @@ export const Hero = `
   <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
     
     <!-- Left Column: Personal Intro & CTAs (lg:col-span-7) -->
-    <div class="lg:col-span-7 flex flex-col items-start space-y-4 sm:space-y-5 text-left order-2 lg:order-1" data-aos="fade-right">
+    <div class="lg:col-span-7 flex flex-col items-center lg:items-start space-y-4 sm:space-y-5 text-center lg:text-left order-2 lg:order-1" data-aos="fade-right">
       
       <!-- Open to Work Status Indicator -->
       <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#121217]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-semibold shadow-lg shadow-emerald-950/20">
@@ -30,12 +30,12 @@ export const Hero = `
       </h1>
 
       <!-- Supporting Description -->
-      <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl font-normal">
+      <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl font-normal mx-auto lg:mx-0">
         Hi, I'm <strong class="text-white font-semibold">${profile.fullName}</strong> (${profile.name}). Full-stack developer building robust web applications, defensive security utilities, and interactive digital experiences with clean architecture.
       </p>
 
       <!-- Primary & Secondary Action CTAs -->
-      <div class="flex flex-wrap items-center gap-3 pt-1 w-full sm:w-auto">
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 w-full sm:w-auto">
         <a 
           href="#project"
           class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#800020] hover:bg-[#9b111e] text-white text-xs sm:text-sm font-semibold shadow-lg shadow-[#800020]/30 transition-all active:scale-98 inline-flex items-center gap-2 cursor-pointer border border-[#9b111e]/40"
@@ -55,7 +55,7 @@ export const Hero = `
       </div>
 
       <!-- Quick Connect Links Row -->
-      <div class="pt-2 flex items-center gap-3 text-zinc-400">
+      <div class="pt-2 flex flex-wrap sm:flex-nowrap items-center justify-center lg:justify-start gap-3 text-zinc-400 w-full lg:w-auto">
         <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-500">Contact:</span>
         <div class="flex items-center gap-2">
           <a 
