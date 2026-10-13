@@ -44,13 +44,14 @@ export const Hero = `
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
         
-        <a 
-          href="#contact"
+        <button 
+          id="btn-download-cv"
+          type="button"
           class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#121217]/85 hover:bg-[#181820] text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold border border-[#27272a] hover:border-[#800020]/70 backdrop-blur-md shadow-md transition-all active:scale-98 inline-flex items-center gap-2 cursor-pointer"
         >
-          <i data-lucide="mail" class="w-4 h-4 text-[#ff8fa3]"></i>
-          <span>Get in Touch</span>
-        </a>
+          <i data-lucide="download" class="w-4 h-4 text-[#ff8fa3]"></i>
+          <span>Download CV</span>
+        </button>
       </div>
 
       <!-- Quick Connect Links Row -->
