@@ -130,7 +130,26 @@ A multi-suite web utility ecosystem featuring over 30+ interactive developer too
 </details>
 
 <details open>
-<summary><h3>3. 🎨 Xeoo Theme Suite</h3></summary>
+<summary><h3>3. 🪐 3D Solar System Portfolio</h3></summary>
+
+> **Category:** Interactive 3D Web & Creative Portfolio  
+> **Client / Target:** Personal Production Portfolio  
+> **Links:** [🌐 Live Application](https://nottbell.vercel.app/) • [🐙 GitHub Repository](https://github.com/notbell1/portfolio)
+
+![3D Solar System Portfolio Preview](./public/img/portfolio/portfolio_home.png)
+
+An interactive 3D solar system developer portfolio engineering experience. Features dynamic multi-layered celestial orbits, real-time trigonometric coordinate calculations, CV download modal, and smooth Framer Motion interactions.
+
+* **Tech Stack:** `React 19` • `TypeScript` • `Tailwind CSS v4` • `Vite` • `Framer Motion`
+* **Key Deliverables:**
+  - 6-Layer responsive orbital dynamics with trigonometrically computed satellite nodes.
+  - Interactive CV download modal popup and ambient cosmic audio player.
+  - Ergonomic mobile-first responsive design adapting seamless layouts across viewport sizes.
+
+</details>
+
+<details open>
+<summary><h3>4. 🎨 Xeoo Theme Suite</h3></summary>
 
 > **Category:** VS Code Extension  
 > **Client / Target:** Visual Studio Code Marketplace / NTTBELL  
@@ -150,7 +169,7 @@ An ultra-luxury, ergonomically balanced Visual Studio Code color theme suite fea
 </details>
 
 <details open>
-<summary><h3>4. 🩺 Core Vitality</h3></summary>
+<summary><h3>5. 🩺 Core Vitality</h3></summary>
 
 > **Category:** Developer Experience  
 > **Client / Target:** Open Source / VS Code Community  
@@ -170,7 +189,7 @@ Realtime developer health tracker and error diagnostics dashboard embedded in Vi
 </details>
 
 <details open>
-<summary><h3>5. 🛡️ Nttbell Assistant</h3></summary>
+<summary><h3>6. 🛡️ Nttbell Assistant</h3></summary>
 
 > **Category:** Browser Extension  
 > **Client / Target:** Chrome Web Store / NTTBELL  
@@ -190,7 +209,7 @@ Next-generation visual privacy and anti-shoulder surfing shield for WhatsApp Web
 </details>
 
 <details open>
-<summary><h3>6. 🗺️ Mapping of Regional Potential in Balai Gadang 2026</h3></summary>
+<summary><h3>7. 🗺️ Mapping of Regional Potential in Balai Gadang 2026</h3></summary>
 
 > **Category:** Web GIS & Regional Mapping  
 > **Client / Target:** Balai Gadang Village Office, Padang City  
@@ -210,7 +229,7 @@ Regional potential mapping and interactive Web Geographic Information System (We
 </details>
 
 <details open>
-<summary><h3>7. 📖 Balai Gadang KKN Logbook 2026</h3></summary>
+<summary><h3>8. 📖 Balai Gadang KKN Logbook 2026</h3></summary>
 
 > **Category:** Community Service & Web App  
 > **Client / Target:** UISB University Community Service Team (KKN)  
@@ -230,7 +249,7 @@ Digital logbook and community documentation portal engineered for the UISB Unive
 </details>
 
 <details open>
-<summary><h3>8. 🐾 Puskeswan Apps</h3></summary>
+<summary><h3>9. 🐾 Puskeswan Apps</h3></summary>
 
 > **Category:** Fullstack Web App  
 > **Client / Target:** UPT Puskeswan & IB Pariaman City / Diskominfo  
