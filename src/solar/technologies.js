@@ -9,6 +9,7 @@ export const technologies = [
   {
     id: "typescript",
     name: "TypeScript",
+    role: "Static Typing & Scalable Web Apps",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 1,
@@ -33,6 +34,7 @@ export const technologies = [
   {
     id: "javascript",
     name: "JavaScript",
+    role: "Dynamic Client Logic & DOM Scripting",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 1,
@@ -57,6 +59,7 @@ export const technologies = [
   {
     id: "php",
     name: "PHP",
+    role: "Server-Side Scripting & REST API Logic",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 1,
@@ -85,6 +88,7 @@ export const technologies = [
   {
     id: "python",
     name: "Python",
+    role: "Automation Scripts, Tooling & Backend",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 2,
@@ -109,6 +113,7 @@ export const technologies = [
   {
     id: "lua",
     name: "Lua / Luau",
+    role: "Roblox Game Development & Scripting",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 2,
@@ -133,6 +138,7 @@ export const technologies = [
   {
     id: "html5",
     name: "HTML5",
+    role: "Semantic Web Structure & Document Markup",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 2,
@@ -157,6 +163,7 @@ export const technologies = [
   {
     id: "css3",
     name: "CSS3",
+    role: "Responsive Layouts, Grid & UI Styling",
     category: "Programming Languages & Web",
     orbit: 1,
     solarOrbit: 2,
@@ -185,6 +192,7 @@ export const technologies = [
   {
     id: "react",
     name: "React",
+    role: "Component-Based UI & Single Page Apps",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 3,
@@ -209,6 +217,7 @@ export const technologies = [
   {
     id: "laravel",
     name: "Laravel",
+    role: "Fullstack PHP MVC & Secure Web Backend",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 3,
@@ -233,6 +242,7 @@ export const technologies = [
   {
     id: "nodejs",
     name: "Node.js",
+    role: "Server-Side JS Runtime & CLI Tooling",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 3,
@@ -261,6 +271,7 @@ export const technologies = [
   {
     id: "vite",
     name: "Vite",
+    role: "Fast Modern Bundler & HMR Dev Server",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 4,
@@ -285,6 +296,7 @@ export const technologies = [
   {
     id: "tailwindcss",
     name: "Tailwind CSS",
+    role: "Utility-First CSS & Rapid Design Systems",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 4,
@@ -309,6 +321,7 @@ export const technologies = [
   {
     id: "bootstrap",
     name: "Bootstrap",
+    role: "Responsive UI Components & 12-Col Grid",
     category: "Framework, Library & Tools",
     orbit: 2,
     solarOrbit: 4,
@@ -337,6 +350,7 @@ export const technologies = [
   {
     id: "mysqli",
     name: "MySQLi",
+    role: "Relational SQL Storage & Prepared Queries",
     category: "Database & Backend Services",
     orbit: 3,
     solarOrbit: 5,
@@ -361,6 +375,7 @@ export const technologies = [
   {
     id: "postgresql",
     name: "PostgreSQL",
+    role: "Enterprise Relational DB & Complex Data",
     category: "Database & Backend Services",
     orbit: 3,
     solarOrbit: 5,
@@ -385,6 +400,7 @@ export const technologies = [
   {
     id: "supabase",
     name: "Supabase",
+    role: "Cloud BaaS & Realtime PostgreSQL DB",
     category: "Database & Backend Services",
     orbit: 3,
     solarOrbit: 5,
@@ -413,6 +429,7 @@ export const technologies = [
   {
     id: "vercel",
     name: "Vercel",
+    role: "Serverless Frontend & Edge Cloud CI/CD",
     category: "Deployment & Version Control",
     orbit: 4,
     solarOrbit: 6,
@@ -437,6 +454,7 @@ export const technologies = [
   {
     id: "git",
     name: "Git",
+    role: "Distributed Version Control & Branching",
     category: "Deployment & Version Control",
     orbit: 4,
     solarOrbit: 6,
@@ -461,6 +479,7 @@ export const technologies = [
   {
     id: "github",
     name: "GitHub",
+    role: "Remote Collaboration & Code Repository Hub",
     category: "Deployment & Version Control",
     orbit: 4,
     solarOrbit: 6,
@@ -485,6 +504,7 @@ export const technologies = [
   {
     id: "wuaze",
     name: "Wuaze",
+    role: "Cloud Staging Hosting & PHP Web Server",
     category: "Deployment & Version Control",
     orbit: 4,
     solarOrbit: 6,

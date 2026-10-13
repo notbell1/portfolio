@@ -238,6 +238,7 @@ window.switchProjectView = (viewMode) => {
   if (viewMode === "grid") {
     orbitContainer.classList.add("hidden");
     gridContainer.classList.remove("hidden");
+    gridContainer.classList.add("grid");
 
     btnGrid.className =
       "px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer bg-[#800020] text-white shadow-sm flex items-center gap-1.5";
@@ -245,6 +246,7 @@ window.switchProjectView = (viewMode) => {
       "px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-white transition-all cursor-pointer flex items-center gap-1.5";
   } else {
     gridContainer.classList.add("hidden");
+    gridContainer.classList.remove("grid");
     orbitContainer.classList.remove("hidden");
 
     btnOrbit.className =
@@ -254,6 +256,7 @@ window.switchProjectView = (viewMode) => {
   }
 
   if (window.lucide) window.lucide.createIcons();
+  if (window.AOS) window.AOS.refresh();
 };
 
 export const initProjectDetail = () => {

@@ -58,8 +58,8 @@ export const Skill = `
                     <span class="text-xs font-bold text-white group-hover:text-[#ff8fa3] transition-colors block leading-tight truncate">
                       ${tech.name}
                     </span>
-                    <span class="text-[10px] text-zinc-400 block truncate">
-                      ${tech.category}
+                    <span class="text-[10px] text-zinc-400 block truncate font-mono" title="${tech.role || tech.category}">
+                      ${tech.role || tech.category}
                     </span>
                   </div>
                 </div>

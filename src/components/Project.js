@@ -223,7 +223,7 @@ export const Project = `
   </div>
 
   <!-- 2. CARD GRID VIEW (Alternative Static View) -->
-  <div id="project-grid-container" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+  <div id="project-grid-container" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
     ${projects
       .map(
         (p, index) => `

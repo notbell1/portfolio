@@ -158,3 +158,9 @@ body:not(.aos-init) [data-aos] {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Explicit Grid display when Project Grid container is active */
+#project-grid-container:not(.hidden) {
+  display: grid;
+}
+
