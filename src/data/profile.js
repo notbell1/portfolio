@@ -1,6 +1,6 @@
 export const profile = {
-  name: "Abbel",
-  fullName: "Abbel Kadafi",
+  name: "Nottbell",
+  fullName: "Abbel",
   headline: "Let's Learn Code to Make More Exploitation",
   subtitle: "Full-Stack Developer, Creative Technologist & UI Artisan",
   bio: "I craft thoughtful web applications, interactive 3D digital spaces, and security-focused developer tools. Driven by clean architecture, disciplined design, and a passion for robust engineering.",

@@ -1,88 +1,258 @@
 # 🪐 Developer — Abbel
 
-An interactive 3D developer portfolio featuring a full-viewport **Developer Solar System** powered by **Three.js (WebGL)**, paired with a modern, high-contrast dark obsidian & maroon aesthetic.
-
-The background solar system renders 20 sculpted 3D technology stack emblems revolving across 6 concentric, dynamically gapped orbital rings (`----icon----`), accompanied by an interactive **Live Orbit Radar** for featured projects.
-
-[🌐 Live Portfolio](https://nottbell.vercel.app) • [🐙 GitHub Repository](https://github.com/notbell1/portfolio)
-
----
-
-## ✨ Key Highlights
-
-- **Developer System (`SolarSystem.js`):**
-  - Full-screen (`100vh`) fixed ambient WebGL background that stays seamlessly in view across all sections down to the footer.
-  - **6 Spacious Concentric Orbit Rings** with dynamic angular line segmentation (`----icon----`) and WebGL depth-buffer occlusion masks so orbit lines never overlap or cut through icons.
-  - **20 Sculpted 3D Tech Stack Emblems:** High-resolution 512×512 vector logos (`Path2D`) with 16-step solid isometric 3D block extrusion and directional specular lighting, locked upright facing the camera in world space.
-  - **40% Directional Gradient Shadow Overlay:** Ensures optimal text legibility on the left while showcasing the 3D solar system on the right.
-- **Interactive Projects Live Orbit Radar (`Project.js`):**
-  - Synchronized orbital radar visualizer where each featured project orbits the core as a live interactive satellite capsule.
-  - **Independent Hover-to-Pause:** Hovering over any individual project satellite pauses only that specific satellite for inspection and one-click modal deep-dives while all other satellites continue orbiting smoothly.
-  - Dynamic category filtering (`All`, `Cyber Security & Audit`, `Developer Tools & CTF`, `VS Code Extension`, `Browser Extension`, `Fullstack Web App`, etc.) that synchronizes both the orbital radar and project cards in real time.
-- **Technical Skills & Technology Stack Index (`Skill.js` & `techIcons.js`):**
-  - Categorized breakdown of all 20 technologies with custom official vector SVG icons.
+<p align="center">
+  <a href="https://nottbell.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Portfolio-nottbell.vercel.app-800020?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+  <a href="https://github.com/notbell1/portfolio">
+    <img src="https://img.shields.io/badge/GitHub-notbell1%2Fportfolio-181820?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge" alt="MIT License" />
+</p>
 
 ---
 
-## 🛠️ Technology Stack (20 Orbiting Technologies)
+## 🛠️ Technology Stack
 
-### 1. Programming Languages & Web
-- **TypeScript (TS)** • **JavaScript (JS)** • **PHP** • **Python** • **Lua / Luau** • **HTML5** • **CSS3**
+<details open>
+<summary><b>1. 💻 Programming Languages & Web</b></summary>
+<br />
 
-### 2. Framework, Library & Development Tools
-- **React** • **Laravel** • **Node.js** • **Vite** • **Tailwind CSS** • **Bootstrap**
+| Technology | Role & Functional Specialization | Badge |
+| :--- | :--- | :---: |
+| **TypeScript** | Static Typing & Scalable Web Apps | `TS` |
+| **JavaScript** | Dynamic Client Logic & DOM Scripting | `JS` |
+| **PHP** | Server-Side Scripting & REST API Logic | `PHP` |
+| **Python** | Automation Scripts, Tooling & Backend | `PY` |
+| **Lua / Luau** | Roblox Game Development & Scripting | `LUA` |
+| **HTML5** | Semantic Web Structure & Document Markup | `HTML` |
+| **CSS3** | Responsive Layouts, Grid & UI Styling | `CSS` |
 
-### 3. Database & Backend Services
-- **MySQLi** • **PostgreSQL** • **Supabase**
+</details>
 
-### 4. Deployment & Version Control
-- **Vercel** • **Git** • **GitHub** • **Wuaze**
+<details open>
+<summary><b>2. ⚡ Framework, Library & Development Tools</b></summary>
+<br />
+
+| Technology | Role & Functional Specialization | Badge |
+| :--- | :--- | :---: |
+| **React** | Component-Based UI & Single Page Apps | `React` |
+| **Laravel** | Fullstack PHP MVC & Secure Web Backend | `Lara` |
+| **Node.js** | Server-Side JS Runtime & CLI Tooling | `Node` |
+| **Vite** | Fast Modern Bundler & HMR Dev Server | `Vite` |
+| **Tailwind CSS** | Utility-First CSS & Rapid Design Systems | `TW` |
+| **Bootstrap** | Responsive UI Components & 12-Col Grid | `BS` |
+
+</details>
+
+<details open>
+<summary><b>3. 🗄️ Database & Backend Services</b></summary>
+<br />
+
+| Technology | Role & Functional Specialization | Badge |
+| :--- | :--- | :---: |
+| **MySQLi** | Relational SQL Storage & Prepared Queries | `SQL` |
+| **PostgreSQL** | Enterprise Relational DB & Complex Data | `PG` |
+| **Supabase** | Cloud BaaS & Realtime PostgreSQL DB | `Supa` |
+
+</details>
+
+<details open>
+<summary><b>4. 🚀 Deployment & Version Control</b></summary>
+<br />
+
+| Technology | Role & Functional Specialization | Badge |
+| :--- | :--- | :---: |
+| **Vercel** | Serverless Frontend & Edge Cloud CI/CD | `▲` |
+| **Git** | Version Control | `Git` |
+| **GitHub** | Code Repository Hosting | `GH` |
+| **Wuaze** | PHP Web Hosting | `Wz` |
+
+</details>
+
+<details open>
+<summary><b>5. 🌟 Specialized Project Competencies & Office Productivity</b></summary>
+<br />
+
+| Competency | Domain Expertise & Applied Toolkits | Application |
+| :--- | :--- | :---: |
+| **Microsoft Office Suite** | Word, Excel & PowerPoint for technical documentation, data analysis & reporting | `MS 365` |
+| **Leaflet JS & Web GIS** | Open-source geospatial mapping, GeoJSON boundary layers & public amenity markers | `GIS / MAP` |
+| **VS Code API & Extensions** | Native editor extension architecture, Webview companion panels & WCAG AA theme suites | `VS CODE` |
+| **Chrome Extension API (MV3)** | Manifest V3 service workers, DOM MutationObserver shields & client privacy | `MANIFEST V3` |
+| **Web Security & Auditing** | SSRF boundary firewalls, SSL/TLS inspection, HTTP security headers & defacement CTF | `SECURITY` |
+| **UI/UX Design Systems** | High-contrast dark aesthetics, ergonomic responsive components & WCAG AA standards | `WCAG AA` |
+
+</details>
 
 ---
 
 ## 🚀 Featured Projects
 
-1. **[XeooAuditor — Web Security & Visibility](https://xeooauditor.xo.je/)** *(October 2026)*  
-   *Cyber Security & Audit* — Automated web diagnostics with zero-PII ephemeral retention, server-side SSRF boundary firewall, and 5-pillar audit engine.
-2. **[XeooTools — Developer & Cyber Suite](https://xeootools.site.je/)** *(October 2026)*  
-   *Developer Tools & CTF* — 30+ interactive developer tools, client-side media lab, and an isolated Defacement CTF cyber security platform.
-3. **[Xeoo Theme Suite — VS Code Studio](https://github.com/notbell1/zx-theme)** *(October 2026)*  
-   *VS Code Extension* — 15 color families and 43 variants with full UI elevation and 1-Click Studio Switcher.
-4. **[Core Vitality — Coding Health Tracker](https://github.com/notbell1/core-vitality)** *(October 2026)*  
-   *Developer Experience* — Real-time health tracker in VS Code with dynamic evolving SVG avatar companion and automated error incident logger.
-5. **[Nttbell Assistant — Screen Shield](https://github.com/notbell1/nttbell-assistant)** *(October 2026)*  
-   *Browser Extension* — WhatsApp Web anti-shoulder surfing shield with real-time blur engine, hover-to-reveal, and 100% local processing.
-6. **[Balai Gadang Village Web Profile](https://balai-gadang.vercel.app/)** *(August 2026)*  
-   *Web GIS & Portal* — Official profile mapping public facilities, MSME catalogs, and RW demographics in Padang City.
-7. **[Balai Gadang KKN Digital Portal](https://kkn-uisb-balaigadang.vercel.app/)** *(August 2026)*  
-   *Web Application* — Digital journal and work program documentation platform for university community service initiatives.
-8. **Puskeswan Apps — Veterinary Record System** *(March 2026)*  
-   *Fullstack Web App* — Centralized veterinary electronic medical record system engineered with Laravel 12, MySQL, and Alpine JS for Diskominfo Kota Pariaman.
+<details open>
+<summary><h3>1. 🛡️ Xeoo Auditor</h3></summary>
 
----
+> **Category:** Cyber Security & Audit  
+> **Client / Target:** Open Source / Security Community  
+> **Links:** [🌐 Live Application](https://xeooauditor.xo.je/) • [🐙 GitHub Repository](https://github.com/notbell1/xeoo-auditor)
 
-## 💻 Local Development
+![Xeoo Auditor Preview](./public/img/projects/xeoo_auditor.png)
 
-```bash
-# Clone the repository
-git clone https://github.com/notbell1/portfolio.git
-cd portfolio
+Automated web security diagnostics and technical visibility platform with zero-PII ephemeral retention. Features a server-side SSRF boundary firewall and comprehensive multi-vector auditing covering SSL/TLS hygiene, security headers, server latency, and SEO crawlability.
 
-# Install dependencies
-npm install
+* **Tech Stack:** `React 19` • `TypeScript` • `Tailwind CSS v4` • `PHP 8.x` • `MySQL` • `Vite`
+* **Key Deliverables:**
+  - SSRF Boundary Firewall blocking internal subnet scanning, RFC1918 ranges, and cloud metadata endpoints.
+  - 5-Pillar Audit Engine scanning SSL/TLS, HTTP headers (HSTS, CSP), Server Latency, SEO, and Privacy trackers.
+  - Ephemeral data retention ensuring zero personal user telemetry or persistent audit logs.
+  - Executive reporting with instant high-fidelity PDF and structured JSON export.
 
-# Start development server
-npm run dev
+</details>
 
-# Build production bundle
-npm run build
+<details open>
+<summary><h3>2. 🧰 Xeoo Tools</h3></summary>
 
-# Preview production build
-npm run preview
-```
+> **Category:** Developer Tools & CTF  
+> **Client / Target:** Independent Developer Platform  
+> **Links:** [🌐 Live Application](https://xeootools.site.je/) • [🐙 GitHub Repository](https://github.com/notbell1/xeoo-tools)
+
+![Xeoo Tools Preview](./public/img/projects/xeootools.png)
+
+A multi-suite web utility ecosystem featuring over 30+ interactive developer tools, client-side media laboratories, and an isolated Defacement CTF (Capture The Flag) cyber platform with server-authoritative flag verification.
+
+* **Tech Stack:** `React` • `TypeScript` • `Tailwind CSS` • `Vite` • `PHP` • `MySQL`
+* **Key Deliverables:**
+  - Defacement CTF Subsystem with dynamic leaderboard, challenge management, and anti-tamper scoring.
+  - Client-side image and media optimization engine (WebP/PNG/AVIF converter, lossless compressor, archive builder).
+  - Cyber security toolset: Password strength analyzer, scam link detector, JWT debugger, and hash identifiers.
+  - Interactive productivity modules including typing speed tests and QR code generators.
+
+</details>
+
+<details open>
+<summary><h3>3. 🎨 Xeoo Theme Suite</h3></summary>
+
+> **Category:** VS Code Extension  
+> **Client / Target:** Visual Studio Code Marketplace / NTTBELL  
+> **Links:** [🐙 GitHub Repository](https://github.com/notbell1/zx-theme)
+
+![Xeoo Theme Suite Preview](./public/img/projects/zx_theme_banner.png)
+
+An ultra-luxury, ergonomically balanced Visual Studio Code color theme suite featuring 15 primary color categories and 43 calibrated variants (Dark, Soft, Light) with distinct interface zone elevation and 1-Click Studio Switcher.
+
+* **Tech Stack:** `TypeScript` • `VS Code API` • `Node.js` • `WCAG AA`
+* **Key Deliverables:**
+  - 43 calibrated theme variants across 15 primary color families with WCAG AA compliance (4.5:1 ~ 14:1 contrast).
+  - Complete interface elevation redesign distinguishing Title Bar, Sidebar, Editor canvas, and Status Bar.
+  - Integrated 1-Click Theme Switcher sidebar view container built natively with VS Code APIs.
+  - 100% safe, lightweight architecture with zero third-party telemetry.
+
+</details>
+
+<details open>
+<summary><h3>4. 🩺 Core Vitality</h3></summary>
+
+> **Category:** Developer Experience  
+> **Client / Target:** Open Source / VS Code Community  
+> **Links:** [🐙 GitHub Repository](https://github.com/notbell1/core-vitality)
+
+![Core Vitality Preview](./public/img/projects/core_vitality_banner.png)
+
+Realtime developer health tracker and error diagnostics dashboard embedded in Visual Studio Code. Features a living, dynamic evolving SVG companion responding to code quality, health metrics, and instant error incident logs.
+
+* **Tech Stack:** `TypeScript` • `VS Code API` • `SVG Animation` • `Webview API`
+* **Key Deliverables:**
+  - Dynamic interactive SVG avatar that evolves and reacts based on Health, Energy, and Happiness vitals.
+  - Real-time incident detection capturing runtime errors with exact file location (LOC) and line numbers (LINE).
+  - Nebula Glassmorphism interface aesthetic with integrated hacker-style focus clock.
+  - Lightweight webview integration running locally with zero performance overhead on the editor.
+
+</details>
+
+<details open>
+<summary><h3>5. 🛡️ Nttbell Assistant</h3></summary>
+
+> **Category:** Browser Extension  
+> **Client / Target:** Chrome Web Store / NTTBELL  
+> **Links:** [🐙 GitHub Repository](https://github.com/notbell1/nttbell-assistant)
+
+![Nttbell Assistant Preview](./public/img/projects/nttbell_assistant.jpg)
+
+Next-generation visual privacy and anti-shoulder surfing shield for WhatsApp Web. Automatically masks sensitive chats, contact identities, and incoming media with smart blur and instant hover-to-reveal capability.
+
+* **Tech Stack:** `TypeScript` • `Vite` • `Chrome Extension API` • `Manifest V3`
+* **Key Deliverables:**
+  - Granular privacy shields covering chat message streams, contact identities, and multimedia previews.
+  - Realtime MutationObserver engine maintaining blur integrity across dynamic chat updates.
+  - Smooth hover-to-reveal effect allowing temporary inspection of masked messages.
+  - 100% local client-side processing under Chrome Manifest V3 with zero external network requests.
+
+</details>
+
+<details open>
+<summary><h3>6. 🗺️ Mapping of Regional Potential in Balai Gadang 2026</h3></summary>
+
+> **Category:** Web GIS & Regional Mapping  
+> **Client / Target:** Balai Gadang Village Office, Padang City  
+> **Links:** [🌐 Live Application](https://balai-gadang.vercel.app/) • [🐙 GitHub Repository](https://github.com/notbell1/balai-gadang)
+
+![Balai Gadang GIS Preview](./public/img/projects/balai_gadang_home.png)
+
+Regional potential mapping and interactive Web Geographic Information System (Web GIS) developed for Balai Gadang Village, Koto Tangah, Padang City. Integrates spatial mapping of 80+ public facilities, 25+ local economic and agrotourism potentials, administrative RW boundaries, and open neighborhood demographic statistics.
+
+* **Tech Stack:** `React 19` • `Leaflet JS` • `Tailwind CSS v4` • `Vite` • `GeoJSON` • `MS Excel`
+* **Key Deliverables:**
+  - Interactive Leaflet JS and GeoJSON mapping of 81+ public facilities (health, religious, education, and municipal).
+  - Geospatial showcase of 25+ superior regional potentials, ornamental plant centers, and local MSME enterprises.
+  - Demographic dashboard charting 20,000+ residents across 14 RW (Neighborhood Units) and 38 RT divisions.
+  - Modern open digital system with responsive layout built on React 19 and Tailwind CSS v4.
+
+</details>
+
+<details open>
+<summary><h3>7. 📖 Balai Gadang KKN Logbook 2026</h3></summary>
+
+> **Category:** Community Service & Web App  
+> **Client / Target:** UISB University Community Service Team (KKN)  
+> **Links:** [🌐 Live Application](https://kkn-uisb-balaigadang.vercel.app/) • [🐙 GitHub Repository](https://github.com/notbell1/kkn-uisb-balaigadang)
+
+![KKN Balai Gadang Logbook Preview](./public/img/projects/kkn_balaigadang_home.png)
+
+Digital logbook and community documentation portal engineered for the UISB University Community Service (KKN) program in Balai Gadang Village, Koto Tangah, Padang City. Features daily field activity tracking, work program timeline execution, multimedia photo storytelling, and organizational member rosters.
+
+* **Tech Stack:** `React 19` • `Tailwind CSS` • `Vite` • `Framer Motion` • `MS Office`
+* **Key Deliverables:**
+  - Interactive daily field activity logbook tracking work program milestones and operational dates.
+  - Multimedia story and documentation gallery preserving community engagement memories.
+  - Organizational structural matrix detailing student committees, field supervisors, and village stakeholders.
+  - High-performance responsive interface built with React 19, Vite, and smooth Framer Motion interactions.
+
+</details>
+
+<details open>
+<summary><h3>8. 🐾 Puskeswan Apps</h3></summary>
+
+> **Category:** Fullstack Web App  
+> **Client / Target:** UPT Puskeswan & IB Pariaman City / Diskominfo  
+> **Links:** *Municipal Internal Veterinary System*
+
+![Puskeswan Apps Preview](./public/img/puskeswan/puskeswan_home.png)
+
+Digital transformation of manual veterinary health records into an integrated web-based information system, enhancing operational efficiency and public service delivery for municipal animal clinics.
+
+* **Tech Stack:** `Laravel 12` • `MySQL` • `Alpine JS` • `Tailwind CSS`
+* **Key Deliverables:**
+  - Integrated Digital Medical Record system with centralized database storage.
+  - Complete animal owner profile management and vaccination history tracking.
+  - Automated reporting system fulfilling regulatory and administrative workflows.
+  - Responsive interface optimized for field veterinary officers on mobile and tablet devices.
+
+</details>
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+This project is open-source and licensed under the [MIT License](./LICENSE).
+
+Copyright &copy; 2026 **Abbel (notbell1)**.

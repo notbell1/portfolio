@@ -17,8 +17,6 @@ export const Hero = `
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
         </span>
         <span>Open to Work</span>
-        <span class="text-zinc-500">•</span>
-        <span class="text-zinc-300 font-normal">Available for Projects</span>
       </div>
 
       <!-- Main Headline -->
@@ -31,7 +29,7 @@ export const Hero = `
 
       <!-- Supporting Description -->
       <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl font-normal mx-auto lg:mx-0">
-        Hi, I'm <strong class="text-white font-semibold">${profile.fullName}</strong> (${profile.name}). Full-stack developer building robust web applications, defensive security utilities, and interactive digital experiences with clean architecture.
+        Hi, I'm <strong class="text-white font-semibold">${profile.fullName}</strong>. Full-stack developer building robust web applications, defensive security utilities, and interactive digital experiences with clean architecture.
       </p>
 
       <!-- Primary & Secondary Action CTAs -->
@@ -121,10 +119,7 @@ export const Hero = `
           
           <!-- Bottom identity vignette pill -->
           <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex items-center justify-between">
-            <div class="text-left">
-              <span class="text-xs sm:text-sm font-bold text-white block leading-tight">${profile.name}</span>
-              <span class="text-[10px] sm:text-xs text-zinc-400">Full-Stack Developer</span>
-            </div>
+         
             
           </div>
         </div>

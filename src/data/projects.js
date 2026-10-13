@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: "xeoo-auditor",
-    title: "XeooAuditor — Web Security & Visibility",
+    title: "Xeoo Auditor",
     category: "Cyber Security & Audit",
     client: "Open Source / Security Community",
     year: "October 2026",
@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     id: "xeoo-tools",
-    title: "XeooTools — Developer & Cyber Suite",
+    title: "Xeoo Tools ",
     category: "Developer Tools & CTF",
     client: "Independent Developer Platform",
     year: "October 2026",
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     id: "zx-theme",
-    title: "Xeoo Theme Suite — VS Code Studio",
+    title: "Xeoo Theme Suite",
     category: "VS Code Extension",
     client: "Visual Studio Code Marketplace / NTTBELL",
     year: "October 2026",
@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     id: "core-vitality",
-    title: "Core Vitality — VS Code Health Tracker",
+    title: "Core Vitality ",
     category: "Developer Experience",
     client: "Open Source / VS Code Community",
     year: "October 2026",
@@ -85,7 +85,7 @@ export const projects = [
   },
   {
     id: "nttbell-assistant",
-    title: "Nttbell Assistant — Screen Shield",
+    title: "Nttbell Assistant",
     category: "Browser Extension",
     client: "Chrome Web Store / NTTBELL",
     year: "October 2026",
@@ -105,7 +105,7 @@ export const projects = [
   },
   {
     id: "balai-gadang",
-    title: "Pemetaan Potensi Wilayah Balai Gadang 2026 — Web GIS",
+    title: "Mapping of Regional Potential in Balai Gadang 2026",
     category: "Web GIS & Regional Mapping",
     client: "Balai Gadang Village Office, Padang City",
     year: "August 2026",
@@ -125,7 +125,7 @@ export const projects = [
   },
   {
     id: "kkn-balaigadang",
-    title: "Logbook KKN Balai Gadang 2026 — Digital Portal",
+    title: "Balai Gadang KKN Logbook 2026",
     category: "Community Service & Web App",
     client: "UISB University Community Service Team (KKN 2026)",
     year: "August 2026",
@@ -145,7 +145,7 @@ export const projects = [
   },
   {
     id: "puskeswan",
-    title: "Puskeswan Apps — Veterinary Record System",
+    title: "Puskeswan Apps",
     category: "Fullstack Web App",
     client: "UPT Puskeswan & IB Pariaman City",
     year: "March 2026",

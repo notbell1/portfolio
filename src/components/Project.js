@@ -241,51 +241,7 @@ export const Project = `
             loading="lazy"
           />
           
-          <!-- Category & Clean Year (No Month) -->
-          <div class="absolute top-3 left-3 flex items-center gap-1.5">
-            <span class="px-2.5 py-0.5 rounded-full bg-[#121217]/90 backdrop-blur-md text-[10px] font-mono font-medium text-zinc-200 border border-[#27272a] shadow-md">
-              ${formatYearOnly(p.year)}
-            </span>
-            <span class="px-2.5 py-0.5 rounded-full bg-[#800020]/90 backdrop-blur-md text-[10px] font-medium text-white shadow-md border border-[#9b111e]/40">
-              ${p.category}
-            </span>
-          </div>
-
-          <!-- Top-Right Action Links -->
-          <div class="absolute top-3 right-3 flex items-center gap-1.5">
-            ${
-              p.githubUrl && p.githubUrl !== "#"
-                ? `
-              <a 
-                href="${p.githubUrl}" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="p-1.5 rounded-full bg-[#121217]/90 hover:bg-[#181820] text-zinc-300 hover:text-white border border-[#27272a] shadow-md inline-flex items-center justify-center transition-colors"
-                title="GitHub Repository"
-                aria-label="GitHub Repository"
-              >
-                ${githubIcon}
-              </a>
-              `
-                : ""
-            }
-            ${
-              p.liveUrl && p.liveUrl !== "#"
-                ? `
-              <a 
-                href="${p.liveUrl}" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="px-2.5 py-0.5 rounded-full bg-[#800020] hover:bg-[#9b111e] text-[10px] font-medium text-white shadow-md border border-[#9b111e]/40 inline-flex items-center gap-1 transition-colors"
-                title="Open Live Preview"
-              >
-                <span>Live</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-              </a>
-              `
-                : ""
-            }
-          </div>
+    
         </div>
 
         <!-- Project Content Body -->
