@@ -553,3 +553,88 @@ export const orbitGroups = [
     color: "rgba(240, 80, 50, 0.20)",
   },
 ];
+
+/**
+ * Specialized Project Competencies & Productivity Toolkits
+ */
+export const projectCompetencies = [
+  {
+    id: "msoffice",
+    name: "Microsoft Office Suite",
+    category: "Office Productivity & Reporting",
+    badgeLabel: "MS 365",
+    description: "Word, Excel & PowerPoint for technical project documentation, demographic data analysis, community service logbooks, and presentations.",
+    useCases: [
+      "Demographic data tabulation & spreadsheet metrics (Excel)",
+      "Technical project documentation & municipal field reports (Word)",
+      "Work program presentations & stakeholder reporting (PowerPoint)",
+    ],
+    relatedProjects: "KKN Balai Gadang, Web GIS, Puskeswan Apps",
+  },
+  {
+    id: "leaflet",
+    name: "Leaflet JS & Web GIS",
+    category: "Geospatial & Spatial Mapping",
+    badgeLabel: "GIS / MAP",
+    description: "Open-source mapping library for mobile-friendly interactive maps, GeoJSON spatial layers, coordinate plotting, and amenity markers.",
+    useCases: [
+      "Interactive 81+ public facility spatial mapping & custom markers",
+      "Administrative RW/RT boundary visualizations with GeoJSON",
+      "Regional agrotourism & SME potential location clustering",
+    ],
+    relatedProjects: "Pemetaan Potensi Wilayah Balai Gadang 2026",
+  },
+  {
+    id: "vscode_api",
+    name: "VS Code API & Extensions",
+    category: "IDE Architecture & Developer Tooling",
+    badgeLabel: "VS CODE",
+    description: "Native Visual Studio Code extension architecture, Webview companion panels, command palette workflows, and TextMate theme tokens.",
+    useCases: [
+      "Custom Webview panels & real-time editor telemetry companion",
+      "Syntax grammar token calibration & WCAG AA theme suites",
+      "VS Code Marketplace packaging & lifecycle management",
+    ],
+    relatedProjects: "Xeoo Theme Suite, Core Vitality",
+  },
+  {
+    id: "chrome_extension",
+    name: "Chrome Extension API (MV3)",
+    category: "Browser Engineering & Privacy",
+    badgeLabel: "MANIFEST V3",
+    description: "Chrome extensions built on Manifest V3, background service workers, content script DOM injection, and storage sync APIs.",
+    useCases: [
+      "Real-time DOM MutationObserver surveillance & dynamic blur shields",
+      "Client-side zero-telemetry architecture & visual privacy",
+      "Chrome Extension Manifest V3 background worker architecture",
+    ],
+    relatedProjects: "Nttbell Assistant (WhatsApp Web Shield)",
+  },
+  {
+    id: "cybersecurity",
+    name: "Web Security & Vulnerability Audit",
+    category: "Defensive Cyber & Application Security",
+    badgeLabel: "SECURITY",
+    description: "Web vulnerability diagnostics, server-side SSRF boundary firewalls, SSL/TLS protocol inspection, and Defacement CTF challenge engineering.",
+    useCases: [
+      "SSRF mitigation & internal subnet filtering (RFC1918)",
+      "Automated HTTP security headers auditing (CSP, HSTS, XFO)",
+      "Isolated CTF cyber defacement platform with anti-tamper scoring",
+    ],
+    relatedProjects: "XeooAuditor, XeooTools Defacement CTF",
+  },
+  {
+    id: "ui_ux",
+    name: "UI/UX & Design Systems",
+    category: "Interface Design & Accessibility",
+    badgeLabel: "WCAG AA",
+    description: "Ergonomic component styling, high-contrast dark mode aesthetics, responsive mobile layouts, and WCAG AA accessibility standards.",
+    useCases: [
+      "WCAG AA contrast calibration (4.5:1 ~ 14:1) across 43 theme variants",
+      "Micro-interactions & fluid animations with Framer Motion and Tailwind",
+      "Mobile-first responsive architecture and glassmorphism styling",
+    ],
+    relatedProjects: "All Featured Web & Extension Projects",
+  },
+];
+

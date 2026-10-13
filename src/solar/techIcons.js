@@ -150,6 +150,52 @@ export const techIcons = {
       <text x="64" y="73" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="22" fill="#0284C7">WUAZE</text>
     </svg>
   `,
+  msoffice: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#D83B01"/>
+      <rect x="28" y="28" width="34" height="34" rx="4" fill="#F25022"/>
+      <rect x="66" y="28" width="34" height="34" rx="4" fill="#7FBA00"/>
+      <rect x="28" y="66" width="34" height="34" rx="4" fill="#00A4EF"/>
+      <rect x="66" y="66" width="34" height="34" rx="4" fill="#FFB900"/>
+    </svg>
+  `,
+  leaflet: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#199900"/>
+      <path d="M78 22C46 30 32 64 36 94c8 12 24 16 38 12 28-9 42-44 38-76-11-7-23-9-34-8z" fill="#ffffff"/>
+      <path d="M42 90c18-20 36-38 52-52" stroke="#199900" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+  `,
+  vscode_api: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#007ACC"/>
+      <path d="M96 22L70 46 48 28 26 38v52l22 10 22-18 26 24 10-5V27L96 22zm0 66L72 64l24-24v48z" fill="#ffffff"/>
+    </svg>
+  `,
+  chrome_extension: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#4285F4"/>
+      <path d="M78 30c0-6.6-5.4-12-12-12s-12 5.4-12 12H34c-6.6 0-12 5.4-12 12v20c6.6 0 12 5.4 12 12s-5.4 12-12 12v20c0 6.6 5.4 12 12 12h20c0-6.6 5.4-12 12-12s12 5.4 12 12h20c6.6 0 12-5.4 12-12v-20c-6.6 0-12-5.4-12-12s5.4-12 12-12V42c0-6.6-5.4-12-12-12H78z" fill="#ffffff"/>
+    </svg>
+  `,
+  cybersecurity: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#800020"/>
+      <path d="M64 22L32 36v32c0 24 13.7 46.5 32 52 18.3-5.5 32-28 32-52V36L64 22z" fill="#9b111e"/>
+      <path d="M64 28v74c14-5 24-23 24-42V39L64 28z" fill="#ff8fa3"/>
+      <path d="M54 62l8 8 16-16" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `,
+  ui_ux: `
+    <svg viewBox="0 0 128 128" class="w-full h-full" fill="none">
+      <rect width="128" height="128" rx="24" fill="#1E1E1E"/>
+      <path d="M44 38c0-8.8 7.2-16 16-16h4v32H44V38z" fill="#F24E1E"/>
+      <path d="M64 22h16c8.8 0 16 7.2 16 16s-7.2 16-16 16H64V22z" fill="#FF7262"/>
+      <path d="M44 70c0-8.8 7.2-16 16-16h4v32h-4c-8.8 0-16-7.2-16-16z" fill="#A259FF"/>
+      <circle cx="80" cy="70" r="16" fill="#1ABCFE"/>
+      <path d="M44 102c0-8.8 7.2-16 16-16h4v16c0 8.8-7.2 16-16 16s-16-7.2-16-16z" fill="#0ACF83"/>
+    </svg>
+  `,
 };
 
 export const getTechIconSvg = (techId) => {
