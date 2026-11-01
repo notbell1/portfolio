@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --color-page: #09090b;
-  --color-surface: #121217;
-  --color-surface-soft: #181820;
-  --color-maroon: #800020;
-  --color-maroon-bright: #9b111e;
-  --color-maroon-dark: #4a0410;
-  --color-maroon-soft: #24070e;
-  --color-ink-primary: #f4f4f5;
-  --color-ink-secondary: #a1a1aa;
-  --color-ink-muted: #71717a;
-  --color-line: #27272a;
+:root,
+html {
+  --theme-primary: #800020;
+  --theme-bright: #9b111e;
+  --theme-accent: #ff8fa3;
+  --theme-rgb: 155, 17, 30;
+  --theme-accent-rgb: 255, 143, 163;
+  --theme-page: #09090b;
+  --block-surface: #121217;
+  --block-pill: #181820;
+  --block-border: #27272a;
+  --block-lip: #040406;
+  --block-hover-lip: #800020;
 }
 
 @layer base {
@@ -22,7 +23,7 @@
     padding: 0;
     overflow-x: hidden;
     position: relative;
-    background-color: #09090b;
+    background-color: var(--theme-page, #09090b);
     color: #f4f4f5;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     text-rendering: optimizeLegibility;
@@ -37,7 +38,66 @@
   }
 }
 
-/* Ensure content is never stuck hidden if external AOS library is delayed or offline */
+#bg-shadow-blur-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(9, 9, 11, 0.08) 0%,
+    rgba(9, 9, 11, 0.25) 28%,
+    rgba(9, 9, 11, 0.58) 65%,
+    rgba(9, 9, 11, 0.84) 100%
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.45) 35%,
+    rgba(0, 0, 0, 0.85) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.45) 35%,
+    rgba(0, 0, 0, 0.85) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+@media (min-width: 640px) {
+  #bg-shadow-blur-overlay {
+    background: linear-gradient(
+      to left,
+      rgba(9, 9, 11, 0) 0%,
+      rgba(9, 9, 11, 0.02) 20%,
+      rgba(9, 9, 11, 0.34) 45%,
+      rgba(9, 9, 11, 0.68) 72%,
+      rgba(9, 9, 11, 0.90) 100%
+    );
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.04) 20%,
+      rgba(0, 0, 0, 0.42) 48%,
+      rgba(0, 0, 0, 0.82) 76%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.04) 20%,
+      rgba(0, 0, 0, 0.42) 48%,
+      rgba(0, 0, 0, 0.82) 76%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+[data-aos],
+html.aos-init [data-aos],
+body.aos-init [data-aos],
 html:not(.aos-init) [data-aos],
 body:not(.aos-init) [data-aos] {
   opacity: 1 !important;
@@ -45,21 +105,46 @@ body:not(.aos-init) [data-aos] {
   visibility: visible !important;
 }
 
-/* Custom restrained scrollbars inside panels */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+main .bg-\[\#121217\],
+main .bg-\[\#121217\]\/90,
+footer .bg-\[\#121217\]\/90,
+.holo-spatial-panel {
+  background-color: var(--block-surface) !important;
+  background-image: none !important;
+  border: 2px solid var(--block-border) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 6px 0 0 var(--block-lip) !important;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease !important;
 }
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #121217;
-  border-radius: 9999px;
+
+.cinematic-tilt-card:hover,
+footer a.bg-\[\#121217\]\/90:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--theme-bright) !important;
+  box-shadow: 0 10px 0 0 var(--block-hover-lip) !important;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 9999px;
+
+main .bg-\[\#181820\] {
+  background-color: var(--block-pill) !important;
+  background-image: none !important;
+  border: 1.5px solid var(--block-border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 3px 0 0 var(--block-lip) !important;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease !important;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #800020;
+
+main .bg-\[\#181820\]:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--theme-accent) !important;
+  box-shadow: 0 5px 0 0 var(--block-hover-lip) !important;
+}
+
+main .bg-\[\#181820\]:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 1px 0 0 var(--block-lip) !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -70,97 +155,54 @@ body:not(.aos-init) [data-aos] {
   scrollbar-width: none;
 }
 
-/* Subtle, non-intrusive animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.97) translateY(6px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 
 .animate-panel-in {
-  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.2s ease-out forwards;
 }
 
-/* Radar Orbit Motion Animations */
-@keyframes radarSpinClockwise {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes radarSpinCounter {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-@keyframes radarSweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.radar-orbit-carrier {
-  position: absolute;
-  pointer-events: none;
-  transform-origin: center center;
-}
-
-.orbit-1-carrier {
-  animation: radarSpinClockwise 36s linear infinite;
-}
-.orbit-1-carrier .radar-node-content {
-  animation: radarSpinCounter 36s linear infinite;
-}
-
-.orbit-2-carrier {
-  animation: radarSpinClockwise 54s linear infinite;
-}
-.orbit-2-carrier .radar-node-content {
-  animation: radarSpinCounter 54s linear infinite;
-}
-
-.orbit-3-carrier {
-  animation: radarSpinClockwise 74s linear infinite;
-}
-.orbit-3-carrier .radar-node-content {
-  animation: radarSpinCounter 74s linear infinite;
-}
-
-.radar-sweep-beam {
-  animation: radarSweep 7s linear infinite;
-}
-
-/* Pause ONLY the hovered satellite; unhovered satellites keep moving */
-.radar-orbit-carrier:has(.orbit-node-btn:hover),
-.radar-orbit-carrier:hover {
-  animation-play-state: paused !important;
-}
-.radar-orbit-carrier:has(.orbit-node-btn:hover) .radar-node-content,
-.radar-orbit-carrier:hover .radar-node-content {
-  animation-play-state: paused !important;
-}
-
-/* Global pause toggle when user clicks Pause button */
-.radar-stage.is-paused .radar-orbit-carrier,
-.radar-stage.is-paused .radar-node-content,
-.radar-stage.is-paused .radar-sweep-beam {
-  animation-play-state: paused !important;
-}
-
-/* Respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Explicit Grid display when Project Grid container is active */
 #project-grid-container:not(.hidden) {
   display: grid;
 }
 
+#home h1,
+main > section > div > h2,
+main > section > div > div > h2,
+footer#contact h2 {
+  text-shadow:
+    0 3px 0 #040406,
+    -1px -1px 0 #040406,
+    1px -1px 0 #040406,
+    -1px 1px 0 #040406,
+    1px 1px 0 #040406,
+    0 6px 18px rgba(0, 0, 0, 0.95),
+    0 0 28px rgba(0, 0, 0, 0.9) !important;
+}
+
+#home p,
+#home .text-zinc-400,
+#home .text-zinc-500,
+main > section > div > p,
+main > section > div > div > p,
+footer#contact > div > div > p,
+footer#contact > div > div.pt-8 span {
+  color: #e4e4e7 !important;
+  font-weight: 500;
+  text-shadow:
+    0 2px 0 #040406,
+    -1px -1px 0 #040406,
+    1px -1px 0 #040406,
+    -1px 1px 0 #040406,
+    1px 1px 0 #040406,
+    0 4px 12px rgba(0, 0, 0, 0.98),
+    0 0 20px rgba(0, 0, 0, 0.92) !important;
+}

@@ -4,14 +4,9 @@ const githubIcon = `<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-h
 
 export const Hero = `
 <section id="home" class="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-16 px-4 sm:px-6 max-w-6xl mx-auto">
-  
   <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
-    
-    <!-- Left Column: Personal Intro & CTAs (lg:col-span-7) -->
-    <div class="lg:col-span-7 flex flex-col items-center lg:items-start space-y-4 sm:space-y-5 text-center lg:text-left order-2 lg:order-1" data-aos="fade-right">
-      
-      <!-- Open to Work Status Indicator -->
-      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#121217]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-semibold shadow-lg shadow-emerald-950/20">
+    <div class="lg:col-span-7 flex flex-col items-center lg:items-start space-y-4 sm:space-y-5 text-center lg:text-left order-2 lg:order-1">
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-[#181820] border border-emerald-500/40 text-emerald-400 text-xs font-semibold">
         <span class="relative flex h-2.5 w-2.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -19,24 +14,20 @@ export const Hero = `
         <span>Open to Work</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-        Let's Learn Code <br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#ff8fa3]">
-          to Make More Exploitation
-        </span>
+      <h1 class="text-[clamp(1.3rem,4.6vw,3.3rem)] lg:text-[clamp(1.7rem,3.2vw,3.35rem)] font-extrabold text-white tracking-tight leading-[1.18] w-full">
+        <span class="block whitespace-nowrap">Lets Learn Code to</span>
+        <span class="block whitespace-nowrap text-[#ff8fa3]">Make More Exploitation</span>
       </h1>
 
-      <!-- Supporting Description -->
       <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl font-normal mx-auto lg:mx-0">
-        Hi, I'm <strong class="text-white font-semibold">${profile.fullName}</strong>. Full-stack developer building robust web applications, defensive security utilities, and interactive digital experiences with clean architecture.
+        Hi, I'm <strong class="text-white font-semibold">${profile.fullName}</strong>. Focusing on <strong class="text-white font-medium">Web Development</strong> and <strong class="text-white font-medium">Junior Cyber Security</strong> — building robust web applications, defensive security utilities, and interactive digital experiences with clean architecture.
       </p>
 
-      <!-- Primary & Secondary Action CTAs -->
       <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 w-full sm:w-auto">
         <a 
-          href="#project"
-          class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#800020] hover:bg-[#9b111e] text-white text-xs sm:text-sm font-semibold shadow-lg shadow-[#800020]/30 transition-all active:scale-98 inline-flex items-center gap-2 cursor-pointer border border-[#9b111e]/40"
+          href="/project"
+          data-route="project"
+          class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#800020] hover:bg-[#9b111e] text-white text-xs sm:text-sm font-semibold shadow-[0_4px_0_0_#000] transition-all hover:-translate-y-0.5 active:translate-y-0.5 inline-flex items-center gap-2 cursor-pointer border border-[#9b111e]"
         >
           <span>Explore Projects</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -45,14 +36,13 @@ export const Hero = `
         <button 
           id="btn-download-cv"
           type="button"
-          class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#121217]/85 hover:bg-[#181820] text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold border border-[#27272a] hover:border-[#800020]/70 backdrop-blur-md shadow-md transition-all active:scale-98 inline-flex items-center gap-2 cursor-pointer"
+          class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#181820] text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 cursor-pointer"
         >
           <i data-lucide="download" class="w-4 h-4 text-[#ff8fa3]"></i>
           <span>Download CV</span>
         </button>
       </div>
 
-      <!-- Quick Connect Links Row -->
       <div class="pt-2 flex flex-wrap sm:flex-nowrap items-center justify-center lg:justify-start gap-3 text-zinc-400 w-full lg:w-auto">
         <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-500">Contact:</span>
         <div class="flex items-center gap-2">
@@ -60,7 +50,7 @@ export const Hero = `
             href="${profile.social.github}" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="p-2 sm:p-2.5 rounded-xl bg-[#121217]/80 hover:bg-[#181820] border border-[#27272a] hover:border-[#800020] text-zinc-300 hover:text-white transition-all shadow-md backdrop-blur-md"
+            class="p-2 sm:p-2.5 rounded-xl bg-[#181820] text-zinc-300 hover:text-white transition-all"
             title="GitHub Profile"
             aria-label="GitHub"
           >
@@ -70,7 +60,7 @@ export const Hero = `
             href="${profile.social.email}" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="p-2 sm:p-2.5 rounded-xl bg-[#121217]/80 hover:bg-[#181820] border border-[#27272a] hover:border-[#800020] text-zinc-300 hover:text-[#ff8fa3] transition-all shadow-md backdrop-blur-md"
+            class="p-2 sm:p-2.5 rounded-xl bg-[#181820] text-zinc-300 hover:text-[#ff8fa3] transition-all"
             title="Send Email"
             aria-label="Email"
           >
@@ -80,7 +70,7 @@ export const Hero = `
             href="${profile.social.telegram}" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="p-2 sm:p-2.5 rounded-xl bg-[#121217]/80 hover:bg-[#181820] border border-[#27272a] hover:border-[#800020] text-zinc-300 hover:text-[#ff8fa3] transition-all shadow-md backdrop-blur-md"
+            class="p-2 sm:p-2.5 rounded-xl bg-[#181820] text-zinc-300 hover:text-[#ff8fa3] transition-all"
             title="Telegram"
             aria-label="Telegram"
           >
@@ -90,7 +80,7 @@ export const Hero = `
             href="${profile.social.whatsapp}" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="p-2 sm:p-2.5 rounded-xl bg-[#121217]/80 hover:bg-[#181820] border border-[#27272a] hover:border-[#800020] text-zinc-300 hover:text-[#ff8fa3] transition-all shadow-md backdrop-blur-md"
+            class="p-2 sm:p-2.5 rounded-xl bg-[#181820] text-zinc-300 hover:text-[#ff8fa3] transition-all"
             title="WhatsApp"
             aria-label="WhatsApp"
           >
@@ -98,36 +88,20 @@ export const Hero = `
           </a>
         </div>
       </div>
-
     </div>
 
-    <!-- Right Column: Profile Photo (lg:col-span-5) -->
-    <div class="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2" data-aos="fade-left">
+    <div class="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
       <div class="relative group">
-        
-        <!-- Ambient Maroon Glow behind photo -->
-        <div class="absolute -inset-2 bg-gradient-to-tr from-[#800020] via-[#9b111e] to-[#4a0410] rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-700"></div>
-        
-        <!-- Responsive Photo Container -->
-        <div class="relative w-48 h-48 sm:w-60 sm:h-60 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-3xl overflow-hidden border-2 border-[#800020]/60 bg-[#121217] shadow-2xl">
+        <div class="cinematic-tilt-card relative w-48 h-48 sm:w-60 sm:h-60 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-2xl overflow-hidden bg-[#121217]">
           <img 
             src="${profile.photo}" 
             alt="${profile.fullName}" 
-            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             loading="eager"
           />
-          
-          <!-- Bottom identity vignette pill -->
-          <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex items-center justify-between">
-         
-            
-          </div>
         </div>
-
       </div>
     </div>
-
   </div>
-
 </section>
 `;

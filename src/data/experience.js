@@ -7,13 +7,15 @@ export const experiences = [
     period: "Feb — Mar 2026",
     tag: "Work Experience",
     summary:
-      "Engineered 'Puskeswan Apps' — a comprehensive digital veterinary health records and clinic management platform for UPT Puskeswan & IB Pariaman.",
+      "Engineered 'PuskeswanApp' — a comprehensive digital veterinary health records and clinic management platform for UPT Puskeswan & IB Pariaman.",
     outcomes: [
       "Digitized manual paper records into centralized relational database models.",
       "Built animal owner profiling and automated vaccination schedule tracking.",
       "Developed responsive mobile interface for field veterinary officers.",
     ],
     tech: ["Laravel 12", "MySQL", "Alpine JS", "Tailwind CSS"],
+    projectId: "puskeswan",
+    projectLabel: "View PuskeswanApp",
   },
   {
     id: "psaabr",

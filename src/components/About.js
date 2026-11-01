@@ -3,8 +3,6 @@ import { projects } from "../data/projects.js";
 
 export const About = `
 <section id="about" class="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-  
-  <!-- Section Header -->
   <div class="mb-8 sm:mb-10" data-aos="fade-down">
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
       Personal &amp; Professional Journey
@@ -14,14 +12,11 @@ export const About = `
     </p>
   </div>
 
-  <!-- Content Grid -->
   <div class="grid lg:grid-cols-12 gap-5 items-stretch">
-    
-    <!-- Profile & Vital Info Card (Left) -->
     <div class="lg:col-span-5 flex flex-col" data-aos="fade-right">
-      <div class="bg-[#121217] border border-[#27272a] p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full">
+      <div class="cinematic-tilt-card bg-[#121217] border border-zinc-800 p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full">
         <div>
-          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-[#27272a]">
+          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-zinc-800">
             <div class="w-12 h-12 rounded-xl overflow-hidden border border-[#800020]/60 shadow-md shrink-0 bg-[#181820]">
               <img src="${profile.photo}" alt="${profile.name}" class="w-full h-full object-cover object-top" />
             </div>
@@ -32,21 +27,21 @@ export const About = `
           </div>
 
           <div class="space-y-3 text-xs sm:text-sm">
-            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+            <div class="flex justify-between items-center py-1.5 border-b border-zinc-800/60">
               <span class="text-zinc-400">Full Name</span>
               <span class="text-white font-medium">${profile.fullName}</span>
             </div>
-            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+            <div class="flex justify-between items-center py-1.5 border-b border-zinc-800/60">
               <span class="text-zinc-400">Location</span>
               <span class="text-white font-medium text-right">West Sumatra, ID</span>
             </div>
-            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
+            <div class="flex justify-between items-center py-1.5 border-b border-zinc-800/60">
               <span class="text-zinc-400">Age</span>
               <span class="text-white font-medium font-mono"><span id="realtime-age">24</span> Years</span>
             </div>
-            <div class="flex justify-between items-center py-1.5 border-b border-[#27272a]/60">
-              <span class="text-zinc-400">Specialty</span>
-              <span class="text-white font-medium text-right">Full-Stack &amp; 3D Web</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-zinc-800/60 gap-3">
+              <span class="text-zinc-400 shrink-0">Specialty</span>
+              <span class="text-white font-medium text-right">Web Development &amp; Junior Cyber Security</span>
             </div>
             <div class="flex justify-between items-center py-1.5">
               <span class="text-zinc-400">Education</span>
@@ -55,16 +50,23 @@ export const About = `
           </div>
         </div>
 
-        <div class="mt-5 pt-3 border-t border-[#27272a] flex items-center justify-between text-xs text-zinc-400">
+        <div class="mt-5 pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
           <span>University</span>
-          <span class="px-2 py-0.5 rounded bg-[#800020]/20 text-[#ff8fa3] border border-[#800020]/30 font-medium">Universitas Islam Sumatera Barat</span>
+          <a
+            href="https://uisb.ac.id/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-2 py-0.5 rounded bg-[#800020]/20 hover:bg-[#800020] text-[#ff8fa3] hover:text-white border border-[#800020]/30 font-medium transition-colors inline-flex items-center gap-1"
+          >
+            <span>Universitas Islam Sumatera Barat</span>
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Narrative & Highlights (Right) -->
     <div class="lg:col-span-7 flex flex-col justify-between" data-aos="fade-left">
-      <div class="bg-[#121217] border border-[#27272a] p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full space-y-4">
+      <div class="cinematic-tilt-card bg-[#121217] border border-zinc-800 p-5 sm:p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full space-y-4">
         <div>
           <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mb-2.5">
             Lifelong Learner Driven by Purpose &amp; Focus.
@@ -72,7 +74,7 @@ export const About = `
           
           <div class="text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-3">
             <p>
-              I engineer web applications that are responsive, accessible, and fast. My work spans from interactive 3D virtual spaces and developer extensions to full-stack administrative platforms.
+              I engineer web applications that are responsive, accessible, and fast. My work spans from modern web development and developer extensions to junior cyber security and administrative platforms.
             </p>
             <p>
               Beyond the visual surface, I build resilient backend APIs with PHP/Laravel and relational databases, incorporating defensive security patterns like SSRF firewalling, CSRF validation, and input sanitization.
@@ -83,25 +85,22 @@ export const About = `
           </div>
         </div>
 
-        <!-- Highlight Metrics -->
-        <div class="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#27272a] text-center">
-          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+        <div class="grid grid-cols-3 gap-2.5 pt-4 border-t border-zinc-800 text-center">
+          <div class="p-3 bg-[#181820] rounded-xl border border-zinc-800">
             <span class="block text-lg sm:text-2xl font-bold text-white font-mono">${profile.yearsCraft}</span>
             <span class="text-[10px] sm:text-xs text-zinc-400">Years Craft</span>
           </div>
-          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+          <div class="p-3 bg-[#181820] rounded-xl border border-zinc-800">
             <span class="block text-lg sm:text-2xl font-bold text-[#ff8fa3] font-mono">${String(projects.length).padStart(2, "0")}</span>
             <span class="text-[10px] sm:text-xs text-zinc-400">Projects</span>
           </div>
-          <div class="p-3 bg-[#181820] rounded-xl border border-[#27272a]">
+          <div class="p-3 bg-[#181820] rounded-xl border border-zinc-800">
             <span class="block text-lg sm:text-2xl font-bold text-white font-mono">${profile.integrity}</span>
             <span class="text-[10px] sm:text-xs text-zinc-400">Quality</span>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 `;

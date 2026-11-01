@@ -1,7 +1,4 @@
-// Import CSS & Tailwind tokens
 import "./style.css";
-
-// Import Components
 import { Header } from "./components/Header.js";
 import { Hero } from "./components/Hero.js";
 import { About, initAge } from "./components/About.js";
@@ -9,41 +6,29 @@ import { Project } from "./components/Project.js";
 import { Skill } from "./components/Skill.js";
 import { Experience } from "./components/Experience.js";
 import { Footer } from "./components/Footer.js";
-
-// Import 3D Developer Solar System
 import { SolarSystem } from "./solar/SolarSystem.js";
-import { technologies } from "./solar/technologies.js";
-
-// Import Navigation & Project Handlers
 import { initNav } from "./utils/navHandler.js";
 import { initProjectDetail } from "./utils/projectHandler.js";
+import { initCinematicEngine } from "./utils/cinematicEngine.js";
 
 const app = document.querySelector("#app");
 
-// Render Complete Portfolio Structure:
-// 1. Fixed full-page 3D Solar System Canvas in background
-// 2. Gradient Shadow Overlay (darkening to the left, 20% reveal from right)
-// 3. Foreground scrollable content with translucent glass styling
 app.innerHTML = `
-  <!-- Full-Page Static/Ambient 3D Solar System Background Canvas -->
   <div 
     id="solar-canvas-mount" 
-    class="fixed inset-0 w-full h-full pointer-events-none z-0 select-none"
+    class="fixed inset-0 w-full h-full z-0 select-none"
     aria-hidden="true"
   ></div>
 
-  <!-- Gradient Shadow Overlay: 75% darkness on left, smooth transition starting 40% from right (60% to 100% open) -->
-  <div 
-    id="solar-gradient-shadow"
-    class="fixed inset-0 w-full h-full pointer-events-none z-[1] select-none"
-    style="background: linear-gradient(to right, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.75) 25%, rgba(9, 9, 11, 0.52) 42%, rgba(9, 9, 11, 0.20) 60%, rgba(9, 9, 11, 0.05) 85%, transparent 100%);"
+  <div
+    id="bg-shadow-blur-overlay"
+    class="fixed inset-0 w-full h-full z-1 pointer-events-none select-none"
     aria-hidden="true"
   ></div>
 
-  <!-- Foreground Scrollable Website Content -->
-  <div class="relative z-10 w-full">
+  <div id="foreground-ui-wrapper" class="relative z-10 w-full">
     ${Header}
-    <main class="w-full">
+    <main class="w-full space-y-6">
       ${Hero}
       ${About}
       ${Project}
@@ -53,33 +38,27 @@ app.innerHTML = `
     ${Footer}
   </div>
 
-  <!-- Standalone Project Detail Modal for Deep-Dives -->
   <div 
     id="projectModal" 
-    class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm items-center justify-center p-3 sm:p-6 select-auto"
+    class="hidden fixed inset-0 z-50 bg-black/80 items-center justify-center p-3 sm:p-6 select-auto"
   >
-    <div id="modalContent" class="w-full max-w-3xl max-h-[92vh] animate-panel-in">
-      <!-- Populated by initProjectDetail -->
-    </div>
+    <div id="modalContent" class="w-full max-w-3xl max-h-[92vh] animate-panel-in"></div>
   </div>
 
-  <!-- CV Download Confirmation Modal -->
   <div 
     id="cvModal" 
-    class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4 select-auto"
+    class="hidden fixed inset-0 z-50 bg-black/80 items-center justify-center p-4 select-auto"
   >
-    <div class="w-full max-w-md bg-[#121217] border border-[#27272a] rounded-2xl shadow-2xl p-6 relative animate-panel-in text-left">
-      <!-- Close Button -->
+    <div class="w-full max-w-md holo-spatial-panel rounded-2xl p-6 relative animate-panel-in text-left">
       <button 
         id="cvModalClose"
         type="button" 
-        class="absolute top-4 right-4 p-1.5 rounded-lg bg-[#181820] text-zinc-400 hover:text-white border border-[#27272a] hover:border-[#800020] transition-all cursor-pointer"
+        class="absolute top-4 right-4 p-1.5 rounded-lg bg-[#181820] text-zinc-400 hover:text-white border border-zinc-800 hover:border-[#800020] transition-all cursor-pointer"
         aria-label="Close modal"
       >
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
 
-      <!-- Icon & Header -->
       <div class="flex items-center gap-3.5 mb-4">
         <div class="w-11 h-11 rounded-xl bg-[#800020]/20 border border-[#800020]/40 flex items-center justify-center text-[#ff8fa3] shrink-0">
           <i data-lucide="file-text" class="w-5 h-5"></i>
@@ -90,8 +69,7 @@ app.innerHTML = `
         </div>
       </div>
 
-      <!-- File Details Card -->
-      <div class="p-3.5 rounded-xl bg-[#181820] border border-[#27272a] mb-5 flex items-center justify-between">
+      <div class="p-3.5 rounded-xl bg-[#181820] border border-zinc-800 mb-5 flex items-center justify-between">
         <div class="flex items-center gap-3 min-w-0">
           <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 font-bold font-mono text-xs shrink-0">
             PDF
@@ -101,7 +79,7 @@ app.innerHTML = `
             <span class="text-[10px] text-zinc-500 font-mono">Format: PDF Document</span>
           </div>
         </div>
-        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#121217] text-zinc-400 border border-[#27272a] shrink-0">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#121217] text-zinc-400 border border-zinc-800 shrink-0">
           ~384 KB
         </span>
       </div>
@@ -110,12 +88,11 @@ app.innerHTML = `
         Do you want to download <strong class="text-white font-semibold">abbel-cv.pdf</strong> to your device?
       </p>
 
-      <!-- Action Buttons -->
       <div class="flex items-center justify-end gap-2.5">
         <button 
           id="cvModalCancel"
           type="button"
-          class="px-4 py-2 rounded-xl bg-[#181820] hover:bg-[#20202a] text-zinc-300 hover:text-white text-xs font-semibold border border-[#27272a] transition-all cursor-pointer"
+          class="px-4 py-2 rounded-xl bg-[#181820] hover:bg-[#20202a] text-zinc-300 hover:text-white text-xs font-semibold border border-zinc-800 transition-all cursor-pointer"
         >
           Cancel
         </button>
@@ -123,7 +100,7 @@ app.innerHTML = `
           href="/cv/abbel-cv.pdf" 
           download="abbel-cv.pdf"
           id="cvModalConfirmDownload"
-          class="px-4 py-2 rounded-xl bg-[#800020] hover:bg-[#9b111e] text-white text-xs font-semibold shadow-lg shadow-[#800020]/30 transition-all border border-[#9b111e]/40 inline-flex items-center gap-1.5 cursor-pointer"
+          class="px-4 py-2 rounded-xl bg-[#800020] hover:bg-[#9b111e] text-white text-xs font-semibold shadow-lg transition-all border border-[#9b111e]/40 inline-flex items-center gap-1.5 cursor-pointer"
         >
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           <span>Download</span>
@@ -133,25 +110,20 @@ app.innerHTML = `
   </div>
 `;
 
-// Initialize UI Icons & Scroll Animations
 if (window.lucide) {
   window.lucide.createIcons();
 }
 if (window.AOS) {
   window.AOS.init({
-    duration: 600,
+    duration: 500,
     once: true,
   });
 }
 
-// Initialize Interactive Handlers
 initNav();
 initAge(2002, 6, 20);
 initProjectDetail();
 
-// ----------------------------------------------------
-// 3D DEVELOPER SOLAR SYSTEM INITIALIZATION
-// ----------------------------------------------------
 let solarSystemInstance = null;
 const solarMount = document.getElementById("solar-canvas-mount");
 
@@ -163,9 +135,11 @@ if (solarMount) {
   }
 }
 
-// ----------------------------------------------------
-// CV DOWNLOAD MODAL HANDLERS
-// ----------------------------------------------------
+initCinematicEngine(solarSystemInstance);
+if (window.lucide) {
+  window.lucide.createIcons();
+}
+
 const btnDownloadCv = document.getElementById("btn-download-cv");
 const cvModal = document.getElementById("cvModal");
 const cvModalClose = document.getElementById("cvModalClose");
@@ -199,9 +173,6 @@ cvModal?.addEventListener("click", (e) => {
   }
 });
 
-// ----------------------------------------------------
-// KEYBOARD ESC & BACKDROP EVENTS FOR PROJECT & CV MODALS
-// ----------------------------------------------------
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     if (cvModal && !cvModal.classList.contains("hidden")) {
@@ -223,4 +194,3 @@ if (projModal) {
     }
   });
 }
-
